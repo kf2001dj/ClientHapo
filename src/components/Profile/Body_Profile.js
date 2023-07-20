@@ -1,39 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './Body_Profile.css'
 export default function Body_Profile()
 {
+    const [images, setImages] = useState([]);
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+      // Gọi API để lấy dữ liệu từ server Express
+        fetch('http://localhost:4000/api/profile')
+        .then((response) => response.json())
+        .then((data) => setImages(data))
+        .catch((error) => {
+          console.error('Lỗi khi gọi API: ', error);
+        });
+        fetch('http://localhost:4000/api/users')
+        .then((response) => response.json())
+        .then((data) => setUsers(data))
+        .catch((error) => {
+          console.error('Lỗi khi gọi API: ', error);
+        });
+    }, []);
+
     return(
         <div className='container text-center'>
             <div className='fontuser-pro'>
-                <img src='./image/Ellipse 25.png'></img>
-                <img src='./image/came.png' className='came'></img>
-                <div className='pro-textAdmin'>
-                    <p className='pro-textone'>Võ Hoài Nam</p>
-                    <p className='pro-texttwo'>namvh@gmail.com</p>
-                    <div className='pro-btnadone'></div>
-                    <div className='pro-day'>
-                        <img src='./image/sn.png' className='img-pro-sn'></img>
-                        <p className='txt-daypro'>10/10/2998</p>
+                {images.map((image) => (
+                    <div key={image.id}>
+                        <img
+                        className='imgid-profile'
+                        src={image.profile_image_url} // đường dẫn hình ảnh trong cơ sở dữ liệu 
+                        alt={`lỗi hình ảnh ${image.id}`}
+                        onError={() => console.error('Lỗi tải hình ảnh.')}
+                         />
+                        <img src='./image/came.png' className='came'></img>
+                        <div className='pro-textAdmin'>
+                        <p className='pro-textone'>{image.name}</p>
+                        {users.map((us) => (
+                             <p className='pro-texttwo' key={us.id}>{us.email}</p>
+                        ))}
+                       
+                        <div className='pro-btnadone'></div>
+                        <div className='pro-day'>
+                            <img src='./image/sn.png' className='img-pro-sn'></img>
+                            <p className='txt-daypro'>{image.birthdate}</p>
+                        </div>
+                        <div className='btn-pro-sn'></div>
+                        <div className='pro-phon'>
+                            <img src='./image/phonblu.png' className='img-pro-phon'></img>
+                            <p className='txt-phonpro'>{image.phone}</p>
+                        </div>
+                        <div className='btn-pro-sn'></div>
+                        <div className='pro-home'>
+                            <img src='./image/homeblu.png' className='img-pro-home'></img>
+                            <p className='txt-homepro'>{image.address}</p>
+                        </div>
+                        <div className='btn-pro-sn'></div>
+                            <p className='pro-txtad-cm'> 
+                                {image.about_me}
+                            </p>
+                        </div>
                     </div>
-                    <div className='btn-pro-sn'></div>
-                    <div className='pro-phon'>
-                        <img src='./image/phonblu.png' className='img-pro-phon'></img>
-                        <p className='txt-phonpro'>0123456789</p>
-                    </div>
-                    <div className='btn-pro-sn'></div>
-                    <div className='pro-home'>
-                        <img src='./image/homeblu.png' className='img-pro-home'></img>
-                        <p className='txt-homepro'>Cầu Giấy, Hà Nội</p>
-                    </div>
-                    <div className='btn-pro-sn'></div>
-                    <p className='pro-txtad-cm'> 
-                    Vivamus volutpat eros pulvinar velit laoreet, 
-                    sit amet egestas erat dignissim. Sed quis rutrum tellus, 
-                    sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum.
-                     Nam nulla ippsumipsum, them venenatis 
-                    </p>
-                </div>
+                   
+                ))}
+                
             </div>
 
             <div className='fonttext-pro'>

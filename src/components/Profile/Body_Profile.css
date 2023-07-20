@@ -5,8 +5,17 @@
     margin-top: 50px;
 }
 
+.imgid-profile {
+    width: 260px;
+    height: 260px;
+    border-radius: 260px;
+    border: 5px solid #FFF;
+    background: lightgray 50% / cover no-repeat;
+}
+
 .came {
-    margin-top: -95px;
+    margin-top: -85px;
+    margin-left: 10px;
 }
 
 .pro-textAdmin {
