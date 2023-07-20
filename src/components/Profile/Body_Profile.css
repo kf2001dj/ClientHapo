@@ -1,0 +1,411 @@
+.fontuser-pro {
+    width: 300px;
+    height: 900px;
+    /* background-color: aqua; */
+    margin-top: 50px;
+}
+
+.came {
+    margin-top: -95px;
+}
+
+.pro-textAdmin {
+    margin-top: -10px;
+}
+
+.pro-textone {
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.5px;
+}
+
+.pro-texttwo {
+    margin-top: -10px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+.pro-btnadone {
+    width: 270px;
+    height: 1px;
+    background: #DCDCDC;
+    margin-left: 10px;
+}
+
+.pro-day {
+    margin-top: 20px;
+    margin-right: 90px;
+}
+
+.img-pro-sn {
+    margin-right: 140px;
+}
+
+.txt-daypro {
+    margin-top: -17px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+.btn-pro-sn {
+    margin-left: 25px;
+    width: 229px;
+    height: 1px;
+    background: #DCDCDC;
+}
+
+/*  */
+.pro-phon {
+    margin-top: 10px;
+    margin-right: 90px;
+}
+
+.img-pro-phon {
+    margin-right: 140px;
+}
+
+.txt-phonpro {
+    margin-left: 10px;
+    margin-top: -17px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+/*  */
+.pro-home {
+    margin-top: 10px;
+    margin-right: 90px;
+}
+
+.img-pro-home {
+    margin-right: 140px;
+}
+
+.txt-homepro {
+    margin-left: 45px;
+    margin-top: -17px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+.pro-txtad-cm {
+    margin-left: 25px;
+    width: 249px;
+    height: 189px;
+    color: #787B7B;
+    text-align: justify;
+    font-family: UTM BryantLG;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.36px;
+}
+
+
+.fonttext-pro {
+    width: 900px;
+    height: 900px;
+    /* background-color: rgb(23, 171, 102); */
+    margin-top: 50px;
+}
+
+.pro-Mylearn {
+    margin-top: 139px;
+    margin-right: 710px;
+}
+
+.text-mylearn {
+    margin-right: 5px;
+    z-index: 2;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.btn-pro-one{
+    margin-top: -20px;
+    z-index: 1;
+    width: 900px;
+    height: 1px;
+    background: #B2D235;
+}
+
+.btn-pro-two {
+    margin-top: 3px;
+    width: 900px;
+    height: 1px;
+    background: #B2D235;
+}
+
+.pro-list-learn {
+    width: 641px;
+    height: 90px;
+    margin-left: 130px;
+    margin-top: 40px;
+}
+
+.pro-list-html {
+    margin-right: 510px;
+}
+
+.pro-list-css {
+    margin-top: -107px;
+    margin-right: 300px;
+}
+
+.pro-list-swit {
+    margin-top: -108px;
+    margin-right: 100px;
+}
+
+.pro-list-cc {
+    margin-top: -108px;
+    margin-left: 100px;
+}
+
+.pro-list-agu {
+    margin-top: -108px;
+    margin-left: 300px;
+}
+
+.pro-list-agu {
+    margin-top: -105px;
+    margin-left: 300px;
+}
+
+.pro-list-addcour {
+    margin-top: -105px;
+    margin-left: 500px;
+    z-index: 1;
+}
+
+.pro-plus {
+    margin-top: -45px;
+}
+
+.pro-txthtml {
+    margin-top: 10px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.28px;
+}
+
+.pro-txtcss {
+    margin-top: 10px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.28px;
+}
+
+.pro-txtswit {
+    margin-top: 10px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.28px;
+}
+
+.pro-txtcc {
+    margin-top: 10px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.28px;
+}
+
+.pro-txtagu {
+    margin-top: 7px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.28px;
+}
+
+.pro-txtaddcour {
+    margin-top: 29px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.28px;
+}
+
+.pro-edit-file {
+    margin-top: 55px;
+    margin-right: 710px;
+}
+
+.text-editpro {
+    margin-right: 3px;
+    z-index: 2;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.list-tt {
+    margin-top: 20px;
+}
+
+.pro-txtname {
+    margin-right: 850px;
+}
+
+.txtname-pro {
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.ipt-txtname {
+    margin-top: -10px;
+    padding-left: 10px;
+    width: 440px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #D6D6D6;
+    background: #FFF;
+}
+/*  */
+.pro-txtemail {
+    margin-top: -90px;
+    margin-left: 460px;    
+}
+
+.txtemail-pro {
+    margin-top: 12px;
+    margin-right: 400px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.ipt-txtemail {
+    margin-top: -10px;
+    padding-left: 10px;
+    width: 440px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #D6D6D6;
+    background: #FFF;
+}
+
+
+
+.txtdate-pro {
+    width: 141px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.ipt-txtdate {
+    margin-top: -10px;
+    padding-left: 10px;
+    width: 440px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #D6D6D6;
+    background: #FFF;
+}
+
+.txtabout-pro {
+    width: 90px;
+    margin-top: 12px;
+    margin-right: 400px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.ipt-textAbme {
+    padding-left: 10px;
+    margin-top: -10px;
+    width: 440px;
+    height: 159px;
+    border-radius: 5px;
+    border: 1px solid #D6D6D6;
+    background: #FFF;
+}
+
+.txtyouAb-ipt {
+    color: #CBCBCB;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+.ipt-txtdate { 
+     color: #868484;
+}
+
+
+

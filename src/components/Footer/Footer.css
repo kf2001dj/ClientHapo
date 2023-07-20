@@ -1,0 +1,186 @@
+.txtFontfoot {
+    position: relative;
+    width: 100%;
+    height: 308px;
+    background: #505353;
+    margin-top: 450px;
+    z-index: 1;
+}
+  
+.imgHapotwo {
+    z-index: 2;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+  
+.txtHapotwo {
+    margin-top: 105px;
+    margin-left: 110px;
+    width: 249px;
+    height: 50px;
+    z-index: 2;
+    position: absolute;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.txtHomefoot {
+    z-index: 2;
+    position: absolute;
+    margin-top: 55px;
+    margin-left: 640px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.txtFeatfoot {
+    z-index: 2;
+    position: absolute;
+    margin-top: 105px;
+    margin-left: 640px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.txtCourfoot {
+    z-index: 2;
+    position: absolute;
+    margin-top: 155px;
+    margin-left: 640px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.txtBlogfoot {
+    z-index: 2;
+    position: absolute;
+    margin-top: 205px;
+    margin-left: 640px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.txtContfoot {
+    z-index: 2;
+    position: absolute;
+    margin-top: 55px;
+    margin-left: 760px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+ }
+  
+.txtTermfoot {
+    z-index: 2;
+    position: absolute;
+    margin-top: 105px;
+    margin-left: 760px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.txtFaq {
+    z-index: 2;
+    position: absolute;
+    margin-top: 155px;
+    margin-left: 760px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+}
+  
+.imgFace {
+    z-index: 2;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 1050px;
+}
+  
+.imgPhone {
+    z-index: 2;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 1150px;
+}
+  
+.imgMail {
+    z-index: 2;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 1250px;
+}
+  
+.txtLinkHapo {
+    z-index: 2;
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 950px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1px;
+    text-decoration-line: underline;
+}
+  
+.fontPass {
+    margin-top: 270px;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 38px;
+    background: #454545;
+}
+  
+.txtPass {
+    margin-top: 10px;
+    text-align: center;
+    color: #FFF;
+    font-size: 15px;
+    font-family: UTM BryantLG;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.75px;
+}

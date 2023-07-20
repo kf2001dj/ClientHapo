@@ -1,0 +1,262 @@
+@media screen and (min-width: 1024px) {
+    /* CSS cho thiết bị có chiều rộng lớn hơn hoặc bằng 1024px */
+    
+}
+
+@media screen and (max-width: 768px) {
+    /* header */
+    .d-flex {
+        height: 100%;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: -15px;
+    }
+
+   .imgNavhapo {
+        width: 200px;
+        height: auto;
+    }
+
+    .fontVien {
+        width: 100%;
+        height: 1px;
+        background: #B2D235;
+    }
+
+    .fontVien2 {
+        width: 100%;
+        height: 1px;
+        background: #B2D235;
+    }
+
+    /* body */
+    .body {
+        margin-bottom: 100px;
+    }
+
+    /* footer */
+}
+  
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* ipad */ 
+    /* header */
+    .d-flex {
+        height: 100%;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: -15px;
+    }
+
+    .fontVien {
+        width: 100%;
+        height: 1px;
+        background: #B2D235;
+    }
+
+    .fontVien2 {
+        width: 100%;
+        height: 1px;
+        background: #B2D235;
+    }
+    /*body*/
+    .body {
+        height: 3000px;
+    }
+
+    .fontheadHapo {
+        position: relative;
+        margin-top: 170px;
+        margin-left: -80px;
+    }
+
+    .txtLearn p {
+        font-size: 34px;
+    }
+    
+    .imgAthapo p {
+        margin-top: 25px;
+        font-size: 29px;
+    }
+
+    .imgCuHapo {
+        margin-left: -5px;
+        width: 43px;
+        height: auto;
+    }
+
+    .fontheadHapo button {
+        margin-left: 120px;
+        width: 200px;
+        height: 40px;
+    }
+   
+    .txtInter p {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .btnStart p {
+        font-size: 18px;
+    }
+
+    .txtFont {
+        margin-top: -150px;
+    }
+}
+
+/* Kiểu màn hình nhỏ hơn 767px
+@media (max-width: 767px) {
+    .body-login {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+    .login_signinHapo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding: 10px;
+    }
+  
+    .sign {
+      font-size: 25px;
+    }
+    
+    .form-user,
+    .form-pass {
+        margin-left: 0px;
+        width: 100%;
+    }
+  
+    .txtUser,
+    .txtPassword_signin {
+      margin-left: 0;
+    }
+  
+    .form-ip,
+    .form-pa {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .btnSign {
+      margin-left: 0;
+      margin-top: 20px;
+      width: 100%;
+    }
+  
+    .forgot {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  
+    .txtForgot {
+      font-size: 18px;
+    }
+  
+    .btnIndex,
+    .btnIndex2,
+    .btnNew,
+    .btnNew2 {
+      display: none;
+    }
+  
+    .txtIn {
+      margin-top: 10px;
+      margin-left: 0;
+      font-size: 18px;
+    }
+  
+    .btnGoogle {
+      margin-top: 10px;
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .txtGoogle {
+      margin-top: -15px;
+      margin-left: 0;
+      font-size: 18px;
+    }
+  
+    .btnGoogle img {
+      margin-top: -10px;
+      margin-left: -90px;
+    }
+  
+    .txtOr {
+      margin-top: 10px;
+      margin-left: 0;
+      font-size: 16px;
+    }
+  
+    .btnCreat {
+      margin-top: 10px;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+   */
+
+/* Kiểu màn hình nhỏ hơn 375px */
+@media (max-width: 378px) {
+  
+  .body-login {
+    margin-top: -20px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    height: auto; 
+  }
+
+  .login_signinHapo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .form-loginlist {
+    margin-top: -350px;
+  }
+
+  .form-loginlist p {
+    font-size: 20px;
+  }
+
+  .sign {
+    width: 300px;
+  }
+  
+  .form-user {
+    padding-left: 20px;
+  }
+
+  .form-user p {
+    font-size: 15px;
+    margin-top: -10px;
+  }
+
+  .form-ip {
+    position: absolute;
+    width: 100;
+  }
+  
+}
+
+
+
+
+.backcolo {
+    background: #F2F2F2;
+}
+
+.backpass {
+    background: #F2F2F2;
+    
+}
+
+.backcolo-dev {
+    background: #F2F2F2;
+}

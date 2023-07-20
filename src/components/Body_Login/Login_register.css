@@ -1,0 +1,218 @@
+.body-login {
+    width: 100%;
+    height: 350px;
+}
+
+.login_signinHapo {
+    width: 552px;
+    height: 711px;
+    flex-shrink: 0;
+    background: #FFF;
+    margin-top: 50px;
+}
+
+.sign {
+    margin-left: -60px;
+    margin-top: 10px;
+    text-align: center;
+    color: #B2D235;
+    font-family: Arial;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.form-user {
+    margin-top: 20px;
+    margin-left: -350px;
+}
+
+.txtUser {
+    padding-top: 10px;
+    margin-left: 280px;
+    display: flex;
+    width: 95px;
+    height: 20px;
+    color: #505353;
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.form-ip {
+    margin-left: 280px;
+    width: 480px;
+    height: 54.066px;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+}
+
+.form-pass {
+    margin-top: 10px;
+    margin-left: -350px;
+}
+
+.txtPassword_signin {
+    padding-top: 10px;
+    margin-left: 280px;
+    display: flex;
+    width: 95px;
+    height: 20px;
+    color: #505353;
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.form-pa {
+    margin-left: 280px;
+    width: 480px;
+    height: 54.066px;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+}
+
+.btnSign {
+    margin-left: -330px;
+    margin-top: 30px;
+    width: 214px;
+    height: 52px;
+    border-radius: 22px;
+    background: #B2D235;
+    box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
+}
+
+.txtBtsign {
+    text-align: center;
+    padding-top: 12px;
+    color: #FFF;
+    font-family: Arial;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.forgot {
+    margin-top: -50px;
+    margin-left: 260px;
+}
+
+.txtForgot {
+    color: #A6CB16;
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.btnIndex {
+    margin-top: 90px;
+    margin-left: -60px;
+    width: 166px;
+    height: 1px;
+    background: #808080;
+}
+
+.btnIndex2 {
+    margin-top: -1px;
+    margin-left: 230px;
+    width: 166px;
+    height: 1px;
+    background: #808080;
+}
+
+.txtIn {
+    margin-top: -15px;
+    margin-left: -70px;
+    color: #505353;
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btnGoogle {
+    margin-top: 10px;
+    margin-left: -65px;
+    width: 430px;
+    height: 56px;
+    border-radius: 22px;
+    border: 1px solid #DC4E41;
+    background: #FAFAFA;
+}
+
+.txtGoogle {
+    margin-top: -25px;
+    margin-left: 190px;
+    width: 77px;
+    height: 21px;
+    color: #DC4E41;
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btnGoogle img {
+    margin-top: 10px;
+    margin-left: -90px;
+}
+
+.btnNew {
+    margin-top: 50px;
+    margin-left: -60px;
+    width: 131px;
+    height: 1px;
+    background: #808080;
+}
+
+.btnNew2 {
+    margin-top: -1px;
+    margin-left: 265px;
+    width:  131px;
+    height: 1px;
+    background: #808080;
+}
+.txtOr {
+    margin-top: -16px;
+    margin-left: -70px;
+    color: #505353;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btnCreat {
+    margin-top: 20px;
+    margin-left: -65px;
+    width: 430px;
+    height: 55px;
+    border-radius: 22px;
+    background: #B2D235;
+    box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
+}
+
+.txtCreate {
+    padding: 15px;
+    color: #FFF;
+    font-family: Arial;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
