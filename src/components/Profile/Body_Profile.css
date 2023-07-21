@@ -88,7 +88,8 @@
 }
 
 .txt-phonpro {
-    margin-left: 10px;
+    text-align: left;
+    margin-left: 65px;
     margin-top: -17px;
     color: #505353;
     font-family: UTM BryantLG;
@@ -110,7 +111,8 @@
 }
 
 .txt-homepro {
-    margin-left: 45px;
+    text-align: left;
+    margin-left: 65px;
     margin-top: -17px;
     color: #505353;
     font-family: UTM BryantLG;

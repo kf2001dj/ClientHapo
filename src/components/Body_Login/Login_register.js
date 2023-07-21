@@ -42,6 +42,19 @@ export default function Login_register() {
       if (response.ok) {
         console.log('Sign in successful');
         setLoggedIn(true);
+        const userResponse = await fetch('http://localhost:4000/api/users', {
+          method: 'GET',
+          credentials: 'include',
+        });
+
+        if (userResponse.ok) {
+          const users = await userResponse.json();
+          const currentUser = users.find((user) => user.username === username);
+          if (currentUser) {
+            localStorage.setItem('userId', currentUser.id);
+          }
+        }
+
         window.location.href= '/';
       } else if (response.status === 401) {
         console.log('Invalid username or password');
@@ -63,6 +76,8 @@ export default function Login_register() {
       if (response.ok) {
         console.log('Sign out successful');
         setLoggedIn(false);
+
+        localStorage.removeItem('userId');
         window.location.reload();
       }
     } catch (error) {

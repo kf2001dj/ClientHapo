@@ -1,67 +1,84 @@
 import React, { useState, useEffect } from 'react';
 
 import './Body_Profile.css'
+
+
 export default function Body_Profile()
 {
-    const [images, setImages] = useState([]);
-    const [users, setUsers] = useState([]);
+    const [user, setUser] = useState({});
+    // const userId = "1"; 
+    const userId = localStorage.getItem('userId');
+    // useEffect(() => {
+    //   // Gọi API để lấy dữ liệu từ server Express sử dụng ID người dùng
+    //   fetch(`http://localhost:4000/api/users/${userId}`)
+    //     .then((response) => {
+    //       if (!response.ok) {
+    //         throw new Error('Response was not ok');
+    //       }
+    //       return response.json();
+    //     })
+    //     .then((data) => setUser(data))
+    //     .catch((error) => {
+    //       console.error('Lỗi khi gọi API: ', error);
+    //     });
+    // }, [userId]); // Thêm 'userId' vào danh sách dependencies để useEffect chạy lại khi ID người dùng thay đổi
+
     useEffect(() => {
-      // Gọi API để lấy dữ liệu từ server Express
-        fetch('http://localhost:4000/api/profile')
-        .then((response) => response.json())
-        .then((data) => setImages(data))
-        .catch((error) => {
-          console.error('Lỗi khi gọi API: ', error);
-        });
-        fetch('http://localhost:4000/api/users')
-        .then((response) => response.json())
-        .then((data) => setUsers(data))
-        .catch((error) => {
-          console.error('Lỗi khi gọi API: ', error);
-        });
-    }, []);
+        // Fetch user data using the userId from localStorage
+        if (userId) {
+          fetch(`http://localhost:4000/api/users/${userId}`)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('Response was not ok');
+              }
+              return response.json();
+            })
+            .then((data) => setUser(data))
+            .catch((error) => {
+              console.error('Error fetching user data: ', error);
+            });
+        }
+      }, [userId]);
 
     return(
         <div className='container text-center'>
             <div className='fontuser-pro'>
-                {images.map((image) => (
-                    <div key={image.id}>
+               
+                    <div>
                         <img
+                        key={user.id}
                         className='imgid-profile'
-                        src={image.profile_image_url} // đường dẫn hình ảnh trong cơ sở dữ liệu 
-                        alt={`lỗi hình ảnh ${image.id}`}
+                        src={user.image_url} // đường dẫn hình ảnh trong cơ sở dữ liệu 
+                        alt={`lỗi hình ảnh ${user.id}`}
                         onError={() => console.error('Lỗi tải hình ảnh.')}
                          />
                         <img src='./image/came.png' className='came'></img>
                         <div className='pro-textAdmin'>
-                        <p className='pro-textone'>{image.name}</p>
-                        {users.map((us) => (
-                             <p className='pro-texttwo' key={us.id}>{us.email}</p>
-                        ))}
-                       
+                        <p className='pro-textone'>{user.name}</p>
+                        <p className='pro-texttwo'>{user.email}</p>
                         <div className='pro-btnadone'></div>
                         <div className='pro-day'>
                             <img src='./image/sn.png' className='img-pro-sn'></img>
-                            <p className='txt-daypro'>{image.birthdate}</p>
+                            <p className='txt-daypro'>{user.birthdate}</p>
                         </div>
                         <div className='btn-pro-sn'></div>
                         <div className='pro-phon'>
                             <img src='./image/phonblu.png' className='img-pro-phon'></img>
-                            <p className='txt-phonpro'>{image.phone}</p>
+                            <p className='txt-phonpro'>{user.phone}</p>
                         </div>
                         <div className='btn-pro-sn'></div>
                         <div className='pro-home'>
                             <img src='./image/homeblu.png' className='img-pro-home'></img>
-                            <p className='txt-homepro'>{image.address}</p>
+                            <p className='txt-homepro'>{user.address}</p>
                         </div>
                         <div className='btn-pro-sn'></div>
                             <p className='pro-txtad-cm'> 
-                                {image.about_me}
+                                {user.about}
                             </p>
                         </div>
                     </div>
                    
-                ))}
+                
                 
             </div>
 
