@@ -74,7 +74,6 @@ export default function Body_Profile()
         console.error('Error updating user data: ', error);
       });
     };
-   
 
     return(
         <div className='container text-center'>
@@ -126,14 +125,15 @@ export default function Body_Profile()
 
                 <div className='pro-list-learn'>
                     <div className='pro-list-html'>
-                        <img src='./image/Ellipse 27.png'></img>
-                        <p className='pro-txthtml'>HTML</p>
+                        <img src={user.mycourses}></img>
+                        <p className='pro-txthtml'>{user.textcourse}</p>
                     </div>
+
                     <div className='pro-list-css'>
-                        <img src='./image/Ellipse 28.png'></img>
-                        <p className='pro-txtcss'>CSS</p>
+                        <img src={user.mycourses}></img>
+                        <p className='pro-txtcss'>{user.textcourse}</p>
                     </div>
-                    <div className='pro-list-swit'>
+                    {/* <div className='pro-list-swit'>
                         <img src='./image/Ellipse 29.png'></img>
                         <p className='pro-txtswit'>Swift 4</p>
                     </div>
@@ -144,9 +144,9 @@ export default function Body_Profile()
                     <div className='pro-list-agu'>
                         <img src='./image/Ellipse 31.png'></img>
                         <p className='pro-txtagu'>Angular</p>
-                    </div>
+                    </div> */}
                     <div className='pro-list-addcour'>
-                        <a href='/' type='button'>
+                        <a href='/allcourses' type='button'>
                             <img src='./image/Ellipse 32.png'></img>
                             <div className='pro-plus'>
                                 <img src='./image/Vectorpro.png'></img>

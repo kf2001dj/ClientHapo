@@ -95,6 +95,7 @@
     padding-top: 20px;
     padding-left: 10px;
 
+
 }
 
 .txt-list-fil {
@@ -231,13 +232,20 @@
 .list-learn-dev {
     margin-top: 20px;
     height: 700px;
-    width: 1300px;
+    width: 1400px;
     position: absolute;
+    display: flex; /* Thêm thuộc tính flex để hiển thị các ô con theo chiều ngang */
+    flex-wrap: wrap; /* Dùng flex-wrap để các ô trên một dòng */
     
 }
 
 .custom-row-dev {
-    margin-left: 1px;
+    margin-top: -20px;
+    margin-left: -35px;
+}
+
+.custom-margin-one {
+    margin: 40px;
 }
 
 .custom-margin-one img {
@@ -246,8 +254,9 @@
 }
 
 .cust-learn-html {
+    text-align: left;
     margin-top: -85px;
-    margin-right: 50px;
+    margin-left: 170px;
     color: #505353;
     font-family: UTM BryantLG;
     font-size: 25px;
@@ -387,173 +396,7 @@
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
 
 }
-/*  */
-.custom-margin {
-    margin-left: 40px;
-    width: 630px;
-    height: 350px;
-    border-radius: 8px;
-    border: 1px solid #F1F1F1;
-    background: #FFF;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
-}
 
-.custom-margin img {
-    margin-right: 470px;
-    margin-top: 30px; 
-}
-
-.cust-learn-css {
-    margin-top: -85px;
-    margin-right: 80px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.custom-row-dev-one {
-    margin-top: 40px;
-    margin-left: 1px;
-}
-
-.cust-learn-php {
-    margin-top: -85px;
-    margin-right: 140px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-/*  */
-.custom-row-dev-tw {
-    margin-top: 40px;
-    margin-left: 1px;
-}
-
-.cust-learn-sw {
-    margin-top: -85px;
-    margin-right: 57px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.cust-learn-cc {
-    margin-top: -85px;
-    margin-right: 158px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.custom-row-dev-th {
-    margin-top: 40px;
-    margin-left: 1px;
-    
-}
-
-.cust-learn-rb {
-    margin-top: -85px;
-    margin-right: 130px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.cust-learn-c {
-    margin-top: -85px;
-    margin-right: 170px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.custom-row-dev-or {
-    margin-top: 40px;
-    margin-left: 1px;
-}
-
-.cust-learn-jq {
-    margin-top: -85px;
-    margin-right: 115px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.cust-learn-ang {
-    margin-top: -85px;
-    margin-right: 95px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.custom-row-dev-f {
-    margin-top: 40px;
-    margin-left: 1px;
-}
-
-.cust-learn-data {
-    margin-top: -85px;
-    margin-right: 22px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.cust-learn-mach {
-    margin-top: -85px;
-    margin-right: 90px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.25px;
-}
-
-.custom-row-dev-s {
-    margin-top: 40px;
-    margin-left: 1px;
-
-}
 
 .list-dev-page {
     margin-top: 30px;

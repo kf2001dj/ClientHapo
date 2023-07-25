@@ -1,6 +1,6 @@
 import '../Body_All/allcour.css';
 
-import React, {useState} from 'react';
+import React, {useState ,useEffect } from 'react';
 
 export default function Body_all(){
     const [isVisible, setIsVisible] = useState(false);
@@ -44,6 +44,15 @@ export default function Body_all(){
     // const handleClick = (pageNumber) => {
     //     setCurrentPage(pageNumber);
     // };
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:4000/api/course')
+          .then((res) => res.json())
+          .then((data) => setUsers(data))
+          .catch((err) => console.log(err));
+      }, []);
+    
+    
     return(
         <div className='container body-list-learn text-center'>
             
@@ -78,7 +87,7 @@ export default function Body_all(){
                             Teacher
                             </option>
                             <option value="option1">Thành Đông</option>
-                            <option value="option2">Tuyết Linh</option>
+                            <option value="option2">Đông Nguyễn</option>
                             <option value="option3">Anh Dương</option>
                             <option value="option4">Anh Nghĩa</option>
                             <option value="option5">Anh Tuấn</option>
@@ -131,15 +140,13 @@ export default function Body_all(){
                   {/* Phần tử mới */}
                 <div className={isVisible ? '' : ''}  >
                     <div className='list-learn-dev'>
+                    {users.map((user) => (
                         <div className='row custom-row-dev'>
                             <div className='col-md-6 custom-margin-one'>
-                                <img src='./image/Ellipse 9.png'></img>
-                                <p className='cust-learn-html'>HTML Fundamentals</p>
+                                <img src={user.image_url}></img>
+                                <p className='cust-learn-html'>{user.name}</p>
                                 <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
+                                    {user.about}
                                 </p>
                                 <a href='/course' type='button' className='bt-learn-more'>
                                     <p className='txtmore-dev'>More</p>
@@ -148,290 +155,12 @@ export default function Body_all(){
                                 <p className='txtlearn-dev'>Learners</p>
                                 <p className='txtless-dev'>Lessons</p>
                                 <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 10.png'></img>
-                                <p className='cust-learn-css'>CSS Fundamentals</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
+                                <p className='solearn-dev'>{user.learners}</p>
+                                <p className='soless-dev'>{user.lessons}</p>
+                                <p className='sotime-dev'>{user.time} (h)</p>
                             </div>
                         </div>
-
-                        <div className='row custom-row-dev-one'>
-                            <div className='col-md-6 custom-margin-one'>
-                                <img src='./image/Ellipse 11.png'></img>
-                                <p className='cust-learn-php'>PHP Tutorial</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 12.png'></img>
-                                <p className='cust-learn-css'>SQL Fundamentals</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                        </div>
-
-                        <div className='row custom-row-dev-tw'>
-                            <div className='col-md-6 custom-margin-one'>
-                            <img src='./image/Ellipse 13.png'></img>
-                                <p className='cust-learn-sw'>Swift 4 Fundamentals</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 14.png'></img>
-                                <p className='cust-learn-cc'>C# Tutorial</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                        </div>
-
-                        <div className='row custom-row-dev-th'>
-                            <div className='col-md-6 custom-margin-one'>
-                                <img src='./image/Ellipse 15.png'></img>
-                                <p className='cust-learn-rb'>Ruby Tutorial</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 18.png'></img>
-                                <p className='cust-learn-c'>C Tutorial</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                        </div>
-
-                        <div className='row custom-row-dev-or'>
-                            <div className='col-md-6 custom-margin-one'>
-                                <img src='./image/Ellipse 16.png'></img>
-                                <p className='cust-learn-jq'>jQuery Tutorial</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 19.png'></img>
-                                <p className='cust-learn-ang'>Angular + NestJS</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                        </div>
-
-                        <div className='row custom-row-dev-f'>
-                            <div className='col-md-6 custom-margin-one'>
-                                <img src='./image/Ellipse 17.png'></img>
-                                <p className='cust-learn-data'>Data Science with Python</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 20.png'></img>
-                                <p className='cust-learn-mach'>Machine Learning</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                        </div>
-
-                        <div className='row custom-row-dev-s'>
-                            <div className='col-md-6 custom-margin-one'>
-                                <img src='./image/Ellipse 9.png'></img>
-                                <p className='cust-learn-html'>HTML Fundamentals</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                            <div className='col-md-6 custom-margin'>
-                                <img src='./image/Ellipse 10.png'></img>
-                                <p className='cust-learn-css'>CSS Fundamentals</p>
-                                <p className='txt-learn-html'>
-                                Practice during lessons, practice between lessons,
-                                 practice whenever you can. Master the task, 
-                                 then reinforce and test your knowledge with fun, 
-                                 hands-on exercises and interactive quizzes.
-                                </p>
-                                <a type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </a>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>16,882</p>
-                                <p className='soless-dev'>2,689</p>
-                                <p className='sotime-dev'>100 (h)</p>
-                            </div>
-                        </div>
+                    ))}
                         <div className='list-dev-page'>
                             <div class="row">
                                 <div class="col-md-12">
