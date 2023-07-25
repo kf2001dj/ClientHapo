@@ -2,7 +2,7 @@ import './App.css';
 import {Routes , Route} from 'react-router-dom';
 import Home from './page/Home';
 import Profile from './page/Profile';
-import Login_Register from './page/Login_Register';
+import Login_Register from './page/Login_Register'
 import Allcourses from './page/Allcourses';
 import SignUp from './page/SignUp';
 import Password from './page/Password';

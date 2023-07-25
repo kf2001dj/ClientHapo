@@ -3,6 +3,7 @@ import './Login_register.css';
 import React, { useState, useEffect } from 'react';
 
 export default function Login_register() {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -86,8 +87,8 @@ export default function Login_register() {
   };
 
   return (
-    <div className="body-login">
-      <div className="container text-center login_signinHapo">
+    <div className="bodyLogin">
+      <div className="container text-center loginSigninHapo">
         <div className="row">
           <div className="col-md">
             <form className='form-loginlist'>

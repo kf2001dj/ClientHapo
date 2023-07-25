@@ -46,7 +46,7 @@ export default function Body_all(){
     // };
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/api/course')
+        fetch('http://localhost:4000/api/courses')
           .then((res) => res.json())
           .then((data) => setUsers(data))
           .catch((err) => console.log(err));
