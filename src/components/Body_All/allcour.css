@@ -86,7 +86,7 @@
 }
 
 .list-filter-note{
-    margin-top: 5px;
+    margin-top: 15px;
     height: 110px;
     width: 1300px;
     background: #FFF;
@@ -240,12 +240,13 @@
 }
 
 .custom-row-dev {
-    margin-top: -20px;
-    margin-left: -35px;
+    margin-top: 1px;
+    margin-left: -50px;
 }
 
 .custom-margin-one {
-    margin: 40px;
+    margin: 50px;
+    margin-top: 20px;
 }
 
 .custom-margin-one img {
