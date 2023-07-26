@@ -24,7 +24,7 @@ export default function Body_Profile()
                 console.error('Error fetching user data: ', error);
                 });
 
-                fetch('http://localhost:4000/api/courses_users')
+                fetch(`http://localhost:4000/api/users/${userId}/courses`)
                 .then((response) => {
                 if (!response.ok) {
                     throw new Error('Response was not ok');
@@ -33,13 +33,13 @@ export default function Body_Profile()
                 })
                 .then((data) => setCourses(data))
                 .catch((error) => {
-                console.error('Error fetching user data: ', error);
+                console.error('Error fetching courses data for user: ', error);
                 });
-           
         
             }else {
                 //bắt buộc phải đăng nhập thì ms edit được
                 setUser({});
+                setCourses([]);
             } 
            
         }, [userId]);
@@ -92,9 +92,9 @@ export default function Body_Profile()
         
 
 
-        return(
-            <div className='container text-center'>
-                <div className='fontuser-pro'>
+    return(
+        <div className='container text-center'>
+            <div className='fontuser-pro'>
                         <div>
                             <img
                             key={user.id}
@@ -141,31 +141,13 @@ export default function Body_Profile()
                     </div>
 
                     <div className='pro-list-learn'>
-                    {courses.map((course) => (
-                            <div className='pro-list-html' key={course.id}>
-                            <img src={course.course_id} />
-                            <p className='pro-txthtml'></p>
-                            </div>
+                    {courses.map((courseUser) => (
+                        <div className='pro-list-html' key={courseUser.id}>
+                            <CourseImage courseImageUrl={courseUser.image_url} />
+                            <p className='pro-txthtml'>{courseUser.txtname}</p>
+                        </div>
                     ))}
 
-
-
-                        {/* <div className='pro-list-css'>
-                            <img src={user.mycourses}></img>
-                            <p className='pro-txtcss'>{user.textcourse}</p>
-                        </div> */}
-                        {/* <div className='pro-list-swit'>
-                            <img src='./image/Ellipse 29.png'></img>
-                            <p className='pro-txtswit'>Swift 4</p>
-                        </div>
-                        <div className='pro-list-cc'>
-                            <img src='./image/Ellipse 30.png'></img>
-                            <p className='pro-txtcc'>C#</p>
-                        </div>
-                        <div className='pro-list-agu'>
-                            <img src='./image/Ellipse 31.png'></img>
-                            <p className='pro-txtagu'>Angular</p>
-                        </div> */}
                         <div className='pro-list-addcour'>
                             <a href='/allcourses' type='button'>
                                 <img src='./image/Ellipse 32.png'></img>
@@ -249,8 +231,25 @@ export default function Body_Profile()
                     <button className='btn-updateprofile' onClick={handleUpdate}>
                         <p> Update</p>
                 </button>
-                </div>
-
             </div>
-        )
+
+        </div>
+    )
+}
+
+function CourseImage({ courseImageUrl }) {
+    const [isLoading, setIsLoading] = useState(true);
+      
+    useEffect(() => {
+        const image = new Image();
+        image.src = courseImageUrl;
+        image.onload = () => setIsLoading(false);
+        image.onerror = () => console.error('Lỗi tải hình ảnh.');
+    }, [courseImageUrl]);
+      
+    if (isLoading) {
+        return <p>Loading...</p>;
     }
+      
+    return <img src={courseImageUrl} alt='Course' />;
+}

@@ -420,10 +420,10 @@
     background: #B2D235;
     box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
     padding-top: 10px;
-    padding-left: 33px;
 }
 
 .txt-slot-dev {
+    margin-right: 25px;
     color: #FFF;
     font-family: UTM BryantLG;
     font-size: 18px;

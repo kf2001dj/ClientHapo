@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 export default function CourseReview()
 {
-    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption, setSelectedOption] = useState('reviews');
     const handleOptionClick = (option) => {
       setSelectedOption(option);
     };

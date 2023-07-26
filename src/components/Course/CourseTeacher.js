@@ -1,14 +1,16 @@
-import React ,{useState} from "react";
+import React ,{useState , useEffect} from "react";
 import '../Course/Course.css';
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 export default function CourseTeacher()
 {
-    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption, setSelectedOption] = useState('teacher');
 
     const handleOptionClick = (option) => {
       setSelectedOption(option);
     };
+
+    
     return(
         <div className="backcolo-dev">
         <Navbar></Navbar>

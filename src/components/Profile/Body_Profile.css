@@ -184,40 +184,24 @@
     width: 641px;
     height: 90px;
     margin-left: 130px;
-    margin-top: 40px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .pro-list-html {
     margin-right: 510px;
+    margin: 15px;
 }
 
-.pro-list-css {
-    margin-top: -107px;
-    margin-right: 300px;
+.pro-list-html img {
+    width: 65px;
 }
 
-.pro-list-swit {
-    margin-top: -108px;
-    margin-right: 100px;
-}
-
-.pro-list-cc {
-    margin-top: -108px;
-    margin-left: 100px;
-}
-
-.pro-list-agu {
-    margin-top: -108px;
-    margin-left: 300px;
-}
-
-.pro-list-agu {
-    margin-top: -105px;
-    margin-left: 300px;
-}
 
 .pro-list-addcour {
-    margin-top: -105px;
+    margin-top: -120px;
     margin-left: 500px;
     z-index: 1;
 }
@@ -237,59 +221,15 @@
     letter-spacing: -0.28px;
 }
 
-.pro-txtcss {
-    margin-top: 10px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.28px;
-}
-
-.pro-txtswit {
-    margin-top: 10px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.28px;
-}
-
-.pro-txtcc {
-    margin-top: 10px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.28px;
-}
-
-.pro-txtagu {
-    margin-top: 7px;
-    color: #505353;
-    font-family: UTM BryantLG;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.28px;
-}
-
 .pro-txtaddcour {
     margin-top: 29px;
-    color: #505353;
+    color: #B2D235;
     font-family: UTM BryantLG;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    letter-spacing: -0.28px;
+    letter-spacing: -0.7px;
 }
 
 .pro-edit-file {

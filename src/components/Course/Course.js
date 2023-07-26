@@ -1,14 +1,18 @@
-import React ,{useState} from "react";
+import React ,{useState , useEffect} from "react";
 import '../Course/Course.css';
 
 
-export default function Course()
+export default function Course(userId)
 {
-    const [selectedOption, setSelectedOption] = useState('');
-
+    const [selectedOption, setSelectedOption] = useState('lessons');
     const handleOptionClick = (option) => {
       setSelectedOption(option);
     };
+    useEffect(() => {
+        handleOptionClick('lessons');
+    }, []);
+
+   
     return(
         <div className="body-course">
             <div className="head-page-course">
@@ -94,17 +98,23 @@ export default function Course()
                                 <>
                                 <div className="but-cour-dev1"></div>
                                 <div className="but-lesson-blu"></div>
+                              
                                 <div className='in-search-dev'>
                                     <input className='ip-list-dev' placeholder='Search...'></input>
                                     <img src='./image/klup.png' className='ip-note-lup-dev' ></img>
                                     <button className='btn-search-dev'>
                                         <p className='txt-search-dev'>Tìm kiếm</p>
                                     </button>
-                                    <a href="/lesson" type="button" className='btn-slot-dev'>
-                                        <p className='txt-slot-dev'>Tham gia khoá học</p>
-                                    </a>
-                                </div>
 
+                                    
+                                    <button type="button" className='btn-slot-dev'
+                                  
+                                    >
+                                        <p className='txt-slot-dev'>Tham gia khoá học</p>
+                                    </button>
+                                  
+                                </div>
+                               
                                 <div> 
                                     <div className="but-list-font"></div>
                                     <p className="oth-solist-dev1">1.</p>

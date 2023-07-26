@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 export default function Lesson()
 {
-    const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption, setSelectedOption] = useState('lessons');
     const handleOptionClick = (option) => {
       setSelectedOption(option);
     };
