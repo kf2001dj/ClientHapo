@@ -1,18 +1,43 @@
 import React ,{useState , useEffect} from "react";
 import '../Course/Course.css';
 
-
 export default function Course(userId)
 {
     const [selectedOption, setSelectedOption] = useState('lessons');
     const handleOptionClick = (option) => {
       setSelectedOption(option);
     };
+
     useEffect(() => {
         handleOptionClick('lessons');
     }, []);
 
-   
+    const [message, setMessage] = useState('');
+
+    // Xử lý khi bấm nút "Thêm khoá học"
+    const handleAddCourse = () => {
+      const user_id = 1; // Thay 1 bằng user_id thực tế từ cơ sở dữ liệu hoặc Redux store
+      const course_id = 14; // Thay 2 bằng course_id thực tế từ cơ sở dữ liệu hoặc Redux store
+  
+      fetch('http://localhost:4000/api/addCourseToUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user_id, course_id }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+            setMessage(data.message);
+        // Thêm thông báo "alert" nếu thêm khoá học thành công
+            alert(data.message);
+        })
+        .catch((error) => {
+          console.error('Lỗi khi thêm khoá học:', error);
+          setMessage('Đã xảy ra lỗi khi thêm khoá học!');
+        });
+    };
+
     return(
         <div className="body-course">
             <div className="head-page-course">
@@ -106,13 +131,13 @@ export default function Course(userId)
                                         <p className='txt-search-dev'>Tìm kiếm</p>
                                     </button>
 
-                                    
                                     <button type="button" className='btn-slot-dev'
-                                  
+                                     onClick={handleAddCourse}
                                     >
                                         <p className='txt-slot-dev'>Tham gia khoá học</p>
+                                        
                                     </button>
-                                  
+                                    <p>{message}</p>
                                 </div>
                                
                                 <div> 

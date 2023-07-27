@@ -7,20 +7,32 @@ export default function Login_register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
-
+  
   useEffect(() => {
     checkLoggedInStatus();
   }, []);
 
+  const storeToken = (token) => {
+    localStorage.setItem('token', token);
+  };
+
   const checkLoggedInStatus = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/signin/status', {
-        method: 'GET',
-        credentials: 'include',
-      });
+      const token = localStorage.getItem('token');
+      if (token) {
+        const response = await fetch('http://localhost:4000/api/signin/status', {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the request header
+          },
+          credentials: 'include',
+        });
 
-      if (response.ok) {
-        setLoggedIn(true);
+        if (response.ok) {
+          setLoggedIn(true);
+        } else {
+          setLoggedIn(false);
+        }
       }
     } catch (error) {
       console.error(error);
@@ -42,12 +54,21 @@ export default function Login_register() {
 
       if (response.ok) {
         console.log('Sign in successful');
-        setLoggedIn(true);
-        const userResponse = await fetch('http://localhost:4000/api/users', {
+        const data = await response.json();
+        const token = data.token;
+      
+        if (token) {
+          // Save the JWT token in localStorage
+          storeToken(token);
+          console.log('Sign in successful');
+          setLoggedIn(true);
+          const userResponse = await fetch('http://localhost:4000/api/users', {
           method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the request header
+          },
           credentials: 'include',
         });
-
         if (userResponse.ok) {
           const users = await userResponse.json();
           const currentUser = users.find((user) => user.username === username);
@@ -55,8 +76,9 @@ export default function Login_register() {
             localStorage.setItem('userId', currentUser.id);
           }
         }
-
-        window.location.href= '/';
+          setLoggedIn(true);
+          window.location.href = '/';
+        }
       } else if (response.status === 401) {
         console.log('Invalid username or password');
       } else {
@@ -78,7 +100,7 @@ export default function Login_register() {
         console.log('Sign out successful');
         setLoggedIn(false);
 
-        localStorage.removeItem('userId');
+        localStorage.removeItem('token');
         window.location.reload();
       }
     } catch (error) {
