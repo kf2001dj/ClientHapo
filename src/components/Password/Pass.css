@@ -1,0 +1,87 @@
+.body-resetpass {
+    width: 100%;
+    height: 400px;
+    
+}
+
+.resetpassHapo {
+    width: 1176px;
+    height: 366px;
+    flex-shrink: 0;
+    background: #FFF;
+    margin-top: 50px;
+}
+
+.resetpass {
+    margin-left: -60px;
+    margin-top: -10px;
+    color: #B2D235;
+    font-family: UTM BryantLG;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.6px;
+}
+
+.enterpass {
+    margin-left: -60px;
+    margin-top: 10px;
+    color: #505353;
+    font-family: UTM BryantLG;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.form-reset-email {
+    margin-top: 20px;
+    margin-left: -350px;
+}
+
+.txtemail-reset {
+    padding-top: 10px;
+    margin-left: 280px;
+    display: flex;
+    width: 95px;
+    height: 20px;
+    color: #505353;
+    font-family: Arial;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.form-resetpass {
+    margin-left: 280px;
+    width: 480px;
+    height: 54.066px;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+}
+
+.btnpasslock {
+    margin-top: 50px;
+    margin-left: -65px;
+    width: 220px;
+    height: 42px;
+    border-radius: 22px;
+    background: #B2D235;
+    box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
+}
+
+.txtCreate-pass {
+    padding: 11px;
+    color: #FFF;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.9px;
+    text-transform: uppercase;
+}

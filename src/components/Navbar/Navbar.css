@@ -1,0 +1,181 @@
+.d-flex {
+    padding: 0 20px;
+}
+.nav-link {
+    margin-left:  5px;
+}
+
+.nav-item {
+    margin-right: 35px;
+    color: #505353;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.btn-blue-navhome {
+    position: absolute;
+
+    width: 80px;
+    height: 34px;
+    border-radius: 17px;
+    background: #B2D235;
+    color: aliceblue;
+    padding-top: 8px;
+    padding-left: 15px;
+}
+
+.btn-blue-navhome  p {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+
+.btn-blue-navall {
+    position: absolute;
+    margin-left: 100px;
+    width: 128px;
+    height: 34px;
+    border-radius: 17px;
+    background: #B2D235;
+    color: aliceblue;
+    padding-top: 8px;
+    padding-left: 15px;
+}
+
+.btn-blue-navall  p {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.btn-blue-navlog {
+    position: absolute;
+    margin-left: 255px;
+    width: 150px;
+    height: 34px;
+    border-radius: 17px;
+    background: #B2D235;
+    color: aliceblue;
+    padding-top: 8px;
+    padding-left: 15px;
+}
+
+.btn-blue-navlog  p {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.btn-blue-navpro {
+    position: absolute;
+    margin-left: 432px;
+    width: 90px;
+    height: 34px;
+    border-radius: 17px;
+    background: #B2D235;
+    color: aliceblue;
+    padding-top: 8px;
+    padding-left: 15px;
+}
+
+.btn-blue-navpro  p {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* xoá  đường viền */
+.navbar-toggler {
+    border: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Lines of the Toggler  */
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #505353;
+    display: block;
+    transition: all 0.2s;
+}
+
+.middle-bar{
+    margin: 5px auto;
+}
+
+
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #505353;
+
+}
+
+/* xong nut x */

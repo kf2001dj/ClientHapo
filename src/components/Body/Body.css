@@ -1,0 +1,957 @@
+/* Body */
+.body {
+  width: 1520px;
+  height: 4000px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.body-header {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+}
+
+.imgHapoLearn {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+  /* bên dưới cần scss cho nhanh hơn */
+.txtLearn {
+  margin-top: -480px;
+  margin-left: 120px;
+  color: #11114E;
+  font-size: 50px;
+  font-family: UTM BryantLG;
+  letter-spacing: -2.5px;
+}
+
+.imgAthapo {
+  margin-top: -30px;
+  margin-left: 120px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  color: #11114E;
+  font-size: 40px;
+  z-index: 1;
+}
+  
+.txtInter {
+  margin-top: -20px;
+  margin-left: 120px;
+  width: 249px;
+  color: #505353;
+  font-size: 20px;
+  font-family: UTM BryantLG;
+  letter-spacing: -1px;
+}
+  
+.btnStart {
+  z-index: 2;
+  width: 300px;
+  height: 50px;
+  background-color: #B2D235;
+  border-radius: 35px;
+  margin-left: 160px;
+}
+
+.txtStart{
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #FFF;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+  
+.txtFont {
+  padding-top: 380px;
+  max-width: 100vw;
+  width: 100%;
+  height: 150px;
+  background-color: #e5dedefc;
+
+}
+
+.btnMeschat {
+  position: absolute;
+  z-index: 2;
+  margin-top: -115px;
+  margin-left: 1385px;
+}
+  
+.Chatbox {
+  margin-left: 1120px;
+  margin-top: -350px;
+  z-index: 2;
+  width: 360px;
+  height: 190px;
+  position: absolute;
+  border-radius: 23px;
+  background: #FFF;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.imgCu {
+  margin-top: 20px;
+  margin-left: 10px;
+  position: absolute;
+  z-index: 3;
+}
+  
+.txtHapo {
+  position: absolute;
+  z-index: 3;
+  margin-top: 15px;
+  margin-left: 50px;
+  color: #7F7F7F;
+  text-align: center;
+  font-size: 12px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.24px;
+}
+  
+.btnEx {
+  position: absolute;
+  z-index: 3;
+  margin-top: 13px;
+  margin-left: 320px;
+  width: 24px;
+  height: 24px;
+}
+  
+.fontHe {
+  margin-top: 40px;
+  margin-left: 50px;
+  position: absolute;
+  z-index: 4;
+  width: 256px;
+  height: 53px;
+  border-radius: 15px;
+  background: #F1F0F0;
+}
+  
+.txtHe {
+  margin-top: 10px;
+  margin-left: 15px;
+  color: #505353;
+  font-size: 12px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 17px;
+  letter-spacing: -0.24px;
+}
+  
+.btnMes {
+    margin-left: 45px;
+    margin-top: 120px;
+    position: absolute;
+    z-index: 4;
+    width: 276px;
+    height: 37px;
+    border-radius: 10px;
+    background: #3184F7;
+}
+  
+.imgVec {
+    margin-top: 2px;
+    margin-left: -170px;
+  }
+  
+.txtMes {
+    margin-left: -5px;
+    margin-top: -17px;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.24px;
+}
+  
+.txtChatmes {
+    margin-left: 85px;
+    margin-top: 165px;
+    z-index: 4;
+    position: absolute;
+    color: #B3B3B3;
+    text-align: center;
+    font-size: 12px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
+}
+  
+.Listconten {
+    margin-top: -100px;
+    margin-left: 70px;
+}
+  
+.row {
+    height: auto;
+    margin-left: 50px;
+}
+  
+.Listbox {
+    width: 400px;
+}
+  
+.ListHtml {
+    margin: auto;
+    width: 370px;
+    height: 470px;
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.ListLava {
+  margin: auto;
+  width: 370px;
+  height: 470px;
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.ListPhp {
+  margin: auto;
+  width: 370px;
+  height: 470px;
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.itemHtml{
+  border-radius: 15px 15px 0px 0px;
+  background: #3F6185;
+  width: 370px;
+  height: 215px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.itemLava{
+  border-radius: 15px 15px 0px 0px;
+  background: #DC594C;
+  width: 370px;
+  height: 215px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.itemPhp{
+  border-radius: 15px 15px 0px 0px;
+  background: #556598;
+  width: 370px;
+  height: 215px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+  
+.imgHtml {
+  margin-top: 40px;
+}
+  
+.imgLava {
+  margin-top: 40px;
+}
+  
+.imgPhp {
+  margin-top: 40px;
+}
+  
+.Playheading {
+  color: #B2D235;
+  font-size: 30px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-top: 20px;
+}
+  
+.Playtime {
+  color: #505353;
+  font-size: 13px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  width: 300px;
+  height: 80px;
+  margin : auto;
+}
+  
+.btnTake {
+  margin-top: 10px;
+  align-items: center;
+  width: 200px;
+  height: 42px; 
+  border-radius: 22px;
+  background: #B2D235;
+  box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
+}
+  
+.txtTake {
+  margin-top: 5px;
+  text-align: center;
+  color: #FFF;
+  font-size: 18px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  letter-spacing: -0.9px;
+}
+
+.ListOther {
+    margin-top: 50px;
+    width: 1440px;
+    height: 150px;
+}
+  
+.txtOther {
+  margin: auto;
+  text-align: center;
+  width: 485px;
+  height: 50px;
+  color: #11114E;
+  font-size: 80px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  letter-spacing: -1.6px;
+}
+  
+.fontOther {
+  margin-top: 10px;
+  margin-left: 535px;
+  width: 450px;
+  height: 6px;
+  border-radius: 3px;
+  background: #B2D235;
+}
+  
+.ListSours {
+  margin-top: 30px;
+  margin-left: 70px;
+}
+  
+.imgCSS {
+  margin-top: 60px
+}
+  
+.imgRuby {
+  margin-top: 50px
+}
+  
+.imgJava {
+  margin-top: 15px
+}
+  
+.itemCSS {
+  width: 370px;
+  height: 194px;
+  border-radius: 15px 15px 0px 0px;
+  background: #24ABE2;
+}
+  
+.itemRuby {
+  width: 370px;
+  height: 194px;
+  border-radius: 15px 15px 0px 0px;
+  background: #E14E40;
+}
+  
+.itemJava {
+  width: 370px;
+  height: 194px;
+  border-radius: 15px 15px 0px 0px;
+  background: #1B75BB;
+}
+   
+.ListOur {
+  width: 1440px;
+  height: 120px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.txtOur {
+  color: #90AB26;
+  font-size: 40px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+  
+.Laptop {
+  max-width: 100vw;
+  width: 100%;
+  height: 633px;
+  position: absolute;
+}
+
+.fontLap { 
+  position: absolute;
+  width: 100vW;
+  height: auto;
+  z-index: 1;
+}
+  
+.listLap {
+  position: absolute;
+  z-index: 2;
+  width: 792px;
+  height: 544px;
+  margin-left: 700px;
+  margin-top: 50px;
+}
+  
+.txtWhy {
+  z-index: 3;
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 170px;
+  color: #FFF;
+  font-size: 70px;
+  font-family: UTM BryantLG;
+  font-weight: 700;
+  width: 560px;
+  height: 102px;
+}
+  
+.imgTich {
+  z-index: 4;
+  position: absolute;
+  margin-left: 185px;
+  margin-top: 250px;
+}
+  
+.textNote {
+  z-index: 3;
+  position: absolute;
+  width: 600px;
+  flex-direction: column;
+  margin-left: 220px;
+  margin-top: 250px;
+  color: #FFF;
+  font-size: 23px;
+  font-family: UTM BryantLG;
+  letter-spacing: -1px;
+}
+  
+.imgTichA {
+  z-index: 4;
+  position: absolute;
+  margin-left: 185px;
+  margin-top: 300px;
+}
+  
+.textNoteA {
+  z-index: 3;
+  position: absolute;
+  width: 600px;
+  flex-direction: column;
+  margin-left: 220px;
+  margin-top: 300px;
+  color: #FFF;
+  font-size: 23px;
+  font-family: UTM BryantLG;
+  letter-spacing: -1px;
+}
+  
+.imgTichB {
+  z-index: 4;
+  position: absolute;
+  margin-left: 185px;
+  margin-top: 350px;
+}
+  
+.textNoteB {
+  z-index: 3;
+  position: absolute;
+  width: 600px;
+  flex-direction: column;
+  margin-left: 220px;
+  margin-top: 350px;
+  color: #FFF;
+  font-size: 23px;
+  font-family: UTM BryantLG;
+  letter-spacing: -1px;
+}
+  
+.imgTichC {
+  z-index: 4;
+  position: absolute;
+  margin-left: 185px;
+  margin-top: 400px;
+}
+  
+.textNoteC {
+  z-index: 3;
+  position: absolute;
+  width: 600px;
+  flex-direction: column;
+  margin-left: 220px;
+  margin-top: 400px;
+  color: #FFF;
+  font-size: 23px;
+  font-family: UTM BryantLG;
+  letter-spacing: -1px;
+}
+
+.imgTichD {
+  z-index: 4;
+  position: absolute;
+  margin-left: 185px;
+  margin-top: 450px;
+}
+  
+.textNoteD {
+  z-index: 3;
+  position: absolute;
+  width: 600px;
+  margin-left: 220px;
+  margin-top: 450px;
+  color: #FFF;
+  font-size: 23px;
+  font-family: UTM BryantLG;
+  letter-spacing: -1px;
+}
+  
+.Feedback {
+  width: 1440px;
+  height: 230px;
+  margin-top: 600px;
+}
+  
+.txtFee {
+  margin-top: 120px;
+  text-align: center;
+  color: #11114E;
+  font-size: 80px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.6px;
+}
+
+.FontFeed {
+    border-radius: 3px;
+    background: #B2D235;
+    width: 325px;
+    height: 6px;
+    margin: auto;
+  }
+  
+.txtFeed {
+  padding-top: 20px;
+  padding-right: 40px;
+  margin: auto;
+  width: 705px;
+  height: 71px;
+  text-align: center;
+  color: #505353;
+  text-align: center;
+  font-size: 29px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.5px;
+}
+  
+.cmtList {
+  width: 100%;
+  max-width: 100vw;
+  height: auto;
+  margin-top: 50px;
+}
+
+.col {
+  width: 100%;
+  margin-left: -40px;
+}
+
+.imgComOne {
+  margin-left: 150px;
+  position: relative;
+  z-index: 1;
+  width: 570px;
+  height: 163.47px;
+}
+  
+.imgComTwo {
+  margin-right: 100px;
+  position: relative;
+  z-index: 1;
+  width: 570px;
+  height: 163.47px;
+}
+  
+.txtPone { 
+  z-index: 2;
+  position: absolute;
+  text-align: left;
+  margin-left: 200px;
+  margin-top: -125px;
+  width: 450px;
+  height: 89px;
+  color: #000;
+  font-size: 16px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+  
+.txtPtwo {
+  position: absolute;
+  text-align: left;
+  margin-left: 55px;
+  margin-top: -125px;
+  width: 450px;
+  height: 89px;
+  z-index: 2;
+  color: #000;
+  font-size: 16px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+  
+.cmtBtOne{
+  position: absolute;
+  margin-top: -140px;
+  margin-left: 175px;
+  z-index: 3;
+  width: 5px;
+  height: 108px;
+  background: #D9DADC;
+}
+  
+.cmtBtTwo{
+  z-index: 3;
+  position: absolute;
+  margin-top: -140px;
+  margin-left: 25px;
+  width: 5px;
+  height: 108px;
+  background: #D9DADC;
+}
+  
+.btvOne {
+  z-index: 4;
+  position: absolute;
+  margin-left: -580px;
+  margin-top: 50px;
+  width: 30px;
+  height: 30px;
+}
+  
+.btvTwo {
+  z-index: 4;
+  position: absolute;
+  margin-left: -120px;
+  margin-top: 50px;
+  width: 30px;
+  height: 30px;
+}
+  
+.imgAdOne {
+  z-index: 5;
+  margin-left: 190px;
+  width: 60px;
+  height: 60px;
+}
+  
+.txtadmOne {
+  margin-top: -60px;
+  margin-left: 260px;
+  width: 177px;
+  height: 23px;
+  color: #11114E;
+  font-size: 20px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+  
+.imgAdTwo {
+  z-index: 5;
+  margin-left: 40px;
+  width: 60px;
+  height: 60px;
+}
+  
+.txtadDevone {
+  width: 59px;
+  height: 19px;
+  margin-top: -15px;
+  margin-left: 260px;
+  color: #505353;
+  font-size: 16px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+  
+.imgOneStartone {
+  margin-top: -20px;
+  margin-left: 260px;
+}
+  
+.imgOneStartwo {
+   margin-top: -24px;
+  margin-left: 280px;
+}
+  
+.imgOneStarthree {
+  margin-top: -24px;
+  margin-left: 300px;
+}
+.imgOneStartfour {
+  margin-top: -24px;
+  margin-left: 320px;
+}
+
+.imgOneStartfive {
+  margin-top: -24px;
+  margin-left: 340px;
+}
+  
+.txtTwodev {
+  margin-top: -60px;
+  margin-left: 110px;
+  width: 177px;
+  height: 23px;
+  color: #11114E;
+  font-size: 20px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+  
+.txtTwopython {
+  width: 59px;
+  height: 19px;
+  margin-top: 1px;
+  margin-left: 110px;
+  color: #505353;
+  font-size: 16px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+  
+.imgTwoStartone {
+  margin-top: -5px;
+  margin-left: 110px;
+}
+  
+.imgTwoStarttwo {
+  margin-top: -24px;
+  margin-left: 130px;
+}
+  
+.imgTwoStartthree {
+  margin-top: -24px;
+  margin-left: 150px;
+}
+
+.imgTwoStartfour {
+  margin-top: -24px;
+  margin-left: 170px;
+}
+  
+.imgTwoStartfive {
+  margin-top: -24px;
+  margin-left: 190px;
+}
+
+.imgTwoStartsix {
+  margin-top: -24px;
+  margin-left: 190px;
+}
+  
+.Become {
+  width: 100%;
+  max-width: 100vw;
+  height: 500px;
+  margin-top: 130px;
+  position: absolute;
+}
+  
+.imgBe {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  z-index: 1;
+  margin-left: -15px;
+}
+
+.txtBecome {
+  margin: auto;
+  z-index: 2;
+  position: absolute;
+  width: 720px;
+  height: 158px;
+  color: #FFF;
+  text-align: center;
+  font-size: 69px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+  
+.btnNow {
+  margin-top: 300px;
+  position: absolute;
+  z-index: 3;
+  width: 377px;
+  height: 70px;
+  border-radius: 35px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+  
+.txtNow {
+  margin: auto;
+  color: #90AB26;
+  font-size: 30px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.5px;
+}
+  
+.Statistic {
+  max-width: 100vw;
+  width: 100%;
+  margin-top: 730px;
+}
+  
+.txtStat {
+  margin: auto;
+  text-align: center;
+  color: #11114E;
+  font-size: 80px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.6px; 
+}
+  
+.btnStat {
+  margin: auto;
+  width: 260px;
+  height: 6px;
+  border-radius: 3px;
+  background: #B2D235;
+}
+
+.listdiem {
+  max-width: 100vw;
+  width: 100%;
+  height: auto;
+  margin-top: 80px;
+}
+  
+.txtCour {
+  margin-left: -1050px;
+  position: absolute;
+  color: #505353;
+  font-size: 60px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -3px;
+}
+
+.txtLess {
+  position: absolute;
+  text-align: center;
+  color: #505353;
+  font-size: 60px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -3px;
+}
+
+.footLearn {
+  margin-left: 1050px;
+  position: absolute;
+  color: #505353;
+  font-size: 60px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -3px;
+}
+
+.listsodiem {
+  width: 100%;
+  height: auto;
+  max-width: 100vw;
+  margin-top: 100px;
+}
+.txtListCour {
+  margin-left: -1050px;
+  position: absolute;
+  color: #B2D235;
+  font-size: 60px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -3px;
+}
+
+.txtListless {
+  text-align: center;
+  position: absolute;
+
+  color: #B2D235;
+  font-size: 60px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -3px;
+ }
+
+.txtListlearn {
+  margin-left: 1050px;
+  position: absolute;
+  
+  color: #B2D235;
+  font-size: 60px;
+  font-family: UTM BryantLG;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -3px;
+}
