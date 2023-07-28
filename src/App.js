@@ -10,6 +10,8 @@ import Course_detail from './page/Course_detail';
 import CourseTeacher from './components/Course/CourseTeacher';
 import CourseReview from './components/Course/CourseReview';
 import Lesson from './components/Course/Lesson';
+import Course from './components/Course/Course';
+
 function App() {
   return (
     <Routes>
@@ -19,10 +21,13 @@ function App() {
           <Route path='/loginregister' element= {<Login_Register></Login_Register>} ></Route>
           <Route path='/signup' element= {<SignUp></SignUp>}></Route>
           <Route path='/resetpassword' element= {<Password></Password>}></Route>
-          <Route path='/course' element= {<Course_detail></Course_detail>}></Route>
+          <Route path='/course_detail/:id' element= {<Course_detail></Course_detail>}></Route>
           <Route path='/teacher' element = {<CourseTeacher></CourseTeacher>}></Route>
           <Route path='/review' element = {<CourseReview></CourseReview>}></Route>
           <Route path='/lesson' element = {<Lesson></Lesson>}></Route>
+
+          <Route path='/course/:id' element = {<Course></Course>}></Route>
+
     </Routes> 
  );
 

@@ -26,7 +26,7 @@ export default function CourseTeacher()
                     <p>All courses</p> 
                     <p className="btn-head-page-all"> > </p>
                 </a>    
-                <a href="/course" className="head-page-cour">
+                <a href="/course_detail" className="head-page-cour">
                     <p>Course detail</p> 
                     <p className="btn-head-page-all"> > </p>
                 </a>  

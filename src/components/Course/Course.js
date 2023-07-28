@@ -1,44 +1,42 @@
 import React ,{useState , useEffect} from "react";
 import '../Course/Course.css';
 
-export default function Course(userId)
+
+export default function Course()
 {
     const [selectedOption, setSelectedOption] = useState('lessons');
     const handleOptionClick = (option) => {
       setSelectedOption(option);
     };
-
     useEffect(() => {
         handleOptionClick('lessons');
     }, []);
 
-    const [message, setMessage] = useState('');
 
-    // Xử lý khi bấm nút "Thêm khoá học"
-    const handleAddCourse = () => {
-      const user_id = 1; // Thay 1 bằng user_id thực tế từ cơ sở dữ liệu hoặc Redux store
-      const course_id = 14; // Thay 2 bằng course_id thực tế từ cơ sở dữ liệu hoặc Redux store
-  
-      fetch('http://localhost:4000/api/addCourseToUser', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ user_id, course_id }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-            setMessage(data.message);
-        // Thêm thông báo "alert" nếu thêm khoá học thành công
-            alert(data.message);
-        })
-        .catch((error) => {
-          console.error('Lỗi khi thêm khoá học:', error);
-          setMessage('Đã xảy ra lỗi khi thêm khoá học!');
-        });
-    };
+    const courseId = localStorage.getItem('courseId');
+    const [courses, setCourses] = useState([]);
+    
+    useEffect(() => {
+        // Fetch user data using the userId from localStorage
+        if (courseId) {
+            fetch(`http://localhost:4000/api/courses/${courseId}`)
+            .then((response) => {
+            if (!response.ok) {
+                throw new Error('Response was not ok');
+            }
+            return response.json();
+            })
+            .then((data) => setCourses(data))
+            .catch((error) => {
+            console.error('Error fetching user data: ', error);
+            });
+        }else {
+            setCourses([]);
+        } 
+    }, [courseId]);
 
     return(
+        
         <div className="body-course">
             <div className="head-page-course">
                 <a href="/" className="head-page-home">
@@ -50,7 +48,7 @@ export default function Course(userId)
                     <p>All courses</p> 
                     <p className="btn-head-page-all"> > </p>
                 </a>    
-                <a href="/course" className="head-page-cour">
+                <a href="/course_detail" className="head-page-cour">
                     <p>Course detail</p> 
                     <p className="btn-head-page-all"> > </p>
                 </a>  
@@ -58,11 +56,15 @@ export default function Course(userId)
                     <p>Lesson detail</p> 
                 </a>
             </div>
-            <div className="body-page-course">  
+         
+                  <div className="body-page-course">  
                 <div className="row body-page-head">
                     <div className="col">
-                        <div className="imgpage-html">
-                            <img src="./image/Rectangle 7.png" className="img-html-body"></img>
+                        <div className="imgpage-html" key={courses.couresId}>
+                            <img 
+                            src={courses.logo} // đường dẫn hình ảnh trong cơ sở dữ liệu 
+                            alt={`lỗi hình ảnh ${courses.id}`}
+                            className="img-html-body"></img>
                         </div>
 
                     </div>
@@ -105,9 +107,7 @@ export default function Course(userId)
                                 onClick={() => handleOptionClick('teacher')}
                                 className={selectedOption === 'teacher' ? 'selected ' : 'default'}
                             >
-                               
-                                    <p className="txtlesson-cour-tea">Teacher</p>
-                              
+                                <p className="txtlesson-cour-tea">Teacher</p>
                             </a>
                             <a
                                 href="/review"
@@ -130,14 +130,14 @@ export default function Course(userId)
                                     <button className='btn-search-dev'>
                                         <p className='txt-search-dev'>Tìm kiếm</p>
                                     </button>
-
-                                    <button type="button" className='btn-slot-dev'
-                                     onClick={handleAddCourse}
-                                    >
-                                        <p className='txt-slot-dev'>Tham gia khoá học</p>
-                                        
-                                    </button>
-                                    <p>{message}</p>
+                                  
+                                        <button type="button" className='btn-slot-dev'
+                                    
+                                        >
+                                            <p className='txt-slot-dev'>Tham gia khoá học</p>
+                                            
+                                        </button>
+                             
                                 </div>
                                
                                 <div> 
@@ -517,9 +517,9 @@ export default function Course(userId)
                 </div>   
                
             </div>
-
-
-               
+     
+ 
         </div>
+       
     )
 }

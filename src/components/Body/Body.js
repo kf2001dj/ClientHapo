@@ -44,8 +44,6 @@ export default function Body() {
                         </div>
                     <div>
                 </div>   
-                
-               
 {/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <div class="container Listconten pt-3 text-center">
                     <div class="row">
@@ -102,6 +100,53 @@ export default function Body() {
                         </div>
                     </div>
                 </div>
+               {/* ////////////////////////////////////////////// */}
+              <div class="Listbox2">
+                    <div className="ListHtml2">
+                        <div className="itemHtml2 ">
+                            <img src="./image/Rectangle 7.png" className="imgHtml2" alt="Html" />
+                        </div>
+                            <p className="Playheading2">HTML/CSS/js Tutorial</p>
+                            <p className="Playtime2">
+                                I knew hardly anything about HTML, JS, and CSS before entering New Media. 
+                                I had coded quite a bit, but never touched...
+                            </p>
+                            <a href='/allcourse' type='button' className="btnTake2">
+                                <p className='txtTake2'>Take This Course </p>
+                            </a>
+                    </div>
+                </div>          
+                <div class="Listbox2 Listboxjava2">
+                           <div className="ListHtml2">
+                                <div className="itemLara2">
+                                    <img src="./image/laravel-1-logo-black-and-white 1.png" className="imgHtml2" alt="Laravel" />
+                                </div>
+                                    <p className="Playheading2">LARAVEL Tutorial</p>
+                                    <p className="Playtime2">
+                                    I knew hardly anything about HTML, JS, and CSS before entering New Media. 
+                                    I had coded quite a bit, but never touched...
+                                    </p>
+                                    <a type='button' href='/allcourse' className="btnTake2">
+                                        <p className='txtTake2'>Take This Course </p>
+                                    </a>
+                           </div>
+                </div>
+                <div class="Listbox2 Listboxphp2">
+                    <div className="ListHtml2">
+                        <div className="itemPhp2">
+                            <img src="./image/Rectangle 15.png" className="imgHtml2" alt="Php" />
+                        </div>
+                            <p className="Playheading2">PHP Tutorial</p>
+                            <p className="Playtime2">
+                                I knew hardly anything about HTML, JS, and CSS before entering New Media. 
+                                I had coded quite a bit, but never touched...
+                            </p>
+                            <a type='button' href="/allcourse" className="btnTake2">
+                                <p className='txtTake2'>Take This Course </p>
+                            </a>
+                    </div>  
+                </div>
+
  {/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <div className="container ListOther">
                     <div className='txtOther'>

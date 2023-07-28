@@ -101,6 +101,7 @@ export default function Login_register() {
         setLoggedIn(false);
 
         localStorage.removeItem('token');
+        localStorage.removeItem('userId'); // xoá thông tin user khỏi profile
         window.location.reload();
       }
     } catch (error) {

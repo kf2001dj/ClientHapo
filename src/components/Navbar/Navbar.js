@@ -1,11 +1,11 @@
 import { useState ,useEffect } from 'react';
 
 import React  from 'react';
-import '../Navbar/Navbar.css';
+import './Navbar.css';
 
 export default function Navbar() {
   const [selectedNavOption, setSelectedNavOption] = useState('');
-  const [isEventHandled, setEventHandled] = useState(false);
+  
   useEffect(() => {
     // Get the current URL path
     const path = window.location.pathname;
@@ -22,79 +22,63 @@ export default function Navbar() {
     }
   }, []);
 
-  const handleOptionClickNav = (option) => {
-    if (!isEventHandled) {
-      setSelectedNavOption(option);
-      setEventHandled(true);
-    }
-  };
-  useEffect(() => {
-    setEventHandled(false);
-  }, [selectedNavOption]);
 
     return ( 
-        <nav class="navbar navbar-expand-lg  navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
+      <nav className="navbar navbar-expand-lg  navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
             <img src='./image/Hapo_Learn.png' className='imgNavhapo' alt='logo'></img>
           </a>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+          <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
-              <span class="toggler-icon top-bar"></span>
-              <span class="toggler-icon middle-bar"></span>
-              <span class="toggler-icon bottom-bar"></span>
+              <span className="toggler-icon top-bar"></span>
+              <span className="toggler-icon middle-bar"></span>
+              <span className="toggler-icon bottom-bar"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-4 mb-lg-0">
               <div className='fontVien'>
             </div></ul>
-            <form class="d-flex">  
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-right">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" type='button' href='/'
-                      className={`nav-link ${selectedNavOption === 'home' ? '' : ''}`}
-                      onClick={(e) =>{ 
-                        e.preventDefault();
-                        handleOptionClickNav('home')}}
+            <form className="d-flex bg-light">  
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 navbar-right">
+                <li className="nav-item">
+                  <div className={`nav-link ${selectedNavOption === 'home' ? '' : ''}`}>
+                    <a className="nav-link active" aria-current="page" type='button' href='/'
                   >HOME
-
                   </a>
+                  </div>
+                 
                 </li>
-                <li class="nav-item ">
-                     <a class="nav-link"  type='button'
+                <li className="nav-item ">
+                  <div className={`nav-link ${selectedNavOption === 'all' ? 'selected' : ''}`}>
+                    <a className="nav-link"  type='button'
                       href="/allcourses"
-                     className={`nav-link ${selectedNavOption === 'all' ? 'selected' : ''}`}
-                      onClick={(e) => {
-                        e.preventDefault(); //tránh load lại trang 
-                        handleOptionClickNav('all')}}
                     >
                     ALL COURSES
                     </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link"  type='button'
-                      href="/loginregister" 
-                      className={`nav-link ${selectedNavOption === 'login' ? 'selected' : ''}`}
-                      onClick={(e) =>{ 
-                        e.preventDefault();
-                        handleOptionClickNav('login')} }
-                  >LOGIN/REGISTER
+                  </div>
                      
-                  </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" type='button'
+                <li className="nav-item">
+                <div className={`nav-link ${selectedNavOption === 'login' ? 'selected' : ''}`}>
+                   <a className="nav-link"  type='button'
+                      href="/loginregister" 
+                  >LOGIN/REGISTER</a>
+                </div>
+                 
+                </li>
+                <li className="nav-item">
+                <div className={`nav-link ${selectedNavOption === 'pro' ? 'selected' : ''}`}>
+                   <a className="nav-link" type='button'
                       href="/profile"  
-                      className={`nav-link ${selectedNavOption === 'pro' ? 'selected' : ''}`}
-                      onClick={(e) => { 
-                        e.preventDefault();
-                        handleOptionClickNav('pro')} }
                   >PROFILE</a>
+                </div>
+                 
                 </li> 
               </ul>
               {selectedNavOption === 'home' &&
-               <div className='btn-blue-navhome'>
+               <div className='btn-blue-navhome '>
                   <a href='/'>
                     <p>HOME</p>
                   </a>
@@ -108,7 +92,7 @@ export default function Navbar() {
                </div>
               }
               {selectedNavOption === 'login' && 
-                <div className='btn-blue-navlog'>
+                <div className='btn-blue-navlog '>
                     <a href='/loginregister'>
                       <p>LOGIN/REGISTER</p>
                     </a>

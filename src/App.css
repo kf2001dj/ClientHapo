@@ -1,70 +1,98 @@
 @media screen and (min-width: 1024px) {
     /* CSS cho thiết bị có chiều rộng lớn hơn hoặc bằng 1024px */
-    
+  .Listbox2 {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
     /* header */
-    .d-flex {
-        height: 100%;
-        margin-left: 15px;
-        margin-bottom: 10px;
-        margin-top: -15px;
-    }
-
    .imgNavhapo {
         width: 200px;
         height: auto;
     }
 
-    .fontVien {
-        width: 100%;
-        height: 1px;
-        background: #B2D235;
-    }
-
-    .fontVien2 {
-        width: 100%;
-        height: 1px;
-        background: #B2D235;
-    }
-
-    /* body */
-    .body {
-        margin-bottom: 100px;
-    }
-
-    /* footer */
 }
   
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* ipad */ 
+@media screen and (min-width: 768px) and (max-width: 1024px) {    /* ipad */ 
     /* header */
+    .navbar {
+      width: 105vW;
+      padding-left: 10px;
+    } 
+
+    .navbar-nav {
+      width: 200px;
+      margin-top: 2px;
+    }
+
+    .navbar-toggler {
+      margin-right: 65px;
+    }
+
     .d-flex {
-        height: 100%;
-        margin-left: 15px;
+        display: flex;
+        width: 100%;
+        height: 230px;
+        margin-left: -18px;
         margin-bottom: 10px;
-        margin-top: -15px;
+        margin-top: -24px;
+        z-index: 999;
+    }
+    .nav-item{
+      padding-top: 5px;
     }
 
     .fontVien {
-        width: 100%;
+        position: absolute;
+        margin-top: 6px;
+        margin-left: -20px;
+        width: 100vw;
         height: 1px;
         background: #B2D235;
     }
 
     .fontVien2 {
-        width: 100%;
+        margin-top: -10px;
+        margin-left: -20px;
+        width: 100vw;
         height: 1px;
         background: #B2D235;
     }
+
+    .btn-blue-navlog {
+      display: none;
+    }
+
+    .btn-blue-navall {
+      display: none;
+    }
+    
+    .btn-blue-navhome {
+      display: none;
+    }
+
+    .nav-item a {
+      color: #505353;
+      font-family: Open Sans;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+    
+    .nav-item a:hover {
+        color: #B2D235;
+    }
+
     /*body*/
     .body {
+        z-index: 1;
         height: 3000px;
     }
 
     .fontheadHapo {
-        position: relative;
         margin-top: 170px;
         margin-left: -80px;
     }
@@ -102,104 +130,147 @@
     .txtFont {
         margin-top: -150px;
     }
-}
-
-/* Kiểu màn hình nhỏ hơn 767px
-@media (max-width: 767px) {
-    .body-login {
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    
-    .login_signinHapo {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin-top: 20px;
-        padding: 10px;
-    }
   
-    .sign {
-      font-size: 25px;
-    }
-    
-    .form-user,
-    .form-pass {
-        margin-left: 0px;
-        width: 100%;
-    }
-  
-    .txtUser,
-    .txtPassword_signin {
-      margin-left: 0;
-    }
-  
-    .form-ip,
-    .form-pa {
-      margin-left: 0;
-      width: 100%;
-    }
-  
-    .btnSign {
-      margin-left: 0;
-      margin-top: 20px;
-      width: 100%;
-    }
-  
-    .forgot {
-      margin-top: 10px;
-      margin-left: 0;
-    }
-  
-    .txtForgot {
-      font-size: 18px;
-    }
-  
-    .btnIndex,
-    .btnIndex2,
-    .btnNew,
-    .btnNew2 {
+    .Listbox {
       display: none;
     }
-  
-    .txtIn {
+
+    .Listbox2 {
+      margin-left: 70px;
       margin-top: 10px;
-      margin-left: 0;
-      font-size: 18px;
     }
-  
-    .btnGoogle {
-      margin-top: 10px;
-      margin-left: 0;
-      width: 100%;
+    .ListHtml2{
+      width: 627px;
+      height: 158.713px;
+      border-radius: 15px;
+      background: #FFF;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     }
-  
-    .txtGoogle {
+
+    .itemHtml2 {
+      padding-top: 35px;
+      padding-left: 50px;
+      width: 240px;
+      height: 158.441px;
+      border-radius: 15px 0px 0px 15px;
+      background: #3F6185;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+    
+    .imgHtml2 {
+      width: 145px;
+      height: 92.401px;
+    }
+
+    .Playheading2 {
+      margin-top: -145px;
+      margin-left: 270px;
+      width: 195px;
+      height: 24.457px;
+      color: #B2D235;
+      font-family: Arial;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .Playtime2 {
+      margin-left: 270px;
+      width: 335px;
+      height: 58.485px;
+      color: #505353;
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px; /* 128.571% */
+    }
+
+    .btnTake2 {
+      display: flex;
+      margin-left: 465px;
       margin-top: -15px;
-      margin-left: 0;
-      font-size: 18px;
+      width: 136px;
+      height: 31.525px;
+      border-radius: 15px;
+      background: #B2D235;
+      box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
+      padding-top: 8px;
+      padding-left: 20px;
     }
-  
-    .btnGoogle img {
-      margin-top: -10px;
-      margin-left: -90px;
+    
+    .txtTake2 {
+      width: 108px;
+      height: 14.887px;
+      color: #FFF;
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.7px;
     }
-  
-    .txtOr {
-      margin-top: 10px;
-      margin-left: 0;
-      font-size: 16px;
+
+    .Listboxjava2 {
+      margin-top: 30px;
     }
-  
-    .btnCreat {
-      margin-top: 10px;
-      margin-left: 0;
-      width: 100%;
+
+    .itemLara2 {
+      padding-top: 35px;
+      padding-left: 50px;
+      width: 240px;
+      height: 159.504px;
+      border-radius: 15px 0px 0px 15px;
+      background: #DC594C;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     }
-  }
-   */
+     
+    .Listboxphp2 {
+      margin-top: 30px;
+    }
+    .itemPhp2 {
+      padding-top: 35px;
+      padding-left: 50px;
+      width: 240px;
+      height: 159.504px;
+      border-radius: 15px 0px 0px 15px;
+      background: #556598;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .ListOther {
+        width: 303px;
+        height: 66.312px;
+    }
+
+    .txtOther {
+             
+      }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Kiểu màn hình nhỏ hơn 375px */
 @media (max-width: 378px) {

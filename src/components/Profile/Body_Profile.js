@@ -6,9 +6,8 @@ export default function Body_Profile()
     {
         const [user, setUser] = useState({});
         const userId = localStorage.getItem('userId');
-
         const [courses, setCourses] = useState([]);
-
+        
         useEffect(() => {
             // Fetch user data using the userId from localStorage
             if (userId) {

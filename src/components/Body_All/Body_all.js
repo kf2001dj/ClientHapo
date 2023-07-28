@@ -46,13 +46,26 @@ export default function Body_all(){
     // };
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/api/courses')
-          .then((res) => res.json())
-          .then((data) => setUsers(data))
-          .catch((err) => console.log(err));
-      }, []);
-    
-    
+        fetch("http://localhost:4000/api/courses")
+        .then((response) => {
+            if (!response.ok) {
+            throw new Error("Failed to fetch course IDs");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // Assuming the server returns an array of course IDs in the 'data' variable
+            setUsers(data);
+        })
+        .catch((error) => {
+            console.error("Error fetching course IDs: ", error);
+        });
+      }, []);    
+      const handleItemClick = (id) => {
+        // Chuyển hướng sang trang mới để hiển thị dữ liệu theo ID
+        window.location.href = `/course_detail/${id}`;
+      };
+
     return(
         <div className='container body-list-learn text-center'>
             
@@ -141,16 +154,20 @@ export default function Body_all(){
                 <div className={isVisible ? '' : ''}  >
                     <div className='list-learn-dev'>
                     {users.map((user) => (
-                        <div className='row custom-row-dev'>
+                        <div className='row custom-row-dev'
+                         key={user.id}
+                         >
                             <div className='col-md-6 custom-margin-one'>
                                 <img src={user.image_url}></img>
                                 <p className='cust-learn-html'>{user.name}</p>
                                 <p className='txt-learn-html'>
                                     {user.about}
                                 </p>
-                                <a href='/course' type='button' className='bt-learn-more'>
+                                <button 
+                                onClick={() => handleItemClick(user.id)}
+                                type='button' className='bt-learn-more'>
                                     <p className='txtmore-dev'>More</p>
-                                </a>
+                                </button>
                                 <div className='btn-back-learn'></div>
                                 <p className='txtlearn-dev'>Learners</p>
                                 <p className='txtless-dev'>Lessons</p>

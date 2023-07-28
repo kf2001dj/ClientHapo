@@ -6,12 +6,11 @@ import Body_all from "../components/Body_All/Body_all";
 
 function Allcourses(){
    
-
+    
     return(
         <div className="backcolo-dev">
-            <Navbar/>
-                <Body_all/>
-            
+            <Navbar />
+            <Body_all/>
             <Footer/>
         </div>
     )
