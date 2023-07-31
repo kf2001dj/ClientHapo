@@ -1,286 +1,538 @@
 @media screen and (min-width: 1024px) {
-    /* CSS cho thiết bị có chiều rộng lớn hơn hoặc bằng 1024px */
   .Listbox2 {
+    display: none;
+  }
+
+  .Listbox3 {
+    display: none;
+  }
+
+  .btnMeschat2 {
+    display: none;
+  }
+  .ListOther2 .txtOther2 {
+    display: none;
+  }
+
+  .fontOther2 {
+    display: none;
+  }
+
+  .ListSours2 {
+    display: none;
+  }
+
+  .txtOur2 {
+    display: none;
+  }
+
+  .listLap2 {
+    display: none;
+  }
+
+  .Laptopdis2 {
+    display: none;
+  }
+
+  .Feedback2 {
+    display: none;
+  }
+
+  .FontFeed1 {
+    display: none;
+  }
+
+  .txtFeed2 {
     display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
-    /* header */
-   .imgNavhapo {
-        width: 200px;
-        height: auto;
-    }
-
-}
-  
-@media screen and (min-width: 768px) and (max-width: 1024px) {    /* ipad */ 
-    /* header */
-    .navbar {
-      width: 105vW;
-      padding-left: 10px;
-    } 
-
-    .navbar-nav {
-      width: 200px;
-      margin-top: 2px;
-    }
-
-    .navbar-toggler {
-      margin-right: 65px;
-    }
-
-    .d-flex {
-        display: flex;
-        width: 100%;
-        height: 230px;
-        margin-left: -18px;
-        margin-bottom: 10px;
-        margin-top: -24px;
-        z-index: 999;
-    }
-    .nav-item{
-      padding-top: 5px;
-    }
-
-    .fontVien {
-        position: absolute;
-        margin-top: 6px;
-        margin-left: -20px;
-        width: 100vw;
-        height: 1px;
-        background: #B2D235;
-    }
-
-    .fontVien2 {
-        margin-top: -10px;
-        margin-left: -20px;
-        width: 100vw;
-        height: 1px;
-        background: #B2D235;
-    }
-
-    .btn-blue-navlog {
-      display: none;
-    }
-
-    .btn-blue-navall {
-      display: none;
-    }
-    
-    .btn-blue-navhome {
-      display: none;
-    }
-
-    .nav-item a {
-      color: #505353;
-      font-family: Open Sans;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      text-transform: uppercase;
-    }
-    
-    .nav-item a:hover {
-        color: #B2D235;
-    }
-
-    /*body*/
-    .body {
-        z-index: 1;
-        height: 3000px;
-    }
-
-    .fontheadHapo {
-        margin-top: 170px;
-        margin-left: -80px;
-    }
-
-    .txtLearn p {
-        font-size: 34px;
-    }
-    
-    .imgAthapo p {
-        margin-top: 25px;
-        font-size: 29px;
-    }
-
-    .imgCuHapo {
-        margin-left: -5px;
-        width: 43px;
-        height: auto;
-    }
-
-    .fontheadHapo button {
-        margin-left: 120px;
-        width: 200px;
-        height: 40px;
-    }
-   
-    .txtInter p {
-        font-size: 20px;
-        margin-top: 30px;
-    }
-
-    .btnStart p {
-        font-size: 18px;
-    }
-
-    .txtFont {
-        margin-top: -150px;
-    }
-  
-    .Listbox {
-      display: none;
-    }
-
-    .Listbox2 {
-      margin-left: 70px;
-      margin-top: 10px;
-    }
-    .ListHtml2{
-      width: 627px;
-      height: 158.713px;
-      border-radius: 15px;
-      background: #FFF;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    }
-
-    .itemHtml2 {
-      padding-top: 35px;
-      padding-left: 50px;
-      width: 240px;
-      height: 158.441px;
-      border-radius: 15px 0px 0px 15px;
-      background: #3F6185;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    }
-    
-    .imgHtml2 {
-      width: 145px;
-      height: 92.401px;
-    }
-
-    .Playheading2 {
-      margin-top: -145px;
-      margin-left: 270px;
-      width: 195px;
-      height: 24.457px;
-      color: #B2D235;
-      font-family: Arial;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    .Playtime2 {
-      margin-left: 270px;
-      width: 335px;
-      height: 58.485px;
-      color: #505353;
-      font-family: Arial;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 18px; /* 128.571% */
-    }
-
-    .btnTake2 {
-      display: flex;
-      margin-left: 465px;
-      margin-top: -15px;
-      width: 136px;
-      height: 31.525px;
-      border-radius: 15px;
-      background: #B2D235;
-      box-shadow: 0px 1.5px 2px 0px #6F8710 inset;
-      padding-top: 8px;
-      padding-left: 20px;
-    }
-    
-    .txtTake2 {
-      width: 108px;
-      height: 14.887px;
-      color: #FFF;
-      font-family: Arial;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: -0.7px;
-    }
-
-    .Listboxjava2 {
-      margin-top: 30px;
-    }
-
-    .itemLara2 {
-      padding-top: 35px;
-      padding-left: 50px;
-      width: 240px;
-      height: 159.504px;
-      border-radius: 15px 0px 0px 15px;
-      background: #DC594C;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    }
-     
-    .Listboxphp2 {
-      margin-top: 30px;
-    }
-    .itemPhp2 {
-      padding-top: 35px;
-      padding-left: 50px;
-      width: 240px;
-      height: 159.504px;
-      border-radius: 15px 0px 0px 15px;
-      background: #556598;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-    }
-
-    .ListOther {
-        width: 303px;
-        height: 66.312px;
-    }
-
-    .txtOther {
-             
-      }
-
-
-
-
-
+  .imgNavhapo {
+    width: 200px;
+    height: auto;
+  }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    width: 105vw;
+    padding-left: 10px;
+  }
 
+  .navbar-nav {
+    width: 200px;
+    margin-top: 2px;
+  }
 
+  .navbar-toggler {
+    margin-right: 65px;
+  }
 
+  .d-flex {
+    display: flex;
+    width: 100%;
+    height: 230px;
+    margin-left: -18px;
+    margin-bottom: 10px;
+    margin-top: -24px;
+    z-index: 999;
+  }
+  .nav-item {
+    padding-top: 5px;
+  }
 
+  .fontVien {
+    position: absolute;
+    margin-top: 6px;
+    margin-left: -20px;
+    width: 100vw;
+    height: 1px;
+    background: #b2d235;
+  }
 
+  .fontVien2 {
+    margin-top: -10px;
+    margin-left: -20px;
+    width: 100vw;
+    height: 1px;
+    background: #b2d235;
+  }
 
+  .btn-blue-navlog {
+    display: none;
+  }
 
+  .btn-blue-navall {
+    display: none;
+  }
 
+  .btn-blue-navhome {
+    display: none;
+  }
 
+  .nav-item a {
+    color: #505353;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
 
+  .nav-item a:hover {
+    color: #b2d235;
+  }
 
+  .body {
+    z-index: 1;
+    width: 768px;
+    height: 3000px;
+  }
 
+  .fontheadHapo {
+    margin-top: 170px;
+    margin-left: -80px;
+  }
 
+  .txtLearn p {
+    font-size: 34px;
+  }
 
+  .imgAthapo p {
+    margin-top: 25px;
+    font-size: 29px;
+  }
 
+  .imgCuHapo {
+    margin-left: -5px;
+    width: 43px;
+    height: auto;
+  }
 
+  .fontheadHapo button {
+    margin-left: 120px;
+    width: 200px;
+    height: 40px;
+  }
 
+  .txtInter p {
+    font-size: 20px;
+    margin-top: 30px;
+  }
 
-/* Kiểu màn hình nhỏ hơn 375px */
+  .btnStart p {
+    font-size: 18px;
+  }
+
+  .txtFont {
+    margin-top: -150px;
+  }
+
+  .Chatbox {
+    display: none;
+  }
+
+  .btnMeschat {
+    display: none;
+  }
+
+  .Listbox {
+    display: none;
+  }
+
+  .Listbox2 {
+    margin-left: 70px;
+    margin-top: 10px;
+  }
+  .ListHtml2 {
+    width: 627px;
+    height: 158.713px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .itemHtml2 {
+    padding-top: 35px;
+    padding-left: 50px;
+    width: 240px;
+    height: 158.441px;
+    border-radius: 15px 0px 0px 15px;
+    background: #3f6185;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .imgHtml2 {
+    width: 145px;
+    height: 92.401px;
+  }
+
+  .Playheading2 {
+    margin-top: -145px;
+    margin-left: 270px;
+    width: 300px;
+    height: 24.457px;
+    color: #b2d235;
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .Playtime2 {
+    margin-left: 270px;
+    width: 335px;
+    height: 58.485px;
+    color: #505353;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+  }
+
+  .btnTake2 {
+    display: flex;
+    margin-left: 465px;
+    margin-top: -15px;
+    width: 136px;
+    height: 31.525px;
+    border-radius: 15px;
+    background: #b2d235;
+    box-shadow: 0px 1.5px 2px 0px #6f8710 inset;
+    padding-top: 8px;
+    padding-left: 20px;
+  }
+
+  .txtTake2 {
+    width: 108px;
+    height: 14.887px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.7px;
+  }
+
+  .Listboxjava2 {
+    margin-top: 30px;
+  }
+
+  .itemLara2 {
+    padding-top: 35px;
+    padding-left: 50px;
+    width: 240px;
+    height: 159.504px;
+    border-radius: 15px 0px 0px 15px;
+    background: #dc594c;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .Listboxphp2 {
+    margin-top: 30px;
+  }
+  .itemPhp2 {
+    padding-top: 35px;
+    padding-left: 50px;
+    width: 240px;
+    height: 159.504px;
+    border-radius: 15px 0px 0px 15px;
+    background: #556598;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .ListOther {
+    display: none;
+  }
+
+  .txtOther {
+    display: none;
+  }
+
+  .ListOther2 {
+    margin-top: -160px;
+    margin-left: 240px;
+  }
+
+  .txtOther2 {
+    width: 303px;
+    height: 66.312px;
+    color: #11114e;
+    font-family: UTM BryantLG;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+  }
+
+  .fontOther {
+    display: none;
+  }
+  .fontOther2 {
+    margin-left: 233px;
+    width: 303px;
+    height: 4.348px;
+    border-radius: 3px;
+    background: #b2d235;
+  }
+
+  .ListSours {
+    display: none;
+  }
+
+  .btnMeschat2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: -174px;
+    margin-left: 680px;
+  }
+
+  .itemJava2 {
+    width: 240px;
+    height: 159.504px;
+    border-radius: 15px 0px 0px 15px;
+    background: #1b75bb;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 20px;
+    padding-left: 35px;
+  }
+
+  .imgJava2 {
+    width: 169px;
+    height: 127.603px;
+  }
+
+  .itemRuby2 {
+    width: 233px;
+    height: 159.504px;
+    border-radius: 15px 0px 0px 15px;
+    background: #e14e40;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 40px;
+    padding-left: 30px;
+  }
+
+  .imgRuby2 {
+    width: 176.296px;
+    height: 73.072px;
+  }
+
+  .Listbox3 {
+    margin-left: 70px;
+    margin-top: 30px;
+  }
+
+  .itemCss2 {
+    width: 233px;
+    height: 159.504px;
+    border-radius: 15px 0px 0px 15px;
+    background: #24abe2;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 55px;
+    padding-left: 55px;
+  }
+
+  .imgCss2 {
+    width: 120px;
+    height: 50px;
+  }
+
+  .ListOur {
+    display: none;
+  }
+
+  .txtOur {
+    display: none;
+  }
+
+  .txtOur2 p {
+    margin-top: -140px;
+    margin-left: 250px;
+    width: 256px;
+    height: 36.961px;
+    color: #90ab26;
+    font-family: UTM BryantLG;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.56px;
+  }
+
+  .txtOur2 img {
+    margin-top: -65px;
+    margin-left: 260px;
+    width: 34px;
+    height: 20.654px;
+  }
+
+  .Laptopdis2 {
+    margin-top: 30px;
+  }
+
+  .Laptop {
+    display: none;
+  }
+
+  .fontLap2 {
+    width: 768px;
+    height: 384px;
+  }
+
+  .listLap2 {
+    width: 310px;
+    height: 248px;
+    margin-top: 100px;
+    margin-left: -320px;
+  }
+
+  .txtWhy2 {
+    margin-top: -330px;
+    margin-left: 200px;
+    display: flex;
+    width: 404px;
+    height: 77.182px;
+    color: #fff;
+    text-align: center;
+    font-family: UTM BryantLG;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+  }
+  .imgTich2 {
+    z-index: 3;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+
+  .textNote2 {
+    margin-top: 18px;
+    margin-left: 100px;
+    width: 359px;
+    height: 20px;
+    color: #fff;
+    font-family: UTM BryantLG;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.8px;
+  }
+
+  .Feedback {
+    display: none;
+  }
+
+  .txtFee {
+    display: none;
+  }
+
+  .Feedback2 {
+    display: flex;
+    margin-left: 300px;
+    margin-top: -670px;
+    width: 209px;
+    height: 56px;
+    color: #11114e;
+    font-family: UTM BryantLG;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1px;
+  }
+
+  .FontFeed {
+    display: none;
+  }
+
+  .FontFeed1 {
+    margin-left: 295px;
+    width: 208px;
+    height: 3px;
+    border-radius: 3px;
+    background: #b2d235;
+  }
+
+  .txtFeed {
+    display: none;
+  }
+
+  .txtFeed2 {
+    margin-top: 20px;
+    margin-left: 150px;
+    width: 516px;
+    height: 46px;
+    color: #505353;
+    text-align: center;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+  }
+}
+
 @media (max-width: 378px) {
-  
   .body-login {
     margin-top: -20px;
     padding: 30px;
     justify-content: center;
     align-items: center;
-    height: auto; 
+    height: auto;
   }
 
   .login_signinHapo {
@@ -299,7 +551,7 @@
   .sign {
     width: 300px;
   }
-  
+
   .form-user {
     padding-left: 20px;
   }
@@ -313,21 +565,29 @@
     position: absolute;
     width: 100;
   }
-  
+
+  .txtFeed {
+    display: none;
+  }
+
+  .txtFeed2 {
+    margin-top: 20px;
+    position: absolute;
+    width: 216px;
+    height: 46px;
+    color: #505353;
+    text-align: center;
+    font-family: UTM BryantLG;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.36px;
+  }
 }
 
-
-
-
-.backcolo {
-    background: #F2F2F2;
-}
-
-.backpass {
-    background: #F2F2F2;
-    
-}
-
-.backcolo-dev {
-    background: #F2F2F2;
+.backcolo-all {
+  background-color: #f2f2f2;
+  height: 3100px;
+  width: 100%;
 }

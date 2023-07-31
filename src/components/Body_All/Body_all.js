@@ -2,6 +2,8 @@ import '../Body_All/allcour.css';
 
 import React, {useState ,useEffect } from 'react';
 
+import { Link } from 'react-router-dom';
+
 export default function Body_all(){
     const [isVisible, setIsVisible] = useState(false);
     const toggleVisibility = () => {
@@ -61,14 +63,10 @@ export default function Body_all(){
             console.error("Error fetching course IDs: ", error);
         });
       }, []);    
-      const handleItemClick = (id) => {
-        // Chuyển hướng sang trang mới để hiển thị dữ liệu theo ID
-        window.location.href = `/course_detail/${id}`;
-      };
+      
 
     return(
         <div className='container body-list-learn text-center'>
-            
             <div className='filter'>
                   {/* Nút ấn */}
                 <button onClick={toggleVisibility} className="btnfilter">
@@ -153,62 +151,70 @@ export default function Body_all(){
                   {/* Phần tử mới */}
                 <div className={isVisible ? '' : ''}  >
                     <div className='list-learn-dev'>
-                    {users.map((user) => (
-                        <div className='row custom-row-dev'
-                         key={user.id}
-                         >
-                            <div className='col-md-6 custom-margin-one'>
-                                <img src={user.image_url}></img>
-                                <p className='cust-learn-html'>{user.name}</p>
-                                <p className='txt-learn-html'>
-                                    {user.about}
-                                </p>
-                                <button 
-                                onClick={() => handleItemClick(user.id)}
-                                type='button' className='bt-learn-more'>
-                                    <p className='txtmore-dev'>More</p>
-                                </button>
-                                <div className='btn-back-learn'></div>
-                                <p className='txtlearn-dev'>Learners</p>
-                                <p className='txtless-dev'>Lessons</p>
-                                <p className='txttime-dev'>Times</p>
-                                <p className='solearn-dev'>{user.learners}</p>
-                                <p className='soless-dev'>{user.lessons}</p>
-                                <p className='sotime-dev'>{user.time} (h)</p>
-                            </div>
-                        </div>
-                    ))}
-                        <div className='list-dev-page'>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <ul class="pagination">
-                                        <li class="page-item previous">
-                                            <a class="page-link" href="" aria-label="Previous">
-                                                <img src='./image/right-mt.png'></img>
-                                            </a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" >
-                                                <p>1</p>
-                                            </a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"  ><p>2</p></a>
-                                        </li>
-                                        <li class="page-item ">
-                                            <a class="page-link" href="#" ><p>3</p></a>
-                                        </li>
-                                        <li class="page-item next">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <img src='./image/left-mt.png'></img>
-                                            </a>
-                                        </li>
-                                    </ul>
+                    
+                        {users.map((user) => (
+                            <div className='row custom-row-dev'
+                            key={user.id}
+                            >
+                                <div className='col-md-6 custom-margin-one'>
+                                    <img src={user.image_url}></img>
+                                    <p className='cust-learn-html'>{user.name}</p>
+                                    <p className='txt-learn-html'>
+                                        {user.about}
+                                    </p>
+                                    <Link 
+                                     to={`/course_detail/${user.id}`}
+                                    >
+                                        <button 
+                                         className='bt-learn-more'>
+                                        <p className='txtmore-dev'>More</p>
+                                    </button>  
+                                    </Link>
+                                  
+                                    <div className='btn-back-learn'></div>
+                                    <p className='txtlearn-dev'>Learners</p>
+                                    <p className='txtless-dev'>Lessons</p>
+                                    <p className='txttime-dev'>Times</p>
+                                    <p className='solearn-dev'>{user.learners}</p>
+                                    <p className='soless-dev'>{user.lessons}</p>
+                                    <p className='sotime-dev'>{user.time} (h)</p>
                                 </div>
                             </div>
+                        ))}
+
+                        
+                        <div className='list-dev-page'>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="pagination">
+                                            <li class="page-item previous">
+                                                <a class="page-link" href="" aria-label="Previous">
+                                                    <img src='./image/right-mt.png'></img>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" >
+                                                    <p>1</p>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#"  ><p>2</p></a>
+                                            </li>
+                                            <li class="page-item ">
+                                                <a class="page-link" href="#" ><p>3</p></a>
+                                            </li>
+                                            <li class="page-item next">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <img src='./image/left-mt.png'></img>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                         </div>
 
                     </div>
+            
                   </div>
               </div>
 

@@ -1,27 +1,32 @@
 import '../Body/Body.css';
 import React from 'react';
+
 export default function Body() {
     return(
+        
         <div className="conatiner body">
                 <div className='body-header'>
                     <img src='./image/Hapo_Learn_banner 1.png' className="imgHapoLearn" ></img>
                         <div className='fontheadHapo'>
-                            <div class="txtLearn">
+                            <div className="txtLearn">
                                 <p>Learn Anytime, Anywhere </p>
                             </div>
-                            <div class="imgAthapo">
+                            <div className="imgAthapo">
                                 <p>at HapoLearn <img className="imgCuHapo" src='./image/Group 6.png'></img> !</p> 
                             </div>
-                            <div class="txtInter">
+                            <div className="txtInter">
                                 <p> Interactive lessons, "on-the-go"  practice, peer support. </p>
                             </div>
-                            <button class="btnStart">
+                            <button className="btnStart">
                                 <a href="/"> <p className='txtStart'>Start Learning Now! </p></a>
                             </button>
                         </div> 
                         <div className='txtFont'></div>
                         <div className='btnMeschat'>
-                        <img src='./image/Group 8.png'></img>
+                            <img src='./image/Group 8.png'></img>
+                        </div>
+                        <div className='btnMeschat2'>
+                            <img src='./image/Group 8.png'></img>
                         </div>
                         <div className="Chatbox">
                             <div className='imgCu'><img src='./image/Ellipse 7.png'></img></div>
@@ -45,9 +50,9 @@ export default function Body() {
                     <div>
                 </div>   
 {/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <div class="container Listconten pt-3 text-center">
-                    <div class="row">
-                        <div class="col-md-4 Listbox">
+                <div className="container Listconten pt-3 text-center">
+                    <div className="row">
+                        <div className="col-md-4 Listbox">
                             <div className="ListHtml">
                                 <div className="itemHtml ">
                                     <img src="./image/Rectangle 7.png" className="imgHtml" alt="Html" />
@@ -59,12 +64,12 @@ export default function Body() {
                                         but never touched anything in regards to web
                                         development.
                                     </p>
-                                    <button class="btnTake">
+                                    <button className="btnTake">
                                         <a href="/"> <p className='txtTake'>Take This Course </p></a>
                                     </button>
                             </div>
                         </div>
-                        <div class="col-md-4 Listbox">
+                        <div className="col-md-4 Listbox">
                            <div className="ListLava">
                                 <div className="itemLava">
                                     <img src="./image/laravel-1-logo-black-and-white 1.png" className="imgLava" alt="Laravel" />
@@ -76,12 +81,12 @@ export default function Body() {
                                         but never touched anything in regards to web
                                         development.
                                     </p>
-                                    <button class="btnTake">
+                                    <button className="btnTake">
                                         <a href="/"> <p className='txtTake'>Take This Course </p></a>
                                     </button>
                            </div>
                         </div>
-                        <div class="col-md-4 Listbox ">
+                        <div className="col-md-4 Listbox ">
                             <div className="ListPhp">
                                 <div className="itemPhp">
                                     <img src="./image/Rectangle 15.png" className="imgPhp" alt="Php" />
@@ -93,7 +98,7 @@ export default function Body() {
                                         but never touched anything in regards to web
                                         development.
                                     </p>
-                                   <button class="btnTake">
+                                   <button className="btnTake">
                                         <a href="/"> <p className='txtTake'>Take This Course </p></a>
                                     </button>
                             </div> 
@@ -101,7 +106,7 @@ export default function Body() {
                     </div>
                 </div>
                {/* ////////////////////////////////////////////// */}
-              <div class="Listbox2">
+              <div className="Listbox2">
                     <div className="ListHtml2">
                         <div className="itemHtml2 ">
                             <img src="./image/Rectangle 7.png" className="imgHtml2" alt="Html" />
@@ -111,12 +116,12 @@ export default function Body() {
                                 I knew hardly anything about HTML, JS, and CSS before entering New Media. 
                                 I had coded quite a bit, but never touched...
                             </p>
-                            <a href='/allcourse' type='button' className="btnTake2">
+                            <a href='/allcourses' type='button' className="btnTake2">
                                 <p className='txtTake2'>Take This Course </p>
                             </a>
                     </div>
                 </div>          
-                <div class="Listbox2 Listboxjava2">
+                <div className="Listbox2 Listboxjava2">
                            <div className="ListHtml2">
                                 <div className="itemLara2">
                                     <img src="./image/laravel-1-logo-black-and-white 1.png" className="imgHtml2" alt="Laravel" />
@@ -126,12 +131,12 @@ export default function Body() {
                                     I knew hardly anything about HTML, JS, and CSS before entering New Media. 
                                     I had coded quite a bit, but never touched...
                                     </p>
-                                    <a type='button' href='/allcourse' className="btnTake2">
+                                    <a type='button' href='/allcourses' className="btnTake2">
                                         <p className='txtTake2'>Take This Course </p>
                                     </a>
                            </div>
                 </div>
-                <div class="Listbox2 Listboxphp2">
+                <div className="Listbox2 Listboxphp2">
                     <div className="ListHtml2">
                         <div className="itemPhp2">
                             <img src="./image/Rectangle 15.png" className="imgHtml2" alt="Php" />
@@ -141,7 +146,7 @@ export default function Body() {
                                 I knew hardly anything about HTML, JS, and CSS before entering New Media. 
                                 I had coded quite a bit, but never touched...
                             </p>
-                            <a type='button' href="/allcourse" className="btnTake2">
+                            <a type='button' href="/allcourses" className="btnTake2">
                                 <p className='txtTake2'>Take This Course </p>
                             </a>
                     </div>  
@@ -153,10 +158,17 @@ export default function Body() {
                         <p>Other courses</p>
                     </div>
                 </div>   
+                <div className="ListOther2">
+                    <div className='txtOther2'>
+                        <p>Other courses</p>
+                    </div>
+                </div>  
                 <div className='fontOther'></div> 
-                <div class="container ListSours pt-3 text-center">
-                    <div class="row">
-                        <div class="col-md-4 Listbox">
+                <div className='fontOther2'></div> 
+                
+                <div className="container ListSours pt-3 text-center">
+                    <div className="row">
+                        <div className="col-md-4 Listbox">
                             <div className="ListHtml">
                                 <div className="itemCSS ">
                                     <img src="./image/CSS.png" className="imgCSS" alt="CSS" />
@@ -168,12 +180,12 @@ export default function Body() {
                                         but never touched anything in regards to web
                                         development.
                                     </p>
-                                    <button class="btnTake">
+                                    <button className="btnTake">
                                         <a href="/"> <p className='txtTake'>Take This Course </p></a>
                                     </button>
                             </div>
                         </div>
-                        <div class="col-md-4 Listbox">
+                        <div className="col-md-4 Listbox">
                            <div className="ListLava">
                                 <div className="itemRuby">
                                     <img src="./image/Group.png" className="imgRuby" alt="Ruby" />
@@ -185,12 +197,12 @@ export default function Body() {
                                         but never touched anything in regards to web
                                         development.
                                     </p>
-                                    <button class="btnTake">
+                                    <button className="btnTake">
                                         <a href="/"> <p className='txtTake'>Take This Course </p></a>
                                     </button>
                            </div>
                         </div>
-                        <div class="col-md-4 Listbox ">
+                        <div className="col-md-4 Listbox ">
                             <div className="ListPhp">
                                 <div className="itemJava">
                                     <img src="./image/java 1.png" className="imgJava" alt="Java" />
@@ -202,13 +214,62 @@ export default function Body() {
                                         but never touched anything in regards to web
                                         development.
                                     </p>
-                                   <button class="btnTake">
+                                   <button className="btnTake">
                                         <a href="/"> <p className='txtTake'>Take This Course </p></a>
                                     </button>
                             </div> 
                         </div>
                     </div>
                 </div>
+                <div className="Listbox2">
+                    <div className="ListHtml2">
+                        <div className="itemJava2 ">
+                            <img src="./image/java 1.png" className="imgJava2" alt="CSS" />
+                        </div>
+                            <p className="Playheading2">Java Tutorial</p>
+                            <p className="Playtime2">
+                            I knew hardly anything about HTML, JS,
+                            and CSS before entering New Media. 
+                            I had coded quite a bit, but never touched...        
+                            </p>
+                            <a type='button' href='allcourses' className="btnTake2">
+                                <p className='txtTake2'>Take This Course </p>
+                            </a>
+                    </div>
+                </div>
+                <div className="Listbox3">
+                    <div className="ListHtml2">
+                        <div className="itemRuby2">
+                            <img src="./image/Group.png" className="imgRuby2" alt="Ruby" />
+                        </div>
+                            <p className="Playheading2">Ruby on rails Tutorial</p>
+                            <p className="Playtime2">
+                            I knew hardly anything about HTML, JS,
+                            and CSS before entering New Media. 
+                            I had coded quite a bit, but never touched...          
+                            </p>
+                            <a type='button' href='allcourses' className="btnTake2">
+                                <p className='txtTake2'>Take This Course </p>
+                            </a>
+                    </div>
+                </div>
+                <div className="Listbox3">
+                    <div className="ListHtml2">
+                        <div className="itemCss2">
+                            <img src="./image/CSS.png" className="imgCss2"/>
+                        </div>
+                        <p className="Playheading2">CSS Tutorial</p>
+                        <p className="Playtime2">
+                           I knew hardly anything about HTML, JS,
+                             and CSS before entering New Media. 
+                            I had coded quite a bit, but never touched...                
+                        </p>
+                        <a href='/allcourses' className="btnTake2">
+                            <p className='txtTake2'>Take This Course </p>
+                        </a>
+                    </div> 
+                </div>
+               
  {/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <div className="container ListOur">
                     <div className='txtOur'>
@@ -217,45 +278,88 @@ export default function Body() {
                         </p>
                     </div>
                 </div>
+                <div className='txtOur2'>
+                        <p> View All Our Courses <></>
+                            <img src="./image/muiten.png"></img>
+                        </p>
+                    </div>
                 <div className="Laptop">
-                    <img src="./image/Rectangle 17.png" className='fontLap' ></img>
-                    <img src="./image/transparent-1911160_1280.png" className="listLap"></img>
-                    <div className="txtWhy"><p>Why HapoLearn?</p></div>
-                    <img src="./image/tich.png" className="imgTich"></img>
-                    <div className="textNote">
-                            <p>Interactive lessons, "on-the-go" practice, peer support.</p>
-                    </div> 
-                    <img src="./image/tich.png" className="imgTichA"></img>
-                    <div className="textNoteA">
-                            <p>Interactive lessons, "on-the-go" practice, peer support.</p>
-                    </div> 
-                    <img src="./image/tich.png" className="imgTichB"></img>
-                    <div className="textNoteB">
-                            <p>Interactive lessons, "on-the-go" practice, peer support.</p>
-                    </div> 
-                    <img src="./image/tich.png" className="imgTichC"></img>
-                    <div className="textNoteC">
-                            <p>Interactive lessons, "on-the-go" practice, peer support.</p>
-                    </div> 
-                    <img src="./image/tich.png" className="imgTichD"></img>
-                    <div className="textNoteD">
-                            <p>Interactive lessons, "on-the-go" practice, peer support.</p>
-                    </div> 
+                        <img src="./image/Rectangle 17.png" className='fontLap' ></img>
+                        <img src="./image/transparent-1911160_1280.png" className="listLap"></img>
+                        <div className="txtWhy"><p>Why HapoLearn?</p></div>
+                        <img src="./image/tich.png" className="imgTich"></img>
+                        <div className="textNote">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTichA"></img>
+                        <div className="textNoteA">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTichB"></img>
+                        <div className="textNoteB">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTichC"></img>
+                        <div className="textNoteC">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTichD"></img>
+                        <div className="textNoteD">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div>   
                 </div>   
+
+                <div className="Laptopdis2">
+                        <img src="./image/Rectangle 17.png" className='fontLap2' ></img>
+                        <img src="./image/transparent-1911160_1280.png" className="listLap2"></img>
+                        <div className="txtWhy2"><p>Why HapoLearn?</p></div>
+                        <img src="./image/tich.png" className="imgTich2"></img>
+                        <div className="textNote2">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTich2"></img>
+                        <div className="textNote2">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTich2"></img>
+                        <div className="textNote2">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTich2"></img>
+                        <div className="textNote2">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div> 
+                        <img src="./image/tich.png" className="imgTich2"></img>
+                        <div className="textNote2">
+                                <p>Interactive lessons, "on-the-go" practice, peer support.</p>
+                        </div>   
+                </div>  
                 <div className="container Feedback">
                     <div className='txtFee'>
                         <p>Feedback </p>
                     </div>
                 </div> 
+                <div className="Feedback2">
+                    <div className='txtFee2'>
+                        <p>Feedback </p>
+                    </div>
+                </div> 
                 <div className="FontFeed"></div>
+                <div className="FontFeed1"></div>
                 <div className="txtFeed">
                     <p>
                         What other students turned professionals have to say about us
                         after learning with us and reaching their goals
                     </p>       
                 </div>
-                <div class="container cmtList">
-                    <div class="row cmtFont">
+                <div className="txtFeed2">
+                    <p>
+                        What other students turned professionals have to say about us
+                        after learning with us and reaching their goals
+                    </p>       
+                </div>
+                <div className="container cmtList">
+                    <div className="row cmtFont">
                         <div class="col">
                             <img src='./image/Union.png' className='imgComOne'></img>
                              <p className='txtPone'>
@@ -295,6 +399,7 @@ export default function Body() {
                         </div>
                     </div>
                 </div>
+        
                 <div className="container Become">
                         <img src='./image/Group 7.png'className='imgBe'></img>
                         <p className='txtBecome'> Become a member of our growing community! </p>
@@ -304,9 +409,8 @@ export default function Body() {
                 </div>
                 <div className="container Statistic">
                     <div className='txtStat'><p>Statistic</p></div>
-                   
-                  
                 </div>   
+
                 <div className='btnStat'></div>  
                 <div className='container listdiem'>
                     <div className='txtCour'><p>Courses</p></div>

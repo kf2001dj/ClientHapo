@@ -12,58 +12,34 @@ export default function Course()
         handleOptionClick('lessons');
     }, []);
 
-
-    const courseId = localStorage.getItem('courseId');
-    const [courses, setCourses] = useState([]);
-    
-    useEffect(() => {
-        // Fetch user data using the userId from localStorage
-        if (courseId) {
-            fetch(`http://localhost:4000/api/courses/${courseId}`)
-            .then((response) => {
-            if (!response.ok) {
-                throw new Error('Response was not ok');
-            }
-            return response.json();
-            })
-            .then((data) => setCourses(data))
-            .catch((error) => {
-            console.error('Error fetching user data: ', error);
-            });
-        }else {
-            setCourses([]);
-        } 
-    }, [courseId]);
-
     return(
         
         <div className="body-course">
             <div className="head-page-course">
                 <a href="/" className="head-page-home">
                     <p>Home</p> 
-                    <p className="btn-head-page"> > </p>
+                    <p className="btn-head-page"> &gt; </p>
                 </a>
                 
                 <a href="/allcourses" className="head-page-allcour">
                     <p>All courses</p> 
-                    <p className="btn-head-page-all"> > </p>
+                    <p className="btn-head-page-all"> &gt; </p>
                 </a>    
                 <a href="/course_detail" className="head-page-cour">
                     <p>Course detail</p> 
-                    <p className="btn-head-page-all"> > </p>
+                    <p className="btn-head-page-all"> &gt; </p>
                 </a>  
                 <a href="/lesson" className="head-page-cour next-lesson">
                     <p>Lesson detail</p> 
                 </a>
             </div>
          
-                  <div className="body-page-course">  
+            <div className="body-page-course">  
                 <div className="row body-page-head">
                     <div className="col">
-                        <div className="imgpage-html" key={courses.couresId}>
+                        <div className="imgpage-html">
                             <img 
-                            src={courses.logo} // đường dẫn hình ảnh trong cơ sở dữ liệu 
-                            alt={`lỗi hình ảnh ${courses.id}`}
+                            
                             className="img-html-body"></img>
                         </div>
 

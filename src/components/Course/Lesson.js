@@ -1,7 +1,7 @@
 import React ,{useState} from "react";
 import '../Course/Lesson.css';
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import Navbar from "../../Navbar/Navbar";
+import Footer from "../../Footer/Footer";
 export default function Lesson()
 {
     const [selectedOption, setSelectedOption] = useState('lessons');
