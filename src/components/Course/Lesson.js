@@ -1,7 +1,7 @@
 import React ,{useState} from "react";
 import '../Course/Lesson.css';
-import Navbar from "../../Navbar/Navbar";
-import Footer from "../../Footer/Footer";
+// import Navbar from "../../Navbar/Navbar";
+// import Footer from "../../Footer/Footer";
 export default function Lesson()
 {
     const [selectedOption, setSelectedOption] = useState('lessons');
@@ -10,20 +10,20 @@ export default function Lesson()
     };
     return(
         <div className="backcolo-dev">
-        <Navbar></Navbar>
+        {/* <Navbar></Navbar> */}
         <div className="body-course">
             <div className="head-page-course">
                 <a href="/" className="head-page-home">
                     <p>Home</p> 
-                    <p className="btn-head-page"> > </p>
+                    <p className="btn-head-page"> &gt; </p>
                 </a>
                 <a href="/allcourses" className="head-page-allcour">
                     <p>All courses</p> 
-                    <p className="btn-head-page-all"> > </p>
+                    <p className="btn-head-page-all"> &gt; </p>
                 </a>    
                 <a href="/course" className="head-page-cour">
                     <p>Course detail</p> 
-                    <p className="btn-head-page-all"> > </p>
+                    <p className="btn-head-page-all"> &gt; </p>
                 </a>  
                 <a href="/lesson" className="head-page-cour next-lesson">
                     <p>Lesson detail</p> 
@@ -291,7 +291,7 @@ export default function Lesson()
 
                
         </div>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
         </div>
     )
 }

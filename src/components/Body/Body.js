@@ -1,9 +1,22 @@
 import '../Body/Body.css';
 import React from 'react';
 
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 export default function Body() {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000, // Tự động chạy slider sau mỗi 3 giây
+    };
+    
     return(
-        
         <div className="conatiner body">
                 <div className='body-header'>
                     <img src='./image/Hapo_Learn_banner 1.png' className="imgHapoLearn" ></img>
@@ -358,8 +371,9 @@ export default function Body() {
                         after learning with us and reaching their goals
                     </p>       
                 </div>
-                <div className="container cmtList">
-                    <div className="row cmtFont">
+                
+                <div className="container cmtList-home">
+                    <Slider {...settings}  className="row">
                         <div class="col">
                             <img src='./image/Union.png' className='imgComOne'></img>
                              <p className='txtPone'>
@@ -397,10 +411,13 @@ export default function Body() {
                             <div className='imgTwoStartfive'><img src='./image/-5.png'></img></div>
                             <div className='imgTwoStartsix'><img src='./image/sao.png'></img></div>
                         </div>
-                    </div>
+                    </Slider>
                 </div>
+
+
+
         
-                <div className="container Become">
+                {/* <div className="container Become">
                         <img src='./image/Group 7.png'className='imgBe'></img>
                         <p className='txtBecome'> Become a member of our growing community! </p>
                         <button class="btnNow">
@@ -421,7 +438,7 @@ export default function Body() {
                     <div className='txtListCour'><p>1,586</p></div>
                     <div className='txtListless'><p>2,689</p></div>
                     <div className='txtListlearn'><p>16,882</p></div>
-                </div>
+                </div> */}
                 
             </div> 
     );

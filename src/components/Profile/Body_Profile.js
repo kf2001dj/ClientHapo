@@ -9,7 +9,6 @@ export default function Body_Profile()
         const [courses, setCourses] = useState([]);
         
         useEffect(() => {
-            // Fetch user data using the userId from localStorage
             if (userId) {
                 fetch(`http://localhost:4000/api/users/${userId}`)
                 .then((response) => {
@@ -79,10 +78,8 @@ export default function Body_Profile()
             return response.json();
         })
         .then((data) => {
-            // Show success message or handle the response data as needed
             setUser(updatedUser);
             console.log('User data updated successfully:', data);
-            
         })
         .catch((error) => {
             console.error('Error updating user data: ', error);

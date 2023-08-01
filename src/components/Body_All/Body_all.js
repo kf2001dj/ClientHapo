@@ -41,11 +41,6 @@ export default function Body_all(){
       setviewOption(event.target.value);
     };
 
-    // page 123
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const handleClick = (pageNumber) => {
-    //     setCurrentPage(pageNumber);
-    // };
     const [users, setUsers] = useState([]);
     useEffect(() => {
         fetch("http://localhost:4000/api/courses")
@@ -56,7 +51,6 @@ export default function Body_all(){
             return response.json();
         })
         .then((data) => {
-            // Assuming the server returns an array of course IDs in the 'data' variable
             setUsers(data);
         })
         .catch((error) => {
@@ -64,7 +58,7 @@ export default function Body_all(){
         });
       }, []);    
       
-
+     
     return(
         <div className='container body-list-learn text-center'>
             <div className='filter'>
@@ -163,10 +157,11 @@ export default function Body_all(){
                                         {user.about}
                                     </p>
                                     <Link 
-                                     to={`/course_detail/${user.id}`}
+                                     to={`/course/${user.id}`}
                                     >
                                         <button 
-                                         className='bt-learn-more'>
+                                      
+                                        className='bt-learn-more'>
                                         <p className='txtmore-dev'>More</p>
                                     </button>  
                                     </Link>
@@ -184,27 +179,27 @@ export default function Body_all(){
 
                         
                         <div className='list-dev-page'>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <ul class="pagination">
-                                            <li class="page-item previous">
-                                                <a class="page-link" href="" aria-label="Previous">
+                                <div className="row">
+                                    <div className="col-md-12">
+                                        <ul className="pagination">
+                                            <li className="page-item previous">
+                                                <a className="page-link" href="" aria-label="Previous">
                                                     <img src='./image/right-mt.png'></img>
                                                 </a>
                                             </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" >
+                                            <li className="page-item">
+                                                <a className="page-link" href="#" >
                                                     <p>1</p>
                                                 </a>
                                             </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#"  ><p>2</p></a>
+                                            <li className="page-item">
+                                                <a className="page-link" href="#"  ><p>2</p></a>
                                             </li>
-                                            <li class="page-item ">
-                                                <a class="page-link" href="#" ><p>3</p></a>
+                                            <li className="page-item ">
+                                                <a className="page-link" href="#" ><p>3</p></a>
                                             </li>
-                                            <li class="page-item next">
-                                                <a class="page-link" href="#" aria-label="Next">
+                                            <li className="page-item next">
+                                                <a className="page-link" href="#" aria-label="Next">
                                                     <img src='./image/left-mt.png'></img>
                                                 </a>
                                             </li>

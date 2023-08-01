@@ -1,8 +1,9 @@
 import React ,{useState , useEffect} from "react";
 import '../Course/Course.css';
 
+import { useParams } from "react-router-dom";
 
-export default function Course()
+export default function Course({ courses })
 {
     const [selectedOption, setSelectedOption] = useState('lessons');
     const handleOptionClick = (option) => {
@@ -12,8 +13,35 @@ export default function Course()
         handleOptionClick('lessons');
     }, []);
 
+    const { id } = useParams();
+    const courseId = parseInt(id);
+    const [course, setCourseData] = useState(null);
+
+    useEffect(() => {
+        const fetchCourseData = async () => {
+            try {
+                const response = await fetch(`http://localhost:4000/api/courses/${courseId}`);
+                if (!response.ok) {
+                throw new Error("Failed to fetch data from the API");
+                }
+                const data = await response.json();
+                setCourseData(data);
+            } catch (error) {
+                console.error(error);
+                setCourseData(null);
+            }
+        };
+
+        fetchCourseData();
+    }, [courseId]);
+
+    if (!course) {
+        return ;
+    }
+
+    ///////////////////////////////////////////////phần hinhanh theo id course
+
     return(
-        
         <div className="body-course">
             <div className="head-page-course">
                 <a href="/" className="head-page-home">
@@ -25,22 +53,24 @@ export default function Course()
                     <p>All courses</p> 
                     <p className="btn-head-page-all"> &gt; </p>
                 </a>    
-                <a href="/course_detail" className="head-page-cour">
+
+                <a href="/course" className="head-page-cour">
                     <p>Course detail</p> 
                     <p className="btn-head-page-all"> &gt; </p>
                 </a>  
+
                 <a href="/lesson" className="head-page-cour next-lesson">
                     <p>Lesson detail</p> 
                 </a>
             </div>
-         
-            <div className="body-page-course">  
+           
+            <div className="body-page-course" key={course.id}>   
                 <div className="row body-page-head">
                     <div className="col">
-                        <div className="imgpage-html">
-                            <img 
-                            
-                            className="img-html-body"></img>
+                        <div className="imgpage-html" >
+                        <img src={course.logo} 
+                        className="img-html-body"
+                        />
                         </div>
 
                     </div>
@@ -102,16 +132,14 @@ export default function Course()
                               
                                 <div className='in-search-dev'>
                                     <input className='ip-list-dev' placeholder='Search...'></input>
-                                    <img src='./image/klup.png' className='ip-note-lup-dev' ></img>
+                                    <img src={course.logo_search} className='ip-note-lup-dev' ></img>
                                     <button className='btn-search-dev'>
                                         <p className='txt-search-dev'>Tìm kiếm</p>
                                     </button>
                                   
                                         <button type="button" className='btn-slot-dev'
-                                    
                                         >
                                             <p className='txt-slot-dev'>Tham gia khoá học</p>
-                                            
                                         </button>
                              
                                 </div>
@@ -346,28 +374,28 @@ export default function Course()
                                 </div> 
                               
                                 <div className='list-dev-page'>
-                                    <div class="row">
-                                        <div class="col-md-12 cour-list-page">
-                                            <ul class="pagination">
-                                                <li class="page-item previous">
-                                                    <a class="page-link  right-courlearn" href="" aria-label="Previous">
-                                                        <img src='./image/right-mt.png'></img>
+                                    <div className="row">
+                                        <div className="col-md-12 cour-list-page">
+                                            <ul className="pagination">
+                                                <li className="page-item previous">
+                                                    <a className="page-link  right-courlearn" href="" aria-label="Previous">
+                                                        <img src={course.logo_left}></img>
                                                     </a>
                                                 </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" >
+                                                <li className="page-item">
+                                                    <a className="page-link" href="#" >
                                                         <p>1</p>
                                                     </a>
                                                 </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#"  ><p>2</p></a>
+                                                <li className="page-item">
+                                                    <a className="page-link" href="#"  ><p>2</p></a>
                                                 </li>
-                                                <li class="page-item ">
-                                                    <a class="page-link" href="#" ><p>3</p></a>
+                                                <li className="page-item ">
+                                                    <a className="page-link" href="#" ><p>3</p></a>
                                                 </li>
-                                                <li class="page-item next">
-                                                    <a class="page-link right-courlearn" href="#" aria-label="Next">
-                                                        <img src='./image/left-mt.png'></img>
+                                                <li className="page-item next">
+                                                    <a className="page-link right-courlearn" href="#" aria-label="Next">
+                                                        <img src={course.logo_right}></img>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -405,34 +433,34 @@ export default function Course()
                     </div>
                     <div className="col">
                         <div className="des-cours-gr">
-                            <img src="./image/3hs.png"></img>
+                            <img src={course.logo_learners}></img>
                             <p className="txt3hs">Learners</p>
                             <p className="txtlearn-cour"> : </p>
                             <p className="solearn-cour">500</p>
                             <div className="btn-courn-solearn"></div>
                             <div className="magin-cours-one">
-                                 <img src="./image/bang.png"></img>
+                                 <img src={course.logo_lessons}></img>
                                 <p className="txt3hs">Lessons</p>
                                 <p className="txtlearn-cour"> : </p>
                                 <p className="solearn-cour">100 lesson</p>
                                 <div className="btn-courn-solearn"></div>
                             </div>
                             <div className="magin-cours-one">
-                                 <img src="./image/dho.png"></img>
+                                <img src={course.logo_times}></img>
                                 <p className="txt3hs">Times</p>
                                 <p className="txtlearn-cour"> : </p>
                                 <p className="solearn-cour">80 hours</p>
                                 <div className="btn-courn-solearn"></div>
                             </div>
                             <div className="magin-cours-one">
-                                 <img src="./image/key.png"></img>
+                                 <img src={course.logo_tags}></img>
                                 <p className="txt3hs">Learners</p>
                                 <p className="txtlearn-cour"> : </p>
                                 <p className="solearn-cour-code">#learn,#code</p>
                                 <div className="btn-courn-solearn"></div>
                             </div>
                             <div className="magin-cours-one">
-                                 <img src="./image/1do.png"></img>
+                                 <img src={course.logo_price}></img>
                                 <p className="txt3hs">Learners</p>
                                 <p className="txtlearn-cour"> : </p>
                                 <p className="solearn-cour">Free</p>
@@ -493,7 +521,7 @@ export default function Course()
                 </div>   
                
             </div>
-     
+          
  
         </div>
        

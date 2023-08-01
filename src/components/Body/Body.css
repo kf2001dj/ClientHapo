@@ -571,9 +571,8 @@
   letter-spacing: -0.5px;
 }
 
-.cmtList {
+.cmtList-home {
   width: 100%;
-  max-width: 100vw;
   height: auto;
   margin-top: 50px;
 }
