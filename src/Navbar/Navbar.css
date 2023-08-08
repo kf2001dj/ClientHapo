@@ -3,7 +3,9 @@
 }
 .nav-link {
     margin-left:  5px;
+    
 }
+
 
 .nav-item {
     margin-right: 35px;
@@ -18,14 +20,16 @@
 
 .btn-blue-navhome {
     position: absolute;
-
+    margin-top: 8px;
+    margin-left: 7px;
+    margin-right: 120px;
     width: 80px;
     height: 34px;
     border-radius: 17px;
     background: #B2D235;
     color: aliceblue;
     padding-top: 8px;
-    padding-left: 15px;
+    padding-left: 18px;
 }
 
 .btn-blue-navhome  p {
@@ -41,8 +45,9 @@
 
 
 .btn-blue-navall {
+    margin-top: 8px;
     position: absolute;
-    margin-left: 100px;
+    margin-left: 130px;
     width: 128px;
     height: 34px;
     border-radius: 17px;
@@ -63,8 +68,9 @@
 }
 
 .btn-blue-navlog {
+    margin-top: 8px;
     position: absolute;
-    margin-left: 255px;
+    margin-left: 307px;
     width: 150px;
     height: 34px;
     border-radius: 17px;
@@ -85,8 +91,9 @@
 }
 
 .btn-blue-navpro {
+    margin-top: 8px;
     position: absolute;
-    margin-left: 432px;
+    margin-left: 508px;
     width: 90px;
     height: 34px;
     border-radius: 17px;
@@ -106,16 +113,24 @@
     text-transform: uppercase;
 }
 
+/* Đặt chiều cao cho navbar để nó không che phủ nội dung bên dưới */
+.navbar {
+    height: 90px; /* Thay đổi chiều cao navbar theo yêu cầu của bạn */
+  }
+
+.navbar {
+    position: sticky;
+}
+
+/* Thêm transition cho hiệu ứng mờ */
+.nav-item {
+    transition: opacity 0.6s ease-in-out;
+}
 
 
-
-
-
-
-
-
-
-
+.navbar-brand img {
+    margin-top: -5px;
+}
 
 
 /* xoá  đường viền */
@@ -133,6 +148,7 @@
 
 /* Lines of the Toggler  */
 .toggler-icon{
+    border-radius: 10px;
     width: 30px;
     height: 3px;
     background-color: #505353;
