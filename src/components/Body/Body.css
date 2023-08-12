@@ -577,27 +577,31 @@
   margin-top: 50px;
 }
 
-.col {
-  width: 100%;
-  margin-left: -40px;
-}
-
-.imgComOne {
-  margin-left: 150px;
-  position: relative;
-  z-index: 1;
+.cmtList-home img {
   width: 570px;
   height: 163.47px;
 }
 
-.imgComTwo {
-  margin-right: 100px;
-  position: relative;
-  z-index: 1;
-  width: 570px;
-  height: 163.47px;
+.slick-prev,
+.slick-prev:hover {
+  left: 10px; 
+  z-index: 999; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: rgb(225, 19, 19); 
+  padding: 10px; 
 }
 
+
+.slick-next,
+.slick-next:hover {
+  right: 10px; /* Điều chỉnh vị trí theo mong muốn */
+  z-index: 999; /* Đảm bảo nút hiển thị trên đỉnh các slide */
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền của nút */
+  color: rgb(9, 240, 48); /* Màu chữ */
+  padding: 10px; /* Khoảng cách từ nút đến viền slide */
+}
+
+/* 
 .txtPone {
   z-index: 2;
   position: absolute;
@@ -788,7 +792,7 @@
 .imgTwoStartsix {
   margin-top: -24px;
   margin-left: 190px;
-}
+} */
 
 .Become {
   width: 100%;
