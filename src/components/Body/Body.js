@@ -507,7 +507,7 @@ export default function Body() {
         </Slider>
       </div>
 
-      {/* <div className="container Become">
+      <div className="container Become">
         <img src="./image/Group 7.png" className="imgBe"></img>
         <p className="txtBecome"> Become a member of our growing community! </p>
         <button class="btnNow">
@@ -545,7 +545,7 @@ export default function Body() {
         <div className="txtListlearn">
           <p>16,882</p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
