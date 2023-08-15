@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../Course/Course.css";
-import axios from "axios";
-import { Jwt } from "jsonwebtoken";
-import { useAuth } from "./authContext";
-
+import "../Course/Course.scss";
 import { useParams } from "react-router-dom";
 
 export default function Course({ courses }) {
@@ -20,8 +16,6 @@ export default function Course({ courses }) {
   const [course, setCourseData] = useState(null);
   const [userId, setUserId] = useState("");
   const [message, setMessage] = useState("");
-  const { authToken } = useAuth();
-
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
@@ -38,36 +32,37 @@ export default function Course({ courses }) {
         setCourseData(null);
       }
     };
-
     fetchCourseData();
   }, [courseId]);
 
-  useEffect(() => {
-    const authToken = localStorage.getItem("authToken");
-    if (authToken) {
-      try {
-        const decodedToken = Jwt.verify(authToken, "your_secret_key"); // Thay thế 'your_secret_key' bằng khóa bí mật thực tế
-        setUserId(decodedToken.user_id);
-      } catch (error) {
-        console.error("Error decoding token:", error);
-      }
+  const handleJoinCourse = async () => {
+    if (!userId || !courseId) {
+      console.error("Missing user_id or course_id");
+      return;
     }
-  }, []);
 
-  const addCourseToUser = async () => {
     try {
-      const response = await axios.post(
-        `http://localhost:4000/api/addCourseToUser/${courseId}`, // Đã thêm courseId vào URL
-        null,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`, // Gửi mã thông báo xác thực trong tiêu đề
-          },
-        }
-      );
-      setMessage(response.data.message);
+      const response = await fetch("http://localhost:4000/api/courses_users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({ user_id: userId, course_id: courseId }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add course to courses_users");
+      }
+
+      console.log("Course added to courses_users successfully");
+
+      setCourseData((prevCourse) => ({
+        ...prevCourse,
+        enrolledUsers: [...prevCourse.enrolledUsers, { id: userId }],
+      }));
     } catch (error) {
-      console.error("Error adding course to user:", error);
+      console.error(error);
     }
   };
 
@@ -179,7 +174,7 @@ export default function Course({ courses }) {
                     <button
                       type="button"
                       className="btn-slot-dev"
-                      onClick={addCourseToUser}
+                      onClick={handleJoinCourse}
                     >
                       <p className="txt-slot-dev">Tham gia khoá học</p>
                       <p>{message}</p>

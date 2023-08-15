@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import './Sign_Up.css';
+import "./Sign_Up.scss";
 
 export default function Sign_Up() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   //showpass
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -20,31 +19,33 @@ export default function Sign_Up() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setErrorMessage('Mật khẩu xác nhận không khớp');
+      setErrorMessage("Mật khẩu xác nhận không khớp");
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:4000/api/signup', {
-        method: 'POST',
+      const response = await fetch("http://localhost:4000/api/signup", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, email, password, confirmPassword }),
       });
 
       if (response.ok) {
-        console.log('Đăng ký thành công');
+        console.log("Đăng ký thành công");
         // Xử lý phản hồi từ API ở đây
         // Ví dụ: chuyển hướng đến trang đăng nhập
-        window.location.href = '/loginregister';
+        window.location.href = "/loginregister";
       } else {
         const data = await response.json();
-        setErrorMessage(data.message || 'Đã xảy ra lỗi trong quá trình đăng ký');
+        setErrorMessage(
+          data.message || "Đã xảy ra lỗi trong quá trình đăng ký"
+        );
       }
     } catch (error) {
       console.error(error);
-      setErrorMessage('Đã xảy ra lỗi trong quá trình đăng ký');
+      setErrorMessage("Đã xảy ra lỗi trong quá trình đăng ký");
     }
   };
 
@@ -80,11 +81,13 @@ export default function Sign_Up() {
                 <p className="txtpass_signup">Password</p>
                 <input
                   className="form-passup-signup"
-                  type={passwordVisible ? 'text' : 'password'}
+                  type={passwordVisible ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <span  className='showcodepass' onClick={handleTogglePassword}>{passwordVisible ? 'Ẩn' : 'Hiện'}</span>
+                <span className="showcodepass" onClick={handleTogglePassword}>
+                  {passwordVisible ? "Ẩn" : "Hiện"}
+                </span>
               </div>
 
               <div className="form-comfirm">
@@ -97,9 +100,7 @@ export default function Sign_Up() {
                 />
               </div>
 
-              {errorMessage &&
-               <p className="error-message">{errorMessage}</p>
-              }
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
 
               <button
                 className="txtCreate-signup btnsignuplock"

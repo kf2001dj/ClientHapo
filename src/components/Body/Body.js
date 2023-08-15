@@ -1,4 +1,4 @@
-import "../Body/Body.css";
+import "../Body/Body.scss";
 import React from "react";
 
 // import Slider from 'react-slick';
