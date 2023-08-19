@@ -1,19 +1,19 @@
 import "../Body/Body.scss";
 import React from "react";
 
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 export default function Body() {
   // const settings = {
-  //     dots: false,
-  //     infinite: true,
-  //     speed: 500,
-  //     slidesToShow: 2,
-  //     slidesToScroll: 1,
-  //     autoplay: true,
-  //     autoplaySpeed: 3000, // Tự động chạy slider sau mỗi 3 giây
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000, // Tự động chạy slider sau mỗi 3 giây
   // };
 
   return (
@@ -424,7 +424,7 @@ export default function Body() {
       </div>
       <div className="FontFeed"></div>
       <div className="FontFeed1"></div>
-      <div className="txtFeed">
+      <div className="txtFeed container">
         <p>
           What other students turned professionals have to say about us after
           learning with us and reaching their goals
@@ -438,14 +438,15 @@ export default function Body() {
       </div>
 
       <div className="container cmtList-home">
-        {/* <Slider {...settings}  className="row"> */}
-        <div class="col">
+        {/* <Slider {...settings}> */}
+        <div>
           <img src="./image/Union.png" className="imgComOne"></img>
           <p className="txtPone">
             “A wonderful course on how to start. Eddie beautifully conveys all
             essentials of a becoming a good Angular developer. Very glad to have
             taken this course. Thank you Eddie Bryan.”
           </p>
+
           <div className="cmtBtOne"></div>
           <img src="./image/Group 11.png" className="btvOne"></img>
           <img src="./image/Ellipse 1.png" className="imgAdOne"></img>
@@ -467,7 +468,7 @@ export default function Body() {
             <img src="./image/sao.png"></img>
           </div>
         </div>
-        <div class="col">
+        <div>
           <img src="./image/Union.png" className="imgComTwo"></img>
           <p className="txtPtwo">
             “A wonderful course on how to start. Eddie beautifully conveys all
@@ -508,7 +509,7 @@ export default function Body() {
       <div className="container Become">
         <img src="./image/Group 7.png" className="imgBe"></img>
         <p className="txtBecome"> Become a member of our growing community! </p>
-        <button class="btnNow">
+        <button className="btnNow">
           <a href="/">
             {" "}
             <p className="txtNow">Start Learning Now! </p>

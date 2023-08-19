@@ -43,7 +43,7 @@ export default function Body_all() {
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/api/courses")
+    fetch("/all/courses")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch course IDs");

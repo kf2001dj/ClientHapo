@@ -19,16 +19,13 @@ export default function Login_register() {
     try {
       const token = localStorage.getItem("token");
       if (token) {
-        const response = await fetch(
-          "http://localhost:4000/api/signin/status",
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`, // Include the token in the request header
-            },
-            credentials: "include",
-          }
-        );
+        const response = await fetch("/signin/status", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the request header
+          },
+          credentials: "include",
+        });
 
         if (response.ok) {
           setLoggedIn(true);
@@ -45,7 +42,7 @@ export default function Login_register() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/api/signin", {
+      const response = await fetch("/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,10 +61,10 @@ export default function Login_register() {
           storeToken(token);
           console.log("Sign in successful");
           setLoggedIn(true);
-          const userResponse = await fetch("http://localhost:4000/api/users", {
+          const userResponse = await fetch("/users", {
             method: "GET",
             headers: {
-              Authorization: `Bearer ${token}`, // Include the token in the request header
+              Authorization: `Bearer ${token}`,
             },
             credentials: "include",
           });
@@ -95,7 +92,7 @@ export default function Login_register() {
 
   const handleSignOut = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/signout", {
+      const response = await fetch("/signout", {
         method: "POST",
         credentials: "include",
       });
@@ -105,7 +102,7 @@ export default function Login_register() {
         setLoggedIn(false);
 
         localStorage.removeItem("token");
-        localStorage.removeItem("userId"); // xoá thông tin user khỏi profile
+        localStorage.removeItem("userId");
         window.location.reload();
       }
     } catch (error) {
