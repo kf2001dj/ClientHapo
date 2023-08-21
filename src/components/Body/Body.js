@@ -468,7 +468,7 @@ export default function Body() {
             <img src="./image/sao.png"></img>
           </div>
         </div>
-        <div>
+        <div className="cmtad2">
           <img src="./image/Union.png" className="imgComTwo"></img>
           <p className="txtPtwo">
             “A wonderful course on how to start. Eddie beautifully conveys all
@@ -511,7 +511,6 @@ export default function Body() {
         <p className="txtBecome"> Become a member of our growing community! </p>
         <button className="btnNow">
           <a href="/">
-            {" "}
             <p className="txtNow">Start Learning Now! </p>
           </a>
         </button>
@@ -521,7 +520,6 @@ export default function Body() {
           <p>Statistic</p>
         </div>
       </div>
-
       <div className="btnStat"></div>
       <div className="container listdiem">
         <div className="txtCour">
