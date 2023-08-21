@@ -196,7 +196,7 @@ export default function Body_all() {
                   <ul className="pagination">
                     <li className="page-item previous">
                       <a className="page-link" href="" aria-label="Previous">
-                        <img src="./image/right-mt.png"></img>
+                        <img src="./image/left-mt.png"></img>
                       </a>
                     </li>
                     <li className="page-item">
@@ -216,7 +216,7 @@ export default function Body_all() {
                     </li>
                     <li className="page-item next">
                       <a className="page-link" href="#" aria-label="Next">
-                        <img src="./image/left-mt.png"></img>
+                        <img src="./image/right-mtall.png"></img>
                       </a>
                     </li>
                   </ul>
