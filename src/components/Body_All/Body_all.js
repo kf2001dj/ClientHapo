@@ -43,10 +43,10 @@ export default function Body_all() {
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("/all/courses")
+    fetch("http://localhost:4000/all/courses")
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to fetch course IDs");
+          throw new Error("Không tìm thấy nạp ID khóa học");
         }
         return response.json();
       })
@@ -54,7 +54,7 @@ export default function Body_all() {
         setUsers(data);
       })
       .catch((error) => {
-        console.error("Error fetching course IDs: ", error);
+        console.error("Lỗi tìm nạp ID khóa học: ", error);
       });
   }, []);
 
@@ -170,7 +170,7 @@ export default function Body_all() {
             {users.map((user) => (
               <div className="row custom-row-dev" key={user.id}>
                 <div className="col-md-6 custom-margin-one">
-                  <img src={user.image_url}></img>
+                  <img src={user.image_url} alt="ảnh lỗi"></img>
                   <p className="cust-learn-html">{user.name}</p>
                   <p className="txt-learn-html">{user.about}</p>
                   <Link to={`/course/${user.id}`}>
