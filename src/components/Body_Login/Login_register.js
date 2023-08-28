@@ -19,7 +19,7 @@ export default function Login_register() {
     try {
       const token = localStorage.getItem("token");
       if (token) {
-        const response = await fetch("http://localhost:4000/signin/status", {
+        const response = await fetch("http://localhost:5000/signin/status", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,62 +38,11 @@ export default function Login_register() {
     }
   };
 
-  // const handleSignIn = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const response = await fetch("http://localhost:4000/signin", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ username, password }),
-  //       credentials: "include",
-  //     });
-
-  //     if (response.ok) {
-  //       console.log("Sign in successful");
-  //       const data = await response.json();
-  //       const token = data.token;
-
-  //       if (token) {
-  //         // Save the JWT token in localStorage
-  //         storeToken(token);
-  //         console.log("Sign in successful");
-  //         setLoggedIn(true);
-  //         const userResponse = await fetch("http://localhost:4000/users", {
-  //           method: "GET",
-  //           headers: {
-  //             Authorization: `Bearer ${token}`,
-  //           },
-  //           credentials: "include",
-  //         });
-  //         if (userResponse.ok) {
-  //           const users = await userResponse.json();
-  //           const currentUser = users.find(
-  //             (user) => user.username === username
-  //           );
-  //           if (currentUser) {
-  //             localStorage.setItem("userId", currentUser.id);
-  //           }
-  //         }
-  //         setLoggedIn(true);
-  //         window.location.href = "/";
-  //       }
-  //     } else if (response.status === 401) {
-  //       console.log("Invalid username or password");
-  //     } else {
-  //       console.log("An error occurred");
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
   const handleSignIn = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/signin", {
+      const response = await fetch("http://localhost:5000/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,39 +52,31 @@ export default function Login_register() {
       });
 
       if (response.ok) {
+        console.log("Sign in successful");
         const data = await response.json();
         const token = data.token;
-
         if (token) {
           // Save the JWT token in localStorage
           storeToken(token);
-
-          // Fetch user data after successful sign-in
-          try {
-            const userResponse = await fetch("/users", {
-              method: "GET",
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-              credentials: "include",
-            });
-
-            if (userResponse.ok) {
-              const users = await userResponse.json();
-              const currentUser = users.find(
-                (user) => user.username === username
-              );
-
-              if (currentUser) {
-                localStorage.setItem("userId", currentUser.id);
-              }
-            }
-          } catch (userError) {
-            console.error("Error fetching user data:", userError);
-          }
-
+          console.log("Sign in successful", token);
           setLoggedIn(true);
-          console.log("Sign in successful");
+          const userResponse = await fetch("http://localhost:5000/users", {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            credentials: "include",
+          });
+          if (userResponse.ok) {
+            const users = await userResponse.json();
+            const currentUser = users.find(
+              (user) => user.username === username
+            );
+            if (currentUser) {
+              localStorage.setItem("userId", currentUser.id);
+            }
+          }
+          setLoggedIn(true);
           window.location.href = "/";
         }
       } else if (response.status === 401) {
@@ -144,13 +85,13 @@ export default function Login_register() {
         console.log("An error occurred");
       }
     } catch (error) {
-      console.error("Error during sign-in:", error);
+      console.error(error);
     }
   };
 
   const handleSignOut = async () => {
     try {
-      const response = await fetch("http://localhost:4000/signout", {
+      const response = await fetch("http://localhost:5000/signout", {
         method: "POST",
         credentials: "include",
       });
@@ -161,7 +102,7 @@ export default function Login_register() {
 
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
-        window.location.reload();
+        window.location.reload("/home");
       }
     } catch (error) {
       console.error(error);

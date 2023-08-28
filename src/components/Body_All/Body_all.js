@@ -43,7 +43,7 @@ export default function Body_all() {
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/all/courses")
+    fetch("http://localhost:5000/all/courses")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Không tìm thấy nạp ID khóa học");
