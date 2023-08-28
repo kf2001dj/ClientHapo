@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 export default function Login_register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  // const [isLoggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     checkLoggedInStatus();
@@ -28,9 +28,9 @@ export default function Login_register() {
         });
 
         if (response.ok) {
-          setLoggedIn(true);
+          // setLoggedIn(true);
         } else {
-          setLoggedIn(false);
+          // setLoggedIn(false);
         }
       }
     } catch (error) {
@@ -59,7 +59,7 @@ export default function Login_register() {
           // Save the JWT token in localStorage
           storeToken(token);
           console.log("Sign in successful", token);
-          setLoggedIn(true);
+          // setLoggedIn(true);
           const userResponse = await fetch("http://localhost:5000/users", {
             method: "GET",
             headers: {
@@ -76,7 +76,7 @@ export default function Login_register() {
               localStorage.setItem("userId", currentUser.id);
             }
           }
-          setLoggedIn(true);
+          // setLoggedIn(true);
           window.location.href = "/";
         }
       } else if (response.status === 401) {
@@ -98,7 +98,7 @@ export default function Login_register() {
 
       if (response.ok) {
         console.log("Sign out successful");
-        setLoggedIn(false);
+        // setLoggedIn(false);
 
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
@@ -116,7 +116,8 @@ export default function Login_register() {
           <div className="col-md">
             <form className="form-loginlist">
               <p className="sign">
-                {isLoggedIn ? "Sign out of HapoLearn" : "Sign in to HapoLearn"}
+                {/* {isLoggedIn ? "Sign out of HapoLearn" : "Sign in to HapoLearn"} */}
+                Sign in to HapoLearn
               </p>
 
               <div className="form-user">
@@ -143,7 +144,7 @@ export default function Login_register() {
                 />
               </div>
 
-              {isLoggedIn ? (
+              {/* {isLoggedIn ? (
                 <button
                   className="btnSign"
                   type="button"
@@ -151,15 +152,11 @@ export default function Login_register() {
                 >
                   <p className="txtBtsign">Sign out</p>
                 </button>
-              ) : (
-                <button
-                  className="btnSign"
-                  type="submit"
-                  onClick={handleSignIn}
-                >
-                  <p className="txtBtsign">Sign in</p>
-                </button>
-              )}
+              ) : ( */}
+              <button className="btnSign" type="submit" onClick={handleSignIn}>
+                <p className="txtBtsign">Sign in</p>
+              </button>
+              {/* )} */}
 
               <div className="forgot">
                 <a href="/resetpassword">

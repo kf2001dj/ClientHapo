@@ -15,6 +15,7 @@ export default function Sign_Up() {
   const handleTogglePassword = () => {
     setPasswordVisible(!passwordVisible);
   };
+
   const handleSignUp = async (e) => {
     e.preventDefault();
 
@@ -24,7 +25,7 @@ export default function Sign_Up() {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/api/signup", {
+      const response = await fetch("http://localhost:5000/up", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,12 +37,10 @@ export default function Sign_Up() {
         console.log("Đăng ký thành công");
         // Xử lý phản hồi từ API ở đây
         // Ví dụ: chuyển hướng đến trang đăng nhập
-        window.location.href = "/loginregister";
+        window.location.href = "/";
       } else {
         const data = await response.json();
-        setErrorMessage(
-          data.message || "Đã xảy ra lỗi trong quá trình đăng ký"
-        );
+        setErrorMessage(data.message || "Đã xảy ra lỗi  đăng ký");
       }
     } catch (error) {
       console.error(error);
