@@ -50,28 +50,27 @@ export default function Navbar() {
     }
   };
 
-  // const handleSignOut = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:5000/logout", {
-  //       method: "POST",
-  //       credentials: "include",
-  //     });
+  const handleSignOut = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/signout", {
+        method: "POST",
+        credentials: "include",
+      });
 
-  //     if (response.ok) {
-  //       console.log("Sign out successful");
-  //       setLoggedIn(true); //login false
+      if (response.ok) {
+        console.log("Sign out successful");
+        setLoggedIn(false);
 
-  //       localStorage.removeItem("userId");
-  //       localStorage.removeItem("token");
-
-  //       window.location.reload("/loginregister");
-  //     } else {
-  //       console.log("lỗi");
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+        localStorage.removeItem("userId");
+        localStorage.removeItem("token");
+        window.location.reload("/loginregister");
+      } else {
+        console.log("lỗi");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg  navbar-light bg-light">
@@ -139,7 +138,7 @@ export default function Navbar() {
                     <div
                       className="nav-link"
                       type="button"
-                      // onClick={handleSignOut}
+                      onClick={handleSignOut}
                     >
                       LOGOUT
                     </div>
