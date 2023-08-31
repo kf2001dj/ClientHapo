@@ -8,7 +8,7 @@ export default function Body_Profile() {
 
   useEffect(() => {
     if (userId) {
-      fetch(`http://localhost:4000/api/users/${userId}`)
+      fetch(`http://localhost:5000/users/${userId}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Response was not ok");
@@ -20,7 +20,7 @@ export default function Body_Profile() {
           console.error("Error fetching user data: ", error);
         });
 
-      fetch(`http://localhost:4000/api/users/${userId}/courses`)
+      fetch(`http://localhost:5000/users/${userId}/courses`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Response was not ok");
@@ -59,7 +59,7 @@ export default function Body_Profile() {
     };
 
     // Update user data on the server
-    fetch(`http://localhost:4000/api/users/${userId}`, {
+    fetch(`http://localhost:5000/users/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ export default function Body_Profile() {
           <img
             key={user.id}
             className="imgid-profile"
-            src={user.image_url} // đường dẫn hình ảnh trong cơ sở dữ liệu
+            src={user.imageUrl} // đường dẫn hình ảnh trong cơ sở dữ liệu
             alt={`lỗi hình ảnh ${user.id}`}
             onError={() => console.error("Lỗi tải hình ảnh.")}
           />

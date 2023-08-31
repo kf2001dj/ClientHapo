@@ -170,7 +170,7 @@ export default function Body_all() {
             {users.map((user) => (
               <div className="row custom-row-dev" key={user.id}>
                 <div className="col-md-6 custom-margin-one">
-                  <img src={user.image_url} alt="ảnh lỗi"></img>
+                  <img src={user.imageUrl} alt="ảnh lỗi"></img>
                   <p className="cust-learn-html">{user.name}</p>
                   <p className="txt-learn-html">{user.about}</p>
                   <Link to={`/course/${user.id}`}>

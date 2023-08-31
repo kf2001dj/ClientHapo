@@ -22,6 +22,57 @@ export default function Navbar() {
     }
   }, []);
 
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    checkLoggedInStatus();
+  }, []);
+
+  const checkLoggedInStatus = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const response = await fetch("http://localhost:5000/signin/status", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+        });
+        if (response.ok) {
+          setLoggedIn(true);
+        } else {
+          setLoggedIn(false);
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // const handleSignOut = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:5000/logout", {
+  //       method: "POST",
+  //       credentials: "include",
+  //     });
+
+  //     if (response.ok) {
+  //       console.log("Sign out successful");
+  //       setLoggedIn(true); //login false
+
+  //       localStorage.removeItem("userId");
+  //       localStorage.removeItem("token");
+
+  //       window.location.reload("/loginregister");
+  //     } else {
+  //       console.log("lỗi");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   return (
     <nav className="navbar navbar-expand-lg  navbar-light bg-light">
       <div className="container-fluid">
@@ -79,26 +130,46 @@ export default function Navbar() {
                 </div>
               </li>
               <li className="nav-item">
-                <div
-                  className={`nav-link ${
-                    selectedNavOption === "login" ? "selected" : ""
-                  }`}
-                >
-                  <a className="nav-link" type="button" href="/loginregister">
-                    LOGIN/REGISTER
-                  </a>
-                </div>
+                {isLoggedIn ? (
+                  <div
+                    className={`nav-link ${
+                      selectedNavOption === "login" ? "selected" : ""
+                    }`}
+                  >
+                    <div
+                      className="nav-link"
+                      type="button"
+                      // onClick={handleSignOut}
+                    >
+                      LOGOUT
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className={`nav-link ${
+                      selectedNavOption === "login" ? "selected" : ""
+                    }`}
+                  >
+                    <a className="nav-link" type="button" href="/loginregister">
+                      LOGIN/REGISTER
+                    </a>
+                  </div>
+                )}
               </li>
               <li className="nav-item">
-                <div
-                  className={`nav-link ${
-                    selectedNavOption === "pro" ? "selected" : ""
-                  }`}
-                >
-                  <a className="nav-link" type="button" href="/profile">
-                    PROFILE
-                  </a>
-                </div>
+                {isLoggedIn ? (
+                  <div
+                    className={`nav-link ${
+                      selectedNavOption === "pro" ? "selected" : ""
+                    }`}
+                  >
+                    <a className="nav-link" type="button" href="/profile">
+                      PROFILE
+                    </a>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </li>
             </ul>
             {selectedNavOption === "home" && (
@@ -115,12 +186,26 @@ export default function Navbar() {
                 </a>
               </div>
             )}
-            {selectedNavOption === "login" && (
-              <div className="btn-blue-navlog ">
-                <a href="/loginregister">
-                  <p>LOGIN/REGISTER</p>
-                </a>
-              </div>
+            {isLoggedIn ? (
+              <>
+                {selectedNavOption === "login" && (
+                  <div className="btn-blue-navlog ">
+                    <div>
+                      <p>LOGOUT</p>
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+                {selectedNavOption === "login" && (
+                  <div className="btn-blue-navlog ">
+                    <a href="/loginregister">
+                      <p>LOGIN/REGISTER</p>
+                    </a>
+                  </div>
+                )}
+              </>
             )}
             {selectedNavOption === "pro" && (
               <div className="btn-blue-navpro">

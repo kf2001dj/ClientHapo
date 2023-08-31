@@ -1,42 +1,42 @@
 import "./Login_register.scss";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function Login_register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // const [isLoggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
-    checkLoggedInStatus();
-  }, []);
+  // useEffect(() => {
+  //   checkLoggedInStatus();
+  // }, []);
 
   const storeToken = (token) => {
     localStorage.setItem("token", token);
   };
 
-  const checkLoggedInStatus = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      if (token) {
-        const response = await fetch("http://localhost:5000/signin/status", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          credentials: "include",
-        });
+  // const checkLoggedInStatus = async () => {
+  //   try {
+  //     const token = localStorage.getItem("token");
+  //     if (token) {
+  //       const response = await fetch("http://localhost:5000/signin/status", {
+  //         method: "GET",
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //         credentials: "include",
+  //       });
 
-        if (response.ok) {
-          // setLoggedIn(true);
-        } else {
-          // setLoggedIn(false);
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //       if (response.ok) {
+  //         // setLoggedIn(true);
+  //       } else {
+  //         // setLoggedIn(false);
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -89,25 +89,25 @@ export default function Login_register() {
     }
   };
 
-  const handleSignOut = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/signout", {
-        method: "POST",
-        credentials: "include",
-      });
+  // const handleSignOut = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:5000/signout", {
+  //       method: "POST",
+  //       credentials: "include",
+  //     });
 
-      if (response.ok) {
-        console.log("Sign out successful");
-        // setLoggedIn(false);
+  //     if (response.ok) {
+  //       console.log("Sign out successful");
+  //       // setLoggedIn(false);
 
-        localStorage.removeItem("token");
-        localStorage.removeItem("userId");
-        window.location.reload("/home");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //       localStorage.removeItem("token");
+  //       localStorage.removeItem("userId");
+  //       window.location.reload("/home");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <div className="bodyLogin">
