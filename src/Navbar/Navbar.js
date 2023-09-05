@@ -50,25 +50,62 @@ export default function Navbar() {
     }
   };
 
+  // const handleSignOut = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:5000/signout", {
+  //       method: "POST",
+  //       credentials: "include",
+  //     });
+
+  //     if (response.ok) {
+  //       console.log("Sign out successful");
+  //       setLoggedIn(false);
+
+  //       localStorage.removeItem("userId");
+  //       localStorage.removeItem("token");
+  //       window.location.reload("/loginregister");
+  //     } else {
+  //       console.log("lỗi");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const handleSignOut = async () => {
     try {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        console.log("Không tìm thấy mã Token, người dùng không được xác thực.");
+        return;
+      }
+
       const response = await fetch("http://localhost:5000/signout", {
         method: "POST",
         credentials: "include",
+        headers: {
+          Authorization: `Bearer ${token}`, // Gửi token trong header để xác thực
+        },
       });
 
-      if (response.ok) {
-        console.log("Sign out successful");
+      if (response.status === 200) {
+        console.log("Đăng xuất thành công !!!!");
         setLoggedIn(false);
 
+        // Đăng xuất thành công, không cần token nữa
+        localStorage.removeItem("token"); //xoá token và userId khỏi localStorage
         localStorage.removeItem("userId");
-        localStorage.removeItem("token");
-        window.location.reload("/loginregister");
+        // Đặt thời gian sống ngắn hơn cho token, để tránh sử dụng token cũ sau khi đăng xuất
+        setTimeout(() => {
+          // window.location.reload("/"); chuyển trang không cần thiết
+        }, 1000); // Chờ 1 giây trước khi tải lại trang
       } else {
-        console.log("lỗi");
+        console.log("Đăng xuất không thành !!!!");
       }
     } catch (error) {
       console.error(error);
+      console.log("Lỗi");
     }
   };
 
