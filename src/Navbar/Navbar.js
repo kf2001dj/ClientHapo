@@ -50,28 +50,6 @@ export default function Navbar() {
     }
   };
 
-  // const handleSignOut = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:5000/signout", {
-  //       method: "POST",
-  //       credentials: "include",
-  //     });
-
-  //     if (response.ok) {
-  //       console.log("Sign out successful");
-  //       setLoggedIn(false);
-
-  //       localStorage.removeItem("userId");
-  //       localStorage.removeItem("token");
-  //       window.location.reload("/loginregister");
-  //     } else {
-  //       console.log("lỗi");
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const handleSignOut = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -88,24 +66,19 @@ export default function Navbar() {
           Authorization: `Bearer ${token}`, // Gửi token trong header để xác thực
         },
       });
-
       if (response.status === 200) {
         console.log("Đăng xuất thành công !!!!");
         setLoggedIn(false);
 
-        // Đăng xuất thành công, không cần token nữa
         localStorage.removeItem("token"); //xoá token và userId khỏi localStorage
         localStorage.removeItem("userId");
-        // Đặt thời gian sống ngắn hơn cho token, để tránh sử dụng token cũ sau khi đăng xuất
-        setTimeout(() => {
-          // window.location.reload("/"); chuyển trang không cần thiết
-        }, 1000); // Chờ 1 giây trước khi tải lại trang
+        window.location.href = "/";
       } else {
         console.log("Đăng xuất không thành !!!!");
       }
     } catch (error) {
       console.error(error);
-      console.log("Lỗi");
+      console.log("Lỗi !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
   };
 
@@ -167,11 +140,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 {isLoggedIn ? (
-                  <div
-                    className={`nav-link ${
-                      selectedNavOption === "login" ? "selected" : ""
-                    }`}
-                  >
+                  <div className="nav-link">
                     <div
                       className="nav-link"
                       type="button"
@@ -243,12 +212,18 @@ export default function Navbar() {
                 )}
               </>
             )}
-            {selectedNavOption === "pro" && (
-              <div className="btn-blue-navpro">
-                <a href="/profile">
-                  <p>PROFILE</p>
-                </a>
-              </div>
+            {isLoggedIn ? (
+              <>
+                {selectedNavOption === "pro" && (
+                  <div className="btn-blue-navpro">
+                    <a href="/profile">
+                      <p>PROFILE</p>
+                    </a>
+                  </div>
+                )}
+              </>
+            ) : (
+              <>{/* ẩn profile khi đăng xuất */}</>
             )}
           </form>
           <div className="fontVien2"></div>

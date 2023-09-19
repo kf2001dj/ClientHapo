@@ -1,6 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./Body_Profile.scss";
 
+function CourseImage({ courseImageUrl }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = courseImageUrl;
+    image.onload = () => setIsLoading(false);
+    image.onerror = () => console.error("Lỗi tải hình ảnh.");
+  }, [courseImageUrl]);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  return <img src={courseImageUrl} alt="Course" />;
+}
+
 export default function Body_Profile() {
   const [user, setUser] = useState({});
   const userId = localStorage.getItem("userId");
@@ -20,16 +37,16 @@ export default function Body_Profile() {
           console.error("Error fetching user data: ", error);
         });
 
-      fetch(`http://localhost:5000/users/${userId}/courses`)
+      fetch(`http://localhost:5000/profile/coursesuser/list/${userId}`)
         .then((response) => {
           if (!response.ok) {
-            throw new Error("Response was not ok");
+            throw new Error("Phản hồi thất bại");
           }
           return response.json();
         })
         .then((data) => setCourses(data))
         .catch((error) => {
-          console.error("Error fetching courses data for user: ", error);
+          console.error("Lỗi tìm nạp dữ liệu khóa học cho người dùng: ", error);
         });
     } else {
       //bắt buộc phải đăng nhập thì ms edit được
@@ -39,7 +56,7 @@ export default function Body_Profile() {
   }, [userId]);
 
   // State variables to manage form input values
-  const [name, setName] = useState("");
+  const [name, setName] = useState(""); // Initialize with default values
   const [email, setEmail] = useState("");
   const [birthdate, setBirthdate] = useState("");
   const [phone, setPhone] = useState("");
@@ -59,7 +76,7 @@ export default function Body_Profile() {
     };
 
     // Update user data on the server
-    fetch(`http://localhost:5000/users/${userId}`, {
+    fetch(`http://localhost:5000/update/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +86,7 @@ export default function Body_Profile() {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Lỗi Cập nhật dữ liệu người dùng");
         }
         return response.json();
       })
@@ -78,7 +95,7 @@ export default function Body_Profile() {
         console.log("User data updated successfully:", data);
       })
       .catch((error) => {
-        console.error("Error updating user data: ", error);
+        console.error("Lỗi khi cập nhật dữ liệu người dùng: ", error);
       });
   };
 
@@ -102,7 +119,7 @@ export default function Body_Profile() {
               <img src="./image/sn.png" className="img-pro-sn"></img>
               <p
                 className="txt-daypro"
-                value={birthdate || user.birthdate}
+                value={user.birthdate}
                 onChange={(e) => setBirthdate(e.target.value)}
               >
                 {user.birthdate}
@@ -134,7 +151,7 @@ export default function Body_Profile() {
         <div className="pro-list-learn">
           {courses.map((courseUser) => (
             <div className="pro-list-html" key={courseUser.id}>
-              <CourseImage courseImageUrl={courseUser.image_url} />
+              <CourseImage courseImageUrl={courseUser.imageUrl} />
               <p className="pro-txthtml">{courseUser.txtname}</p>
             </div>
           ))}
@@ -222,21 +239,4 @@ export default function Body_Profile() {
       </div>
     </div>
   );
-}
-
-function CourseImage({ courseImageUrl }) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const image = new Image();
-    image.src = courseImageUrl;
-    image.onload = () => setIsLoading(false);
-    image.onerror = () => console.error("Lỗi tải hình ảnh.");
-  }, [courseImageUrl]);
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
-  return <img src={courseImageUrl} alt="Course" />;
 }

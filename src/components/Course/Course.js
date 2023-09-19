@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Course/Course.scss";
+
 import { useParams } from "react-router-dom";
 
 export default function Course({ courses }) {
@@ -14,13 +15,13 @@ export default function Course({ courses }) {
   const { id } = useParams();
   const courseId = parseInt(id);
   const [course, setCourseData] = useState(null);
-  const [userId, setUserId] = useState("");
-  const [message, setMessage] = useState("");
+  // const [userId, setUserId] = useState("");
+  // const [message, setMessage] = useState("");
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/courses/${courseId}`
+          `http://localhost:5000/all/courses/${courseId}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data from the API");
@@ -35,36 +36,36 @@ export default function Course({ courses }) {
     fetchCourseData();
   }, [courseId]);
 
-  const handleJoinCourse = async () => {
-    if (!userId || !courseId) {
-      console.error("Missing user_id or course_id");
-      return;
-    }
+  // const handleJoinCourse = async () => {
+  //   if (!userId || !courseId) {
+  //     console.error("Missing user_id or course_id");
+  //     return;
+  //   }
 
-    try {
-      const response = await fetch("http://localhost:4000/api/courses_users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({ user_id: userId, course_id: courseId }),
-      });
+  //   try {
+  //     const response = await fetch("http://localhost:5000/api/courses_users", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //       },
+  //       body: JSON.stringify({ user_id: userId, course_id: courseId }),
+  //     });
 
-      if (!response.ok) {
-        throw new Error("Failed to add course to courses_users");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("Failed to add course to courses_users");
+  //     }
 
-      console.log("Course added to courses_users successfully");
+  //     console.log("Course added to courses_users successfully");
 
-      setCourseData((prevCourse) => ({
-        ...prevCourse,
-        enrolledUsers: [...prevCourse.enrolledUsers, { id: userId }],
-      }));
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //     setCourseData((prevCourse) => ({
+  //       ...prevCourse,
+  //       enrolledUsers: [...prevCourse.enrolledUsers, { id: userId }],
+  //     }));
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   if (!course) {
     return;
@@ -73,34 +74,34 @@ export default function Course({ courses }) {
   return (
     <div className="body-course">
       <div className="head-page-course">
-        <a href="/" className="head-page-home">
-          <p>Home</p>
-          <p className="btn-head-page"> &gt; </p>
+        <a href="/">
+          Home
+          <div className="btn-nexthome"> &gt; </div>
         </a>
 
-        <a href="/allcourses" className="head-page-allcour">
-          <p>All courses</p>
-          <p className="btn-head-page-all"> &gt; </p>
+        <a href="/allcourses" className="next-allcourse">
+          All courses
+          <div className="btn-nextall"> &gt; </div>
         </a>
 
-        <a href="/course" className="head-page-cour">
-          <p>Course detail</p>
-          <p className="btn-head-page-all"> &gt; </p>
+        <a href="/course" className="next-course">
+          Course detail
+          <div className="btn-nextcourse"> &gt; </div>
         </a>
 
-        <a href="/lesson" className="head-page-cour next-lesson">
-          <p>Lesson detail</p>
+        <a href="/lesson" className="next-detail">
+          Lesson detail
         </a>
       </div>
 
       <div className="body-page-course" key={course.id}>
         <div className="row body-page-head">
-          <div className="col">
+          <div className="col-8">
             <div className="imgpage-html">
               <img src={course.logo} className="img-html-body" />
             </div>
           </div>
-          <div className="col">
+          <div className="col-4">
             <div className="des-cours">
               <p className="txtdes-cours">Descriptions course</p>
               <div className="btndes-cours"></div>
@@ -120,7 +121,7 @@ export default function Course({ courses }) {
         </div>
 
         <div className="row body-page-head">
-          <div className="col">
+          <div className="col-8">
             <div className="coures-learn-devlist">
               <a
                 href="##"
@@ -164,7 +165,7 @@ export default function Course({ courses }) {
                       placeholder="Search..."
                     ></input>
                     <img
-                      src={course.logo_search}
+                      src={course.logo_searc}
                       className="ip-note-lup-dev"
                     ></img>
                     <button className="btn-search-dev">
@@ -174,10 +175,10 @@ export default function Course({ courses }) {
                     <button
                       type="button"
                       className="btn-slot-dev"
-                      onClick={handleJoinCourse}
+                      // onClick={handleJoinCourse}
                     >
                       <p className="txt-slot-dev">Tham gia khoá học</p>
-                      <p>{message}</p>
+                      {/* <p>{message}</p> */}
                     </button>
                   </div>
 
@@ -452,7 +453,7 @@ export default function Course({ courses }) {
               )}
             </div>
           </div>
-          <div className="col">
+          <div className="col-4">
             <div className="des-cours-gr">
               <img src={course.logo_learners}></img>
               <p className="txt3hs">Learners</p>
