@@ -43,6 +43,7 @@ function App() {
           path="/reset-password/:token"
           element={<Resetpass></Resetpass>}
         ></Route>
+
         <Route path="/course/:id" element={<Course></Course>}></Route>
       </Routes>
 

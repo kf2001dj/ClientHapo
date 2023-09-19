@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "../Course/Lesson.scss";
-// import Navbar from "../../Navbar/Navbar";
-// import Footer from "../../Footer/Footer";
 export default function Lesson() {
   const [selectedOption, setSelectedOption] = useState("lessons");
   const handleOptionClick = (option) => {
@@ -9,28 +7,30 @@ export default function Lesson() {
   };
   return (
     <div className="backcolo-dev">
-      {/* <Navbar></Navbar> */}
       <div className="body-course">
         <div className="head-page-course">
-          <a href="/" className="head-page-home">
-            <p>Home</p>
-            <p className="btn-head-page"> &gt; </p>
+          <a href="/">
+            Home
+            <div className="btn-nexthome"> &gt; </div>
           </a>
-          <a href="/allcourses" className="head-page-allcour">
-            <p>All courses</p>
-            <p className="btn-head-page-all"> &gt; </p>
+
+          <a href="/allcourses" className="next-allcourse">
+            All courses
+            <div className="btn-nextall"> &gt; </div>
           </a>
-          <a href="/course" className="head-page-cour">
-            <p>Course detail</p>
-            <p className="btn-head-page-all"> &gt; </p>
+
+          <a href="/review" className="next-course">
+            Course detail
+            <div className="btn-nextcourse"> &gt; </div>
           </a>
-          <a href="/lesson" className="head-page-cour next-lesson">
-            <p>Lesson detail</p>
+
+          <a href="/lesson" className="next-detail">
+            Lesson detail
           </a>
         </div>
         <div className="body-page-course">
           <div className="row body-page-head">
-            <div className="col">
+            <div className="col-8">
               <div className="imgpage-html">
                 <img
                   src="./image/Rectangle 7.png"
@@ -41,10 +41,9 @@ export default function Lesson() {
           </div>
 
           <div className="row body-page-head">
-            <div className="col">
+            <div className="col-8">
               <div className="coures-learn-devlist">
-                <a
-                  href="##"
+                <span
                   type="button"
                   onClick={() => handleOptionClick("lessons")}
                   className={
@@ -52,9 +51,8 @@ export default function Lesson() {
                   }
                 >
                   <p className="txtlesson-cour txtdescript">Descriptions</p>
-                </a>
-                <a
-                  href="##"
+                </span>
+                <span
                   type="button"
                   onClick={() => handleOptionClick("teacher")}
                   className={
@@ -62,7 +60,7 @@ export default function Lesson() {
                   }
                 >
                   <p className="txtlesson-cour-tea">Documents</p>
-                </a>
+                </span>
 
                 {selectedOption === "lessons" && (
                   <>
@@ -167,7 +165,7 @@ export default function Lesson() {
                 )}
               </div>
             </div>
-            <div className="col">
+            <div className="col-4">
               <div className="des-cours-gr-rv">
                 <img src="./image/3hs.png"></img>
                 <p className="txt3hs">Learners</p>
@@ -259,7 +257,6 @@ export default function Lesson() {
           </div>
         </div>
       </div>
-      {/* <Footer></Footer> */}
     </div>
   );
 }

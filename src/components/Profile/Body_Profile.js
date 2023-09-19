@@ -44,7 +44,14 @@ export default function Body_Profile() {
           }
           return response.json();
         })
-        .then((data) => setCourses(data))
+        .then((data) => {
+          if (Array.isArray(data)) {
+            setCourses(data);
+          } else {
+            console.error("Response data is not an array: ", data);
+            setCourses([]); // Set courses to an empty array to prevent the error
+          }
+        })
         .catch((error) => {
           console.error("Lỗi tìm nạp dữ liệu khóa học cho người dùng: ", error);
         });

@@ -84,7 +84,7 @@ export default function Course({ courses }) {
           <div className="btn-nextall"> &gt; </div>
         </a>
 
-        <a href="/course" className="next-course">
+        <a href="/review" className="next-course">
           Course detail
           <div className="btn-nextcourse"> &gt; </div>
         </a>
@@ -123,8 +123,7 @@ export default function Course({ courses }) {
         <div className="row body-page-head">
           <div className="col-8">
             <div className="coures-learn-devlist">
-              <a
-                href="##"
+              <span
                 type="button"
                 onClick={() => handleOptionClick("lessons")}
                 className={
@@ -132,7 +131,7 @@ export default function Course({ courses }) {
                 }
               >
                 <p className="txtlesson-cour">Lessons</p>
-              </a>
+              </span>
               <a
                 href="/teacher"
                 type="button"
@@ -165,7 +164,7 @@ export default function Course({ courses }) {
                       placeholder="Search..."
                     ></input>
                     <img
-                      src={course.logo_searc}
+                      src="../image/klup.png"
                       className="ip-note-lup-dev"
                     ></img>
                     <button className="btn-search-dev">
@@ -404,7 +403,7 @@ export default function Course({ courses }) {
                               href=""
                               aria-label="Previous"
                             >
-                              <img src={course.logo_left}></img>
+                              <img src="../image/left-mt.png"></img>
                             </a>
                           </li>
                           <li className="page-item">
@@ -428,7 +427,7 @@ export default function Course({ courses }) {
                               href="#"
                               aria-label="Next"
                             >
-                              <img src={course.logo_right}></img>
+                              <img src="../image/right-mtall.png"></img>
                             </a>
                           </li>
                         </ul>
@@ -455,34 +454,34 @@ export default function Course({ courses }) {
           </div>
           <div className="col-4">
             <div className="des-cours-gr">
-              <img src={course.logo_learners}></img>
+              <img src="../image/3hs.png"></img>
               <p className="txt3hs">Learners</p>
               <p className="txtlearn-cour"> : </p>
               <p className="solearn-cour">500</p>
               <div className="btn-courn-solearn"></div>
               <div className="magin-cours-one">
-                <img src={course.logo_lessons}></img>
+                <img src="../image/bang.png"></img>
                 <p className="txt3hs">Lessons</p>
                 <p className="txtlearn-cour"> : </p>
                 <p className="solearn-cour">100 lesson</p>
                 <div className="btn-courn-solearn"></div>
               </div>
               <div className="magin-cours-one">
-                <img src={course.logo_times}></img>
+                <img src="../image/dho.png"></img>
                 <p className="txt3hs">Times</p>
                 <p className="txtlearn-cour"> : </p>
                 <p className="solearn-cour">80 hours</p>
                 <div className="btn-courn-solearn"></div>
               </div>
               <div className="magin-cours-one">
-                <img src={course.logo_tags}></img>
+                <img src="../image/key.png"></img>
                 <p className="txt3hs">Learners</p>
                 <p className="txtlearn-cour"> : </p>
                 <p className="solearn-cour-code">#learn,#code</p>
                 <div className="btn-courn-solearn"></div>
               </div>
               <div className="magin-cours-one">
-                <img src={course.logo_price}></img>
+                <img src="../image/1do.png"></img>
                 <p className="txt3hs">Learners</p>
                 <p className="txtlearn-cour"> : </p>
                 <p className="solearn-cour">Free</p>

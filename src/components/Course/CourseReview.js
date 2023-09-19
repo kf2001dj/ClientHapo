@@ -14,29 +14,30 @@ export default function CourseReview() {
   };
   return (
     <div className="backcolo-dev">
-      {/* <Navbar></Navbar> */}
       <div className="body-course">
         <div className="head-page-course">
-          <a href="/" className="head-page-home">
-            <p>Home</p>
-            <p className="btn-head-page"> &gt; </p>
-          </a>
-          <a href="/allcourses" className="head-page-allcour">
-            <p>All courses</p>
-            <p className="btn-head-page-all"> &gt; </p>
-          </a>
-          <a href="/course" className="head-page-cour">
-            <p>Course detail</p>
-            <p className="btn-head-page-all"> &gt; </p>
+          <a href="/">
+            Home
+            <div className="btn-nexthome"> &gt; </div>
           </a>
 
-          <a href="/lesson" className="head-page-cour next-lesson">
-            <p>Lesson detail</p>
+          <a href="/allcourses" className="next-allcourse">
+            All courses
+            <div className="btn-nextall"> &gt; </div>
+          </a>
+
+          <a href="/course" className="next-course">
+            Course detail
+            <div className="btn-nextcourse"> &gt; </div>
+          </a>
+
+          <a href="/lesson" className="next-detail">
+            Lesson detail
           </a>
         </div>
         <div className="body-page-course">
           <div className="row body-page-head">
-            <div className="col">
+            <div className="col-8">
               <div className="imgpage-html">
                 <img
                   src="./image/Rectangle 7.png"
@@ -66,7 +67,7 @@ export default function CourseReview() {
           </div>
 
           <div className="row body-page-head">
-            <div className="col">
+            <div className="col-8">
               <div className="coures-learn-devlist">
                 <a
                   href="##"
@@ -78,8 +79,7 @@ export default function CourseReview() {
                 >
                   <p className="txtlesson-cour">Lessons</p>
                 </a>
-                <a
-                  href="##"
+                <span
                   type="button"
                   onClick={() => handleOptionClick("teacher")}
                   className={
@@ -87,9 +87,8 @@ export default function CourseReview() {
                   }
                 >
                   <p className="txtlesson-cour-tea">Teacher</p>
-                </a>
-                <a
-                  href="##"
+                </span>
+                <span
                   type="button"
                   onClick={() => handleOptionClick("reviews")}
                   className={
@@ -97,7 +96,7 @@ export default function CourseReview() {
                   }
                 >
                   <p className="txtlesson-cour-rev">Reviews</p>
-                </a>
+                </span>
 
                 {selectedOption === "lessons" && (
                   <>
@@ -520,13 +519,13 @@ export default function CourseReview() {
                       </div>
                     </div>
 
-                    <a type="text" href="###" onClick={toggleshowVisibility}>
+                    <span type="button" onClick={toggleshowVisibility}>
                       {isVisibleShow ? "" : ""}
                       <p className="txtallshowrv">
                         Show all reviews
                         <img src="./image/showall.png"></img>
                       </p>
-                    </a>
+                    </span>
                     {isVisibleShow && (
                       <div>
                         <img
@@ -611,7 +610,7 @@ export default function CourseReview() {
                 )}
               </div>
             </div>
-            <div className="col">
+            <div className="col-4">
               <div className="des-cours-gr-rv">
                 <img src="./image/3hs.png"></img>
                 <p className="txt3hs">Learners</p>

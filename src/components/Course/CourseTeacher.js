@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../Course/Course.scss";
-// import Navbar from "../../Navbar/Navbar";
-// import Footer from "../../Footer/Footer";
 export default function CourseTeacher() {
   const [selectedOption, setSelectedOption] = useState("teacher");
 
@@ -11,36 +9,35 @@ export default function CourseTeacher() {
 
   return (
     <div className="backcolo-dev">
-      {/* <Navbar></Navbar> */}
-
       <div className="body-course">
         <div className="head-page-course">
-          <a href="/" className="head-page-home">
-            <p>Home</p>
-            <p className="btn-head-page"> &gt; </p>
+          <a href="/">
+            Home
+            <div className="btn-nexthome"> &gt; </div>
           </a>
 
-          <a href="/allcourses" className="head-page-allcour">
-            <p>All courses</p>
-            <p className="btn-head-page-all"> &gt; </p>
-          </a>
-          <a href="/course_detail" className="head-page-cour">
-            <p>Course detail</p>
-            <p className="btn-head-page-all"> &gt; </p>
+          <a href="/allcourses" className="next-allcourse">
+            All courses
+            <div className="btn-nextall"> &gt; </div>
           </a>
 
-          <a href="/lesson" className="head-page-cour next-lesson">
-            <p>Lesson detail</p>
+          <a href="/course" className="next-course">
+            Course detail
+            <div className="btn-nextcourse"> &gt; </div>
+          </a>
+
+          <a href="/lesson" className="next-detail">
+            Lesson detail
           </a>
         </div>
         <div className="body-page-course">
           <div className="row body-page-head">
-            <div className="col">
+            <div className="col-8">
               <div className="imgpage-html">
                 <img src="./image/Rectangle 7.png" className="img-html-body" />
               </div>
             </div>
-            <div className="col">
+            <div className="col-4">
               <div className="des-cours">
                 <p className="txtdes-cours">Descriptions course</p>
                 <div className="btndes-cours"></div>
@@ -60,10 +57,9 @@ export default function CourseTeacher() {
           </div>
 
           <div className="row body-page-head">
-            <div className="col">
+            <div className="col-8">
               <div className="coures-learn-devlist">
-                <a
-                  href="##"
+                <span
                   type="button"
                   onClick={() => handleOptionClick("lessons")}
                   className={
@@ -71,9 +67,8 @@ export default function CourseTeacher() {
                   }
                 >
                   <p className="txtlesson-cour">Lessons</p>
-                </a>
-                <a
-                  href="##"
+                </span>
+                <span
                   type="button"
                   onClick={() => handleOptionClick("teacher")}
                   className={
@@ -81,7 +76,7 @@ export default function CourseTeacher() {
                   }
                 >
                   <p className="txtlesson-cour-tea">Teacher</p>
-                </a>
+                </span>
                 <a
                   href="/review"
                   type="button"
@@ -336,7 +331,7 @@ export default function CourseTeacher() {
                                 href=""
                                 aria-label="Previous"
                               >
-                                <img src="./image/right-mt.png"></img>
+                                <img src="./image/left-mt.png"></img>
                               </a>
                             </li>
                             <li class="page-item">
@@ -360,7 +355,7 @@ export default function CourseTeacher() {
                                 href="#"
                                 aria-label="Next"
                               >
-                                <img src="./image/left-mt.png"></img>
+                                <img src="./image/right-mtall.png"></img>
                               </a>
                             </li>
                           </ul>
@@ -463,7 +458,7 @@ export default function CourseTeacher() {
                 )}
               </div>
             </div>
-            <div className="col">
+            <div className="col-4">
               <div className="des-cours-gr">
                 <img src="./image/3hs.png"></img>
                 <p className="txt3hs">Learners</p>
@@ -549,7 +544,6 @@ export default function CourseTeacher() {
           </div>
         </div>
       </div>
-      {/* <Footer></Footer> */}
     </div>
   );
 }
