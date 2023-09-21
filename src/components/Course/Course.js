@@ -171,14 +171,14 @@ export default function Course({ courses }) {
                       <p className="txt-search-dev">Tìm kiếm</p>
                     </button>
 
-                    <button
+                    <span
                       type="button"
                       className="btn-slot-dev"
                       // onClick={handleJoinCourse}
                     >
                       <p className="txt-slot-dev">Tham gia khoá học</p>
                       {/* <p>{message}</p> */}
-                    </button>
+                    </span>
                   </div>
 
                   <div>

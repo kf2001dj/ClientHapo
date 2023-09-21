@@ -12,15 +12,10 @@ import CourseReview from "./components/Course/CourseReview";
 import Lesson from "./components/Course/Lesson";
 import Resetpass from "./components/Password/Resetpass";
 
-import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer/Footer";
-
 import Course from "./components/Course/Course";
 
 function App() {
   return (
-    <div>
-      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
@@ -46,9 +41,6 @@ function App() {
 
         <Route path="/course/:id" element={<Course></Course>}></Route>
       </Routes>
-
-      <Footer></Footer>
-    </div>
   );
 }
 
