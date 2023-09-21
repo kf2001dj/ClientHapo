@@ -1,6 +1,6 @@
 /* Body */
 .body {
-  width: 1520px;
+  width: 100%;
   height: 4000px;
 }
 
@@ -27,7 +27,7 @@
 /* bên dưới cần scss cho nhanh hơn */
 .txtLearn {
   margin-top: -480px;
-  margin-left: 120px;
+  margin-left: 85px;
   color: #11114e;
   font-size: 50px;
   font-family: UTM BryantLG;
@@ -36,7 +36,7 @@
 
 .imgAthapo {
   margin-top: -30px;
-  margin-left: 120px;
+  margin-left: 85px;
   font-family: UTM BryantLG;
   font-weight: 700;
   color: #11114e;
@@ -46,7 +46,7 @@
 
 .txtInter {
   margin-top: -20px;
-  margin-left: 120px;
+  margin-left: 85px;
   width: 249px;
   color: #505353;
   font-size: 20px;
@@ -402,7 +402,7 @@
 
 .fontLap {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: auto;
   z-index: 1;
 }
@@ -536,7 +536,6 @@
 
 .txtFee {
   margin-top: 120px;
-  text-align: center;
   color: #11114e;
   font-size: 80px;
   font-family: UTM BryantLG;
@@ -555,15 +554,14 @@
 }
 
 .txtFeed {
-  padding-top: 20px;
-  padding-right: 40px;
+  padding-top: 30px;
   margin: auto;
   width: 705px;
   height: 71px;
   text-align: center;
   color: #505353;
   text-align: center;
-  font-size: 29px;
+  font-size: 25px;
   font-family: UTM BryantLG;
   font-style: normal;
   font-weight: 400;
@@ -574,16 +572,11 @@
 .cmtList-home {
   width: 100%;
   height: auto;
-  margin-top: 50px;
-}
-
-.col {
-  width: 100%;
-  margin-left: -40px;
+  margin-top: 40px;
 }
 
 .imgComOne {
-  margin-left: 150px;
+  margin-left: 80px;
   position: relative;
   z-index: 1;
   width: 570px;
@@ -591,7 +584,7 @@
 }
 
 .imgComTwo {
-  margin-right: 100px;
+  margin-right: 80px;
   position: relative;
   z-index: 1;
   width: 570px;
@@ -602,7 +595,7 @@
   z-index: 2;
   position: absolute;
   text-align: left;
-  margin-left: 200px;
+  margin-left: 140px;
   margin-top: -125px;
   width: 450px;
   height: 89px;
@@ -635,7 +628,7 @@
 .cmtBtOne {
   position: absolute;
   margin-top: -140px;
-  margin-left: 175px;
+  margin-left: 106px;
   z-index: 3;
   width: 5px;
   height: 108px;
@@ -646,7 +639,7 @@
   z-index: 3;
   position: absolute;
   margin-top: -140px;
-  margin-left: 25px;
+  margin-left: 30px;
   width: 5px;
   height: 108px;
   background: #d9dadc;
@@ -664,7 +657,7 @@
 .btvTwo {
   z-index: 4;
   position: absolute;
-  margin-left: -120px;
+  margin-left: -100px;
   margin-top: 50px;
   width: 30px;
   height: 30px;
@@ -672,14 +665,14 @@
 
 .imgAdOne {
   z-index: 5;
-  margin-left: 190px;
+  margin-left: 120px;
   width: 60px;
   height: 60px;
 }
 
 .txtadmOne {
   margin-top: -60px;
-  margin-left: 260px;
+  margin-left: 195px;
   width: 177px;
   height: 23px;
   color: #11114e;
@@ -701,7 +694,7 @@
   width: 59px;
   height: 19px;
   margin-top: -15px;
-  margin-left: 260px;
+  margin-left: 195px;
   color: #505353;
   font-size: 16px;
   font-family: UTM BryantLG;
@@ -712,26 +705,26 @@
 
 .imgOneStartone {
   margin-top: -20px;
-  margin-left: 260px;
+  margin-left: 195px;
 }
 
 .imgOneStartwo {
   margin-top: -24px;
-  margin-left: 280px;
+  margin-left: 215px;
 }
 
 .imgOneStarthree {
   margin-top: -24px;
-  margin-left: 300px;
+  margin-left: 235px;
 }
 .imgOneStartfour {
   margin-top: -24px;
-  margin-left: 320px;
+  margin-left: 255px;
 }
 
 .imgOneStartfive {
   margin-top: -24px;
-  margin-left: 340px;
+  margin-left: 275px;
 }
 
 .txtTwodev {

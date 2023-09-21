@@ -10,6 +10,7 @@
   .btnMeschat2 {
     display: none;
   }
+
   .ListOther2 .txtOther2 {
     display: none;
   }
@@ -128,7 +129,7 @@
   .body {
     z-index: 1;
     width: 768px;
-    height: 3000px;
+    height: auto;
   }
 
   .fontheadHapo {
@@ -499,11 +500,12 @@
   }
 
   .FontFeed1 {
-    margin-left: 295px;
+    margin-left: 299px;
     width: 208px;
     height: 3px;
     border-radius: 3px;
     background: #b2d235;
+    margin-top: 5px;
   }
 
   .txtFeed {
@@ -523,6 +525,75 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.36px;
+  }
+
+  .txtFeed {
+    display: none !important;
+  }
+
+  .imgComTwo,
+  .txtPtwo,
+  .cmtBtTwo,
+  .imgAdTwo,
+  .txtTwodev,
+  .txtTwopython,
+  .imgTwoStartone,
+  .imgTwoStarttwo,
+  .imgTwoStartthree,
+  .imgTwoStartfour,
+  .imgTwoStartfive,
+  .imgTwoStartsix {
+    display: none;
+  }
+
+  .btvTwo {
+    margin-left: -820px !important;
+    margin-top: -65px !important;
+  }
+
+  .imgComOne {
+    margin-right: 800px;
+  }
+
+  .btvOne {
+    margin-left: -1380px !important;
+  }
+
+  .btvTwo {
+    margin-left: 50px;
+  }
+
+  .Become {
+    margin-top: -30px !important;
+  }
+
+  .txtBecome {
+    margin-top: -60px !important;
+    width: 402px !important;
+    height: 90px !important;
+    font-size: 35px !important;
+  }
+
+  .btnNow {
+    margin-top: 150px !important;
+    width: 250px !important;
+    height: 48px !important;
+  }
+
+  .txtNow {
+    font-size: 20px !important;
+  }
+
+  .txtStat {
+    font-size: 50px;
+    width: 175px !important;
+    height: 66.312px !important;
+  }
+
+  .btnStat {
+    width: 260px;
+    height: 6px;
+    border-radius: 3px;
   }
 }
 
@@ -586,8 +657,12 @@
   }
 }
 
-/* .backcolo-all {
+.backcolo-all {
   background-color: #f2f2f2;
-  height: 3100px;
-  width: 100%;
-} */
+}
+
+@media screen and (min-width: 990px) and (max-width: 1024px) {
+  .bg-light {
+    display: none !important;
+  }
+}

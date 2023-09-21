@@ -4,9 +4,6 @@
   background: #e9e7e7;
   padding-top: 16px;
   padding-left: 100px;
-}
-
-.head-page-course p {
   color: #505353;
   font-family: UTM BryantLG;
   font-size: 16px;
@@ -16,26 +13,37 @@
   letter-spacing: -0.32px;
 }
 
-.btn-head-page {
-  margin-top: -33px;
-  margin-left: 45px;
+.btn-nexthome {
+  margin-left: 50px;
+  margin-top: -18px;
 }
 
-.head-page-allcour {
+.next-allcourse {
   display: flex;
-  margin-top: -35px;
-  margin-left: 60px;
+  margin-left: 65px;
+  margin-top: -22px;
 }
 
-.btn-head-page-all {
+.btn-nextall {
+  margin-left: 8px;
+  margin-top: 2px;
+}
+
+.next-course {
+  display: flex;
+  margin-left: 165px;
+  margin-top: -22px;
+}
+
+.btn-nextcourse {
+  margin-left: 8px;
   margin-top: 1px;
-  margin-left: 5px;
 }
 
-.head-page-cour {
+.next-detail {
   display: flex;
-  margin-top: -35px;
-  margin-left: 150px;
+  margin-left: 280px;
+  margin-top: -21px;
 }
 
 .body-page-course {
@@ -47,7 +55,7 @@
 
 .body-page-head {
   margin-top: 30px;
-  margin-left: -11px;
+  // margin-left: -11px;
 }
 
 .imgpage-html {
