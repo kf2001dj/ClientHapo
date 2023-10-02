@@ -16,31 +16,28 @@ import Course from "./components/Course/Course";
 
 function App() {
   return (
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/profile" element={<Profile></Profile>}></Route>
-        <Route path="/allcourses" element={<Allcourses></Allcourses>}></Route>
-        <Route
-          path="/loginregister"
-          element={<Login_Register></Login_Register>}
-        ></Route>
-        <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/resetpassword" element={<Password></Password>}></Route>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/profile" element={<Profile></Profile>}></Route>
+      <Route path="/allcourses" element={<Allcourses></Allcourses>}></Route>
+      <Route
+        path="/loginregister"
+        element={<Login_Register></Login_Register>}
+      ></Route>
+      <Route path="/signup" element={<SignUp></SignUp>}></Route>
+      <Route path="/resetpassword" element={<Password></Password>}></Route>
 
-        <Route
-          path="/teacher"
-          element={<CourseTeacher></CourseTeacher>}
-        ></Route>
-        <Route path="/review" element={<CourseReview></CourseReview>}></Route>
-        <Route path="/lesson" element={<Lesson></Lesson>}></Route>
+      <Route path="/teacher" element={<CourseTeacher></CourseTeacher>}></Route>
+      <Route path="/review" element={<CourseReview></CourseReview>}></Route>
+      <Route path="/lesson" element={<Lesson></Lesson>}></Route>
 
-        <Route
-          path="/reset-password/:token"
-          element={<Resetpass></Resetpass>}
-        ></Route>
+      <Route
+        path="/reset-password/:token"
+        element={<Resetpass></Resetpass>}
+      ></Route>
 
-        <Route path="/course/:id" element={<Course></Course>}></Route>
-      </Routes>
+      <Route path="/course/:id" element={<Course></Course>}></Route>
+    </Routes>
   );
 }
 
