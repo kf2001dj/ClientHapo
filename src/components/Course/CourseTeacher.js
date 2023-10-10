@@ -1,14 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Course/Course.scss";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { useParams } from "react-router-dom";
 export default function CourseTeacher() {
   const [selectedOption, setSelectedOption] = useState("teacher");
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
+  const { id } = useParams();
+  const courseId = parseInt(id);
+  const [course, setCourseData] = useState(null);
 
+  useEffect(() => {
+    const fetchCourseData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/all/courses/${courseId}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data from the API");
+        }
+        const data = await response.json();
+        setCourseData(data);
+        console.log("Course Id :" + courseId);
+      } catch (error) {
+        console.error(error);
+        setCourseData(null);
+      }
+    };
+    fetchCourseData();
+  }, [courseId]);
+
+  if (!course) {
+    return null;
+  }
   return (
     <div className="backcolo-all">
       <Navbar></Navbar>
@@ -34,14 +61,11 @@ export default function CourseTeacher() {
               Lesson detail
             </a>
           </div>
-          <div className="body-page-course">
+          <div className="body-page-course" key={course.id}>
             <div className="row body-page-head">
               <div className="col-8">
                 <div className="imgpage-html">
-                  <img
-                    src="./image/Rectangle 7.png"
-                    className="img-html-body"
-                  />
+                  <img src={course.logo} alt="logo" className="img-html-body" />
                 </div>
               </div>
               <div className="col-4">

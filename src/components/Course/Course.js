@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Course/Course.scss";
-
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { useParams } from "react-router-dom";
@@ -18,7 +18,10 @@ export default function Course({ courses }) {
   const courseId = parseInt(id);
   const [course, setCourseData] = useState(null);
   const [, setUserId] = useState("");
+  const [userIdExists, setUserIdExists] = useState(false); // Ban đầu cho rằng userId tồn tại
+
   // const [message, setMessage] = useState("");
+
   //handle course
   useEffect(() => {
     const fetchCourseData = async () => {
@@ -43,12 +46,13 @@ export default function Course({ courses }) {
   // Kiểm tra xem người dùng đã đăng nhập hay chưa
   useEffect(() => {
     const token = localStorage.getItem("token");
+    // console.log("token : " + token);
     if (token) {
       const userId = localStorage.getItem("userId");
+      // console.log("User ID từ localStorage:", userId);
       // Kiểm tra xem userId có tồn tại hay không
       if (userId) {
         setUserId(userId);
-        // In giá trị userId từ localStorage
       } else {
         // Nếu userId không tồn tại, bạn có thể gửi yêu cầu đến máy chủ để lấy userId
         const getUserId = async () => {
@@ -67,16 +71,12 @@ export default function Course({ courses }) {
             }
             const userData = await response.json();
             setUserId(userData.userId);
-            // Sau khi lấy được userId từ máy chủ, lưu vào localStorage để sử dụng lần sau
-            localStorage.setItem("userId", userData.userId);
-            console.log("User ID từ server:", userData.userId); // In giá trị userId từ máy chủ
           } catch (error) {
             console.error(error);
           }
         };
         getUserId();
       }
-      console.log("User ID từ localStorage:", userId);
     } else {
       // Nếu không có token trong localStorage, userId sẽ được đặt là null
       setUserId(null);
@@ -87,16 +87,23 @@ export default function Course({ courses }) {
     const userId = localStorage.getItem("userId");
     if (!userId) {
       console.error("Vui lòng đăng nhập để tham gia khóa học :)) ");
+      setUserIdExists(true);
+
+      // Đặt hẹn giờ để ẩn thông báo sau 1,5s giây
+      setTimeout(() => {
+        setUserIdExists(false);
+        window.location.href = "/loginregister";
+      }, 1500);
       return;
     }
 
     const requestBody = {
-      userid: parseInt(userId),
-      courseid: courseId,
+      userId: parseInt(userId),
+      courseId: courseId,
     };
 
     try {
-      const response = await fetch("http://localhost:5000/all/hapo", {
+      const response = await fetch("http://localhost:5000/all/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,24 +111,26 @@ export default function Course({ courses }) {
         },
         body: JSON.stringify(requestBody),
       });
+      if (response.ok) {
+        // Thêm khóa học thành công
+        console.log("Khóa học đã được thêm thành công!");
 
-      console.log("Request Body xuất:", requestBody);
+        // Hiển thị thông báo cho người dùng
+        alert("Khóa học đã được thêm thành công!");
 
-      if (!response.ok) {
-        console.error("Không thể thêm khóa học.");
-        console.log("Response: Lỗi ", response);
-        return;
+        setUserId(userId);
+      } else if (response.status === 400) {
+        // Khóa học đã tồn tại cho người dùng
+        console.log("Khóa học đã tồn tại !!! ");
+
+        // Hiển thị thông báo lỗi cho người dùng
+        alert("Khóa học đã tồn tại !!!");
+      } else {
+        console.log(
+          "Thêm khóa học không thành công. Response status: " + response.status
+        );
       }
-
-      console.log("Course added successfully");
-
-      // Thêm user id vào danh sách đã đăng ký (nếu có)
-      if (course) {
-        setCourseData((prevCourse) => ({
-          ...prevCourse,
-          enrolledUsers: [...prevCourse.enrolledUsers, { id: userId }],
-        }));
-      }
+      console.log("Request Body ", requestBody);
     } catch (error) {
       console.error(error);
     }
@@ -194,8 +203,8 @@ export default function Course({ courses }) {
                 >
                   <p className="txtlesson-cour">Lessons</p>
                 </span>
-                <a
-                  href="/teacher"
+                <Link
+                  to={`/teacher/${courseId}`}
                   type="button"
                   onClick={() => handleOptionClick("teacher")}
                   className={
@@ -203,9 +212,9 @@ export default function Course({ courses }) {
                   }
                 >
                   <p className="txtlesson-cour-tea">Teacher</p>
-                </a>
-                <a
-                  href="/review"
+                </Link>
+                <Link
+                  to={`/review/${courseId}`}
                   type="button"
                   onClick={() => handleOptionClick("reviews")}
                   className={
@@ -213,7 +222,7 @@ export default function Course({ courses }) {
                   }
                 >
                   <p className="txtlesson-cour-rev">Reviews</p>
-                </a>
+                </Link>
 
                 {selectedOption === "lessons" && (
                   <>
@@ -233,7 +242,11 @@ export default function Course({ courses }) {
                       <button className="btn-search-dev">
                         <p className="txt-search-dev">Tìm kiếm</p>
                       </button>
-
+                      {userIdExists && !localStorage.getItem("userId") && (
+                        <p className="codeErro">
+                          Vui lòng đăng nhập để thêm khoá học vào tài khoản :))
+                        </p>
+                      )}
                       <span
                         type="button"
                         className="btn-slot-dev"

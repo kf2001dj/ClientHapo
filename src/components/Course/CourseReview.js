@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Course/CourseReview.scss";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+
+import { useParams } from "react-router-dom";
 export default function CourseReview() {
   const [selectedOption, setSelectedOption] = useState("reviews");
   const handleOptionClick = (option) => {
@@ -12,6 +14,124 @@ export default function CourseReview() {
   const toggleshowVisibility = () => {
     setIsVisibleShow(!isVisibleShow);
   };
+
+  const { id } = useParams();
+  const courseId = parseInt(id);
+  const [course, setCourseData] = useState(null);
+  const [, setUserId] = useState("");
+  // const [userIdExists, setUserIdExists] = useState(false);
+  useEffect(() => {
+    const fetchCourseData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/all/courses/${courseId}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data from the API");
+        }
+        const data = await response.json();
+        setCourseData(data);
+        console.log("Course Id :" + courseId);
+      } catch (error) {
+        console.error(error);
+        setCourseData(null);
+      }
+    };
+    fetchCourseData();
+  }, [courseId]);
+  // Kiểm tra xem người dùng đã đăng nhập hay chưa
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    // console.log("token : " + token);
+    if (token) {
+      const userId = localStorage.getItem("userId");
+      // console.log("User ID từ localStorage:", userId);
+      // Kiểm tra xem userId có tồn tại hay không
+      if (userId) {
+        setUserId(userId);
+      } else {
+        // Nếu userId không tồn tại, bạn có thể gửi yêu cầu đến máy chủ để lấy userId
+        const getUserId = async () => {
+          try {
+            const response = await fetch(
+              "http://localhost:5000/signin/status",
+              {
+                method: "GET",
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            if (!response.ok) {
+              throw new Error("Failed to get user ID");
+            }
+            const userData = await response.json();
+            setUserId(userData.userId);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        getUserId();
+      }
+    } else {
+      // Nếu không có token trong localStorage, userId sẽ được đặt là null
+      setUserId(null);
+    }
+  }, []);
+
+  const handleRemoveLeaveCourse = async (courseId) => {
+    const userId = localStorage.getItem("userId");
+    const courseIdNumber = parseInt(courseId); // Đảm bảo courseId là số nguyên
+    const userIdNumber = parseInt(userId); // Đảm bảo userId là số nguyên
+    console.log(userId);
+    if (!userId) {
+      // Xử lý logic khi userId không khả dụng (ví dụ: chuyển hướng đến trang đăng nhập)
+      return;
+    }
+
+    const cleanRequestBody = {
+      userId: userIdNumber,
+      courseId: courseIdNumber,
+    };
+    try {
+      // Loại bỏ các thuộc tính không cần thiết hoặc không thể chuyển đổi thành JSON
+
+      const response = await fetch("http://localhost:5000/all/delete", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(cleanRequestBody), // Sử dụng dữ liệu đã được làm sạch
+      });
+
+      if (response.ok) {
+        // Xoá khóa học thành công
+        console.log("Khóa học đã được xoá thành công!");
+
+        // Hiển thị thông báo cho người dùng
+        alert("Khóa học đã được xoá thành công!");
+
+        // Gọi một hàm hoặc thực hiện bất kỳ cập nhật nào khác cần thiết trên giao diện của bạn
+      } else if (response.status === 400) {
+        // Khóa học không tồn tại cho người dùng
+        console.log("Khóa học không tồn tại !!! ");
+
+        // Hiển thị thông báo lỗi cho người dùng
+        alert("Khóa học không tồn tại !!!");
+      } else {
+        console.log(
+          "Xoá khóa học không thành công. Response status: " + response.status
+        );
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  if (!course) {
+    return null;
+  }
   return (
     <div className="backcolo-all">
       <Navbar />
@@ -37,42 +157,20 @@ export default function CourseReview() {
               Lesson detail
             </a>
           </div>
-          <div className="body-page-course">
+          <div className="body-page-course" key={course.id}>
             <div className="row body-page-head">
               <div className="col-8">
                 <div className="imgpage-html">
-                  <img
-                    src="./image/Rectangle 7.png"
-                    className="img-html-body"
-                  ></img>
+                  <img src={course.logo} alt="logo" className="img-html-body" />
                 </div>
               </div>
-              {/* <div className="col">
-                        <div className="des-cours">
-                            <p className="txtdes-cours">Descriptions course</p>
-                            <div className="btndes-cours"></div>
-                            <p className="txtlearn-des">
-                            Vivamus volutpat eros pulvinar velit
-                             laoreet, sit amet egestas erat dignissim.
-                              Sed quis rutrum tellus, sit amet viverra
-                               felis. Cras sagittis sem sit amet urna 
-                               feugiat rutrum. Nam nulla ipsum, venenatis 
-                               malesuada felis quis, ultricies convallis neque.
-                                Pellentesque tristique fringilla tempus. Vivamus bibendum 
-                                nibh in dolor pharetra, a euismod nulla dignissim. Aenean 
-                                viverra tincidunt nibh, in imperdiet nunc. Suspendisse eu
-                                 ante pretium, consectetur leo at, congue quam. Nullam 
-                                 hendrerit porta ante vitae tristique.
-                            </p>
-                        </div>
-                    </div> */}
             </div>
 
             <div className="row body-page-head">
               <div className="col-8">
                 <div className="coures-learn-devlist">
-                  <a
-                    href="##"
+                  <span
+                    // href="##"
                     type="button"
                     onClick={() => handleOptionClick("lessons")}
                     className={
@@ -80,7 +178,7 @@ export default function CourseReview() {
                     }
                   >
                     <p className="txtlesson-cour">Lessons</p>
-                  </a>
+                  </span>
                   <span
                     type="button"
                     onClick={() => handleOptionClick("teacher")}
@@ -355,40 +453,46 @@ export default function CourseReview() {
                       </div>
                       {/* so trang */}
                       <div className="list-dev-page">
-                        <div class="row">
-                          <div class="col-md-12 cour-list-page">
-                            <ul class="pagination">
-                              <li class="page-item previous">
+                        <div className="row">
+                          <div className="col-md-12 cour-list-page">
+                            <ul className="pagination">
+                              <li className="page-item previous">
                                 <a
-                                  class="page-link  right-courlearn"
-                                  href=""
+                                  className="page-link  right-courlearn"
+                                  href="##"
                                   aria-label="Previous"
                                 >
-                                  <img src="./image/right-mt.png"></img>
+                                  <img
+                                    src="./image/left-mt.png"
+                                    alt="anhloi"
+                                  ></img>
                                 </a>
                               </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">
+                              <li className="page-item">
+                                <a className="page-link" href="##">
                                   <p>1</p>
                                 </a>
                               </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#">
+                              <li className="page-item">
+                                <a className="page-link" href="##">
                                   <p>2</p>
                                 </a>
                               </li>
-                              <li class="page-item ">
-                                <a class="page-link" href="#">
+                              <li className="page-item ">
+                                <a className="page-link" href="##">
                                   <p>3</p>
                                 </a>
                               </li>
-                              <li class="page-item next">
+                              <li className="page-item next">
                                 <a
-                                  class="page-link right-courlearn"
-                                  href="#"
+                                  className="page-link right-courlearn"
+                                  href="##"
                                   aria-label="Next"
                                 >
-                                  <img src="./image/left-mt.png"></img>
+                                  <img
+                                    src="./image/right-mtall.png"
+                                    alt="anhloi"
+                                  ></img>
                                 </a>
                               </li>
                             </ul>
@@ -410,27 +514,33 @@ export default function CourseReview() {
                         <img
                           src="./image/Ellipse 33.png"
                           className="img-maindev-gg"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Ellipse 34.png"
                           className="img-maindev-face"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Ellipse 35.png"
                           className="img-maindev-slack"
+                          alt="anhloi"
                         ></img>
 
                         <img
                           src="./image/Groupdev.png"
                           className="img-maindev-g"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Vectorfacedev.png"
                           className="img-maindev-fa"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Group 84.png"
                           className="img-maindev-sl"
+                          alt="anhloi"
                         ></img>
 
                         <p className="txtdevmain-skill">
@@ -444,32 +554,38 @@ export default function CourseReview() {
                       </div>
 
                       <div className="maindev-list">
-                        <img src="./image/devmain.png"></img>
+                        <img src="./image/devmain.png" alt="anhloi"></img>
                         <p className="txtdev-id">Luu Trung Nghia </p>
                         <p className="txtdev-id2">Second Year Teacher</p>
                         <img
                           src="./image/Ellipse 33.png"
                           className="img-maindev-gg"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Ellipse 34.png"
                           className="img-maindev-face"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Ellipse 35.png"
                           className="img-maindev-slack"
+                          alt="anhloi"
                         ></img>
 
                         <img
                           src="./image/Groupdev.png"
                           className="img-maindev-g"
+                          alt="anhloi"
                         ></img>
                         <img
                           src="./image/Vectorfacedev.png"
+                          alt="anhloi"
                           className="img-maindev-fa"
                         ></img>
                         <img
                           src="./image/Group 84.png"
+                          alt="anhloi"
                           className="img-maindev-sl"
                         ></img>
 
@@ -493,27 +609,33 @@ export default function CourseReview() {
                       <div className="review-btn"></div>
                       <img
                         src="./image/Rectangle 174.png"
+                        alt="anhloi"
                         className="rv-blog"
                       ></img>
                       <p className="txtrv-blog">5</p>
                       <img
                         src="./image/start-rv.png"
+                        alt="anhloi"
                         className="rv-start-dev"
                       ></img>
                       <img
                         src="./image/start-rv.png"
+                        alt="anhloi"
                         className="rv-start-dev2"
                       ></img>
                       <img
                         src="./image/start-rv.png"
+                        alt="anhloi"
                         className="rv-start-dev3"
                       ></img>
                       <img
                         src="./image/start-rv.png"
+                        alt="anhloi"
                         className="rv-start-dev4"
                       ></img>
                       <img
                         src="./image/start-rv.png"
+                        alt="anhloi"
                         className="rv-start-dev5"
                       ></img>
                       <p className="txtrating-rv">2 Ratings</p>
@@ -548,7 +670,7 @@ export default function CourseReview() {
                         {isVisibleShow ? "" : ""}
                         <p className="txtallshowrv">
                           Show all reviews
-                          <img src="./image/showall.png"></img>
+                          <img src="./image/showall.png" alt="anhloi"></img>
                         </p>
                       </span>
                       {isVisibleShow && (
@@ -556,10 +678,12 @@ export default function CourseReview() {
                           <img
                             src="./image/imgrv.png"
                             className="imgshow-rv"
+                            alt="anhloi"
                           ></img>
                           <p className="txtshow-rv">Nam Hoang</p>
                           <img
                             src="./image/Group 94.png"
+                            alt="anhloi"
                             className="imgrv-star"
                           ></img>
                           <p className="imgalldate-show">
@@ -576,11 +700,13 @@ export default function CourseReview() {
                           <div className="showcmt2">
                             <img
                               src="./image/imgrv.png"
+                              alt="anhloi"
                               className="imgshow-rv"
                             ></img>
                             <p className="txtshow-rv">Nam Hoang</p>
                             <img
                               src="./image/Group 94.png"
+                              alt="anhloi"
                               className="imgrv-star"
                             ></img>
                             <p className="imgalldate-show">
@@ -598,6 +724,7 @@ export default function CourseReview() {
                           <div className="showcmt3">
                             <img
                               src="./image/imgrv.png"
+                              alt="anhloi"
                               className="imgshow-rv2"
                             ></img>
                             <p className="txtshow-rv2">Nga Nguyen</p>
@@ -622,6 +749,7 @@ export default function CourseReview() {
                           <p className="txtvote">Vote</p>
                           <img
                             src="./image/Group 149.png"
+                            alt="anhloi"
                             className="imggr149"
                           ></img>
                           <p className="txtstartsfoot"> (stars) </p>
@@ -637,43 +765,50 @@ export default function CourseReview() {
               </div>
               <div className="col-4">
                 <div className="des-cours-gr-rv">
-                  <img src="./image/3hs.png"></img>
+                  <img src="./image/3hs.png" alt="anhloi"></img>
                   <p className="txt3hs">Learners</p>
                   <p className="txtlearn-cour"> : </p>
                   <p className="solearn-cour">500</p>
                   <div className="btn-courn-solearn"></div>
                   <div className="magin-cours-one">
-                    <img src="./image/bang.png"></img>
+                    <img src="./image/bang.png" alt="anhloi"></img>
                     <p className="txt3hs">Lessons</p>
                     <p className="txtlearn-cour"> : </p>
                     <p className="solearn-cour">100 lesson</p>
                     <div className="btn-courn-solearn"></div>
                   </div>
                   <div className="magin-cours-one">
-                    <img src="./image/dho.png"></img>
+                    <img src="./image/dho.png" alt="anhloi"></img>
                     <p className="txt3hs">Times</p>
                     <p className="txtlearn-cour"> : </p>
                     <p className="solearn-cour">80 hours</p>
                     <div className="btn-courn-solearn"></div>
                   </div>
                   <div className="magin-cours-one">
-                    <img src="./image/key.png"></img>
+                    <img src="./image/key.png" alt="anhloi"></img>
                     <p className="txt3hs">Learners</p>
                     <p className="txtlearn-cour"> : </p>
                     <p className="solearn-cour-code">#learn,#code</p>
                   </div>
                   <div className="btn-courn-solearn-end"></div>
                   <div className="magin-cours-one">
-                    <img src="./image/1do.png"></img>
+                    <img src="./image/1do.png" alt="anhloi"></img>
                     <p className="txt3hs">Learners</p>
                     <p className="txtlearn-cour"> : </p>
                     <p className="solearn-cour">Free</p>
                   </div>
                   <div className="btn-courn-solearn-end"></div>
                   <div>
-                    <a href="##" className="btn-end-learndev">
+                    {/* {userIdExists &&
+                      !localStorage.getItem("userId") &&
+                      alert("Hãy tham gia khoá học")} */}
+                    <span
+                      type="button"
+                      className="btn-end-learndev"
+                      onClick={handleRemoveLeaveCourse}
+                    >
                       <p>Kết thúc khoá học</p>
-                    </a>
+                    </span>
                   </div>
                 </div>
 

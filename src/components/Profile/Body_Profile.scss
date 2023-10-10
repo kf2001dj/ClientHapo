@@ -199,15 +199,16 @@
   width: 65px;
 }
 
-.pro-list-addcour {
-  margin-top: 25px;
-  margin-left: 500px;
-  z-index: 1;
-}
+// .pro-list-addcour {
+//   position: absolute;
+//   margin-top: 15px;
+//   margin-left: 590px;
+//   z-index: 1;
+// }
 
-.pro-plus {
-  margin-top: -45px;
-}
+// .pro-plus {
+//   z-index: 6;
+// }
 
 .pro-txthtml {
   margin-top: 10px;
@@ -221,7 +222,50 @@
 }
 
 .pro-txtaddcour {
-  margin-top: 29px;
+  margin-top: 10px;
+  color: #b2d235;
+  font-family: UTM BryantLG;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.7px;
+}
+.pro-list-addcour {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.pro-plus {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.add-course1 {
+  position: relative;
+  z-index: 1;
+}
+.pro-list-learn {
+  /* Cài đặt kiểu hiển thị flex để các phần tử con hiển thị theo hàng ngang */
+  display: flex;
+  flex-wrap: wrap; /* Để các phần tử chuyển hàng khi không đủ không gian */
+}
+
+.pro-list-html {
+  /* Cài đặt kiểu hiển thị inline-block để các phần tử hiển thị bên cạnh nhau */
+  display: inline-block;
+  margin: 10px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.pro-list-addcour {
+  /* Cài đặt kiểu hiển thị inline-block để phần phụ "Add course" hiển thị bên cạnh các phần tử khác */
+  display: inline-block;
+  margin: 10px; /* Thêm khoảng cách giữa nó và các phần tử khác */
   color: #b2d235;
   font-family: UTM BryantLG;
   font-size: 14px;

@@ -1,30 +1,32 @@
+/* eslint-disable no-template-curly-in-string */
 import React, { useState, useEffect } from "react";
 import "./Body_Profile.scss";
 
-// function CourseImage({ courseImageUrl }) {
-//   const [isLoading, setIsLoading] = useState(true);
+function CourseImage({ courseImageUrl }) {
+  const [isLoading, setIsLoading] = useState(true);
 
-//   useEffect(() => {
-//     const image = new Image();
-//     image.src = courseImageUrl;
-//     image.onload = () => setIsLoading(false);
-//     image.onerror = () => console.error("Lỗi tải hình ảnh.");
-//   }, [courseImageUrl]);
+  useEffect(() => {
+    const image = new Image();
+    image.src = courseImageUrl;
+    image.onload = () => setIsLoading(false);
+    image.onerror = () => console.error("Lỗi tải hình ảnh.");
+  }, [courseImageUrl]);
 
-//   if (isLoading) {
-//     return <p>Loading...</p>;
-//   }
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-//   return <img src={courseImageUrl} alt="Course" />;
-// }
+  return <img src={courseImageUrl} alt="Course" />;
+}
 
 export default function Body_Profile() {
   const [user, setUser] = useState({});
   const userId = localStorage.getItem("userId");
-  // const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     if (userId) {
+      // Fetch user data
       fetch(`http://localhost:5000/users/${userId}`)
         .then((response) => {
           if (!response.ok) {
@@ -32,33 +34,30 @@ export default function Body_Profile() {
           }
           return response.json();
         })
-        .then((data) => setUser(data))
+        .then((data) => {
+          setUser(data);
+
+          // Fetch user's course data (assuming there is an API endpoint for it)
+          fetch(`http://localhost:5000/all/userscourses/${userId}`)
+            .then((courseResponse) => {
+              if (!courseResponse.ok) {
+                throw new Error("Course response was not ok");
+              }
+              return courseResponse.json();
+            })
+            .then((courseData) => {
+              // Set the courses state with course data
+              setCourses(courseData);
+            })
+            .catch((courseError) => {
+              console.error("Error fetching user's courses: ", courseError);
+            });
+        })
         .catch((error) => {
           console.error("Error fetching user data: ", error);
         });
-
-      // fetch(`http://localhost:5000/profile/coursesuser/list/${userId}`)
-      //   .then((response) => {
-      //     if (!response.ok) {
-      //       throw new Error("Phản hồi thất bại");
-      //     }
-      //     return response.json();
-      //   })
-      //   .then((data) => {
-      //     if (Array.isArray(data)) {
-      //       setCourses(data);
-      //     } else {
-      //       console.error("Response data is not an array: ", data);
-      //       setCourses([]); // Set courses to an empty array to prevent the error
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     console.error("Lỗi tìm nạp dữ liệu khóa học cho người dùng: ", error);
-      //   });
     } else {
-      //bắt buộc phải đăng nhập thì ms edit được
       setUser({});
-      // setCourses([]);
     }
   }, [userId]);
 
@@ -164,16 +163,16 @@ export default function Body_Profile() {
         </div>
 
         <div className="pro-list-learn">
-          {/* {courses.map((courseUser) => (
+          {courses.map((courseUser) => (
             <div className="pro-list-html" key={courseUser.id}>
-              <CourseImage courseImageUrl={courseUser.imageUrl} />
+              <CourseImage courseImageUrl={courseUser.imageUrl}></CourseImage>
               <p className="pro-txthtml">{courseUser.txtname}</p>
             </div>
-          ))} */}
+          ))}
 
           <div className="pro-list-addcour">
             <a href="/allcourses" type="button">
-              <img src="./image/Ellipse 32.png" alt="elip"></img>
+              <img src="./image/Ellipse 32.png" alt="elip" className="add-course1"></img>
               <div className="pro-plus">
                 <img src="./image/Vectorpro.png" alt="vector"></img>
               </div>

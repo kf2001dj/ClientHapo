@@ -13,12 +13,16 @@ export default function Navbar() {
     // Determine the selected navigation option based on the path
     if (path === "/") {
       setSelectedNavOption("home");
-    } else if (path === "/allcourses") {
+    } else if (path === "/allcourses" || path.startsWith("/course/")) {
       setSelectedNavOption("all");
     } else if (path === "/loginregister") {
       setSelectedNavOption("login");
     } else if (path === "/profile") {
       setSelectedNavOption("pro");
+    } else if (path === "/signup") {
+      setSelectedNavOption("login");
+    } else if (path === "/resetpassword") {
+      setSelectedNavOption("login");
     }
   }, []);
 
