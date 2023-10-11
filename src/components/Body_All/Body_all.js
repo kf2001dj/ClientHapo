@@ -172,7 +172,7 @@ export default function Body_all() {
                 <div className="col-md-6 custom-margin-one">
                   <img src={user.imageUrl} alt="ảnh lỗi"></img>
                   <p className="cust-learn-html">{user.name}</p>
-                  <p className="txt-learn-html">{user.about}</p>
+                  <p className="txt-learn-html">{user.about}</p>  
                   <Link to={`/course/${user.id}`}>
                     <button className="bt-learn-more">
                       <p className="txtmore-dev">More</p>

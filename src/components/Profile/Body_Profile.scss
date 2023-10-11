@@ -62,7 +62,7 @@
 }
 
 .txt-daypro {
-  margin-left: -10px;
+  margin-left: 3px;
   margin-top: -17px;
   color: #505353;
   font-family: UTM BryantLG;
@@ -182,9 +182,9 @@
 }
 
 .pro-list-learn {
-  width: 641px;
+  width: 800px;
   height: 90px;
-  margin-left: 130px;
+  margin-left: 30px;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -197,16 +197,8 @@
 
 .pro-list-html img {
   width: 65px;
-}
-
-.pro-list-addcour {
-  margin-top: -120px;
-  margin-left: 500px;
-  z-index: 1;
-}
-
-.pro-plus {
-  margin-top: -45px;
+  height: 65px;
+  border-radius: 65px;
 }
 
 .pro-txthtml {
@@ -221,7 +213,50 @@
 }
 
 .pro-txtaddcour {
-  margin-top: 29px;
+  margin-top: 10px;
+  color: #b2d235;
+  font-family: UTM BryantLG;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.7px;
+}
+.pro-list-addcour {
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.pro-plus {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.add-course1 {
+  position: relative;
+  z-index: 1;
+}
+.pro-list-learn {
+  /* Cài đặt kiểu hiển thị flex để các phần tử con hiển thị theo hàng ngang */
+  display: flex;
+  flex-wrap: wrap; /* Để các phần tử chuyển hàng khi không đủ không gian */
+}
+
+.pro-list-html {
+  /* Cài đặt kiểu hiển thị inline-block để các phần tử hiển thị bên cạnh nhau */
+  display: inline-block;
+  margin: 10px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.pro-list-addcour {
+  /* Cài đặt kiểu hiển thị inline-block để phần phụ "Add course" hiển thị bên cạnh các phần tử khác */
+  display: inline-block;
+  margin: 10px; /* Thêm khoảng cách giữa nó và các phần tử khác */
   color: #b2d235;
   font-family: UTM BryantLG;
   font-size: 14px;
@@ -232,7 +267,7 @@
 }
 
 .pro-edit-file {
-  margin-top: 55px;
+  margin-top: 50px;
   margin-right: 710px;
 }
 
