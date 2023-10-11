@@ -182,9 +182,9 @@
 }
 
 .pro-list-learn {
-  width: 641px;
+  width: 800px;
   height: 90px;
-  margin-left: 130px;
+  margin-left: 30px;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -197,18 +197,9 @@
 
 .pro-list-html img {
   width: 65px;
+  height: 65px;
+  border-radius: 65px;
 }
-
-// .pro-list-addcour {
-//   position: absolute;
-//   margin-top: 15px;
-//   margin-left: 590px;
-//   z-index: 1;
-// }
-
-// .pro-plus {
-//   z-index: 6;
-// }
 
 .pro-txthtml {
   margin-top: 10px;
@@ -233,7 +224,7 @@
 }
 .pro-list-addcour {
   display: inline-block;
-  margin: 10px;
+  margin: 20px;
   position: relative;
   text-align: center;
 }

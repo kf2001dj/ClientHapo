@@ -85,7 +85,6 @@ export default function CourseReview() {
     const userIdNumber = parseInt(userId); // Đảm bảo userId là số nguyên
     console.log(userId);
     if (!userId) {
-      // Xử lý logic khi userId không khả dụng (ví dụ: chuyển hướng đến trang đăng nhập)
       return;
     }
 
@@ -93,9 +92,8 @@ export default function CourseReview() {
       userId: userIdNumber,
       courseId: courseIdNumber,
     };
+    console.log(cleanRequestBody);
     try {
-      // Loại bỏ các thuộc tính không cần thiết hoặc không thể chuyển đổi thành JSON
-
       const response = await fetch("http://localhost:5000/all/delete", {
         method: "POST",
         headers: {
@@ -104,15 +102,13 @@ export default function CourseReview() {
         },
         body: JSON.stringify(cleanRequestBody), // Sử dụng dữ liệu đã được làm sạch
       });
-
+      
       if (response.ok) {
         // Xoá khóa học thành công
         console.log("Khóa học đã được xoá thành công!");
 
         // Hiển thị thông báo cho người dùng
         alert("Khóa học đã được xoá thành công!");
-
-        // Gọi một hàm hoặc thực hiện bất kỳ cập nhật nào khác cần thiết trên giao diện của bạn
       } else if (response.status === 400) {
         // Khóa học không tồn tại cho người dùng
         console.log("Khóa học không tồn tại !!! ");
@@ -210,6 +206,7 @@ export default function CourseReview() {
                         <img
                           src="./image/klup.png"
                           className="ip-note-lup-dev"
+                          alt="kluploi"
                         ></img>
                         <button className="btn-search-dev">
                           <p className="txt-search-dev">Tìm kiếm</p>
@@ -508,7 +505,7 @@ export default function CourseReview() {
                       <div className="but-teach-blu"></div>
                       <p className="txtmaindev">Main Teachers</p>
                       <div className="maindev-list">
-                        <img src="./image/devmain.png"></img>
+                        <img src="./image/devmain.png" alt="devmain"></img>
                         <p className="txtdev-id">Luu Trung Nghia </p>
                         <p className="txtdev-id2">Second Year Teacher</p>
                         <img
